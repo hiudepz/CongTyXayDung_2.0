@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.NhanVienKho;
+using System;
 using System.Windows.Forms;
 
 namespace GUI
@@ -13,7 +14,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new quanlyvattu());
+            Application.Run(new quanlynhacungcap());
         }
     }
 }
