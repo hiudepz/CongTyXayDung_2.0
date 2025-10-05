@@ -45,7 +45,9 @@
             this.btnTimkiemvattu = new System.Windows.Forms.Button();
             this.btnHinhanhvattu = new System.Windows.Forms.Button();
             this.dgvVattu = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVattu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,7 +137,7 @@
             this.cbbNCC.FormattingEnabled = true;
             this.cbbNCC.Location = new System.Drawing.Point(1191, 271);
             this.cbbNCC.Name = "cbbNCC";
-            this.cbbNCC.Size = new System.Drawing.Size(121, 21);
+            this.cbbNCC.Size = new System.Drawing.Size(145, 21);
             this.cbbNCC.TabIndex = 2;
             // 
             // btnThemvattu
@@ -194,11 +196,20 @@
             this.dgvVattu.TabIndex = 4;
             this.dgvVattu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVattu_CellContentClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(1191, 314);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(145, 107);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // quanlyvattu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1443, 839);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvVattu);
             this.Controls.Add(this.btnHinhanhvattu);
             this.Controls.Add(this.btnTimkiemvattu);
@@ -221,6 +232,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.quanlyvattu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVattu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +257,6 @@
         private System.Windows.Forms.Button btnTimkiemvattu;
         private System.Windows.Forms.Button btnHinhanhvattu;
         private System.Windows.Forms.DataGridView dgvVattu;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
