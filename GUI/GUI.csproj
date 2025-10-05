@@ -102,6 +102,12 @@
     <Compile Include="quanlyvattu.Designer.cs">
       <DependentUpon>quanlyvattu.cs</DependentUpon>
     </Compile>
+    <Compile Include="quanlyyeucaukhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyyeucaukhachhang.Designer.cs">
+      <DependentUpon>quanlyyeucaukhachhang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="quanlyvattu.resx">
       <DependentUpon>quanlyvattu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyyeucaukhachhang.resx">
+      <DependentUpon>quanlyyeucaukhachhang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

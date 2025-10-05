@@ -37,7 +37,11 @@ namespace GUI
             dt.Rows.Add(4, "Cát vàng sông Hồng", "Khối", 300, "Công ty VLXD Miền Bắc");
             dt.Rows.Add(5, "Đá 1x2", "Khối", 700, "Công ty VLXD Miền Nam");
 
+            cbbNCC.Items.AddRange(new string[] { "Công ty Xi măng Holcim", "Công ty Gạch Đồng Tâm", "Công ty Thép Việt Nhật", "Công ty VLXD Miền Bắc", "Công ty VLXD Miền Nam" });
+        
+            cbbNCC.SelectedIndex = 0;
             dgvVattu.DataSource = dt;
+          
         }
     }
 }
