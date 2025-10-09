@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,17 @@ using System.Windows.Forms;
 
 namespace GUI.Login
 {
-    public partial class Login : Form
+    public partial class login : Form
     {
-        public Login()
+        public login()
         {
             InitializeComponent();
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            DashBoarch d = new DashBoarch();
+            d.Show();
         }
     }
 }

@@ -16,5 +16,11 @@ namespace GUI.Admin
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+                quanlynhanvien themnhanvien = new quanlynhanvien();
+                themnhanvien.Show();
+        }
     }
 }

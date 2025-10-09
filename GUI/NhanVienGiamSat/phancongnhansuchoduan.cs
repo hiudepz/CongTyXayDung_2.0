@@ -29,7 +29,7 @@ namespace GUI
             dt.Rows.Add("Trần Thị B", "Thi công chính", new DateTime(2025, 10, 1), new DateTime(2025, 11, 30));
             dt.Rows.Add("Lê Văn C", "Kế toán dự án", new DateTime(2025, 10, 1), new DateTime(2025, 12, 15));
 
-            dgvPhancongduan.DataSource = dt;
+            dgvBangPhanCong.DataSource = dt;
 
             
             cbbDuan.Items.Add("Dự án A");
@@ -38,6 +38,16 @@ namespace GUI
             cbbNhanvien.Items.Add("Nguyễn Văn A");
             cbbNhanvien.Items.Add("Trần Thị B");
             cbbNhanvien.Items.Add("Lê Văn C");
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

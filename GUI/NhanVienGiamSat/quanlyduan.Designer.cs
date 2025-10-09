@@ -45,14 +45,17 @@
             this.btnChonanhduan = new System.Windows.Forms.Button();
             this.dgvQuanlyduan = new System.Windows.Forms.DataGridView();
             this.btnPhancongnhansuchoduan = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanlyduan)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(620, 289);
+            this.label1.Location = new System.Drawing.Point(20, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
@@ -60,8 +63,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(620, 322);
+            this.label2.Location = new System.Drawing.Point(20, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 0;
@@ -69,8 +73,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(620, 406);
+            this.label3.Location = new System.Drawing.Point(20, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 0;
@@ -78,8 +83,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(620, 439);
+            this.label4.Location = new System.Drawing.Point(20, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 0;
@@ -87,8 +93,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(620, 360);
+            this.label6.Location = new System.Drawing.Point(20, 85);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 0;
@@ -96,7 +103,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(1105, 289);
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Location = new System.Drawing.Point(373, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(135, 135);
             this.pictureBox1.TabIndex = 1;
@@ -104,43 +112,49 @@
             // 
             // txtTenduan
             // 
-            this.txtTenduan.Location = new System.Drawing.Point(738, 286);
+            this.txtTenduan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTenduan.Location = new System.Drawing.Point(137, 17);
             this.txtTenduan.Name = "txtTenduan";
             this.txtTenduan.Size = new System.Drawing.Size(100, 20);
             this.txtTenduan.TabIndex = 2;
             // 
             // txtTiendo
             // 
-            this.txtTiendo.Location = new System.Drawing.Point(739, 312);
+            this.txtTiendo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTiendo.Location = new System.Drawing.Point(137, 50);
             this.txtTiendo.Name = "txtTiendo";
             this.txtTiendo.Size = new System.Drawing.Size(100, 20);
             this.txtTiendo.TabIndex = 2;
             // 
             // dtpNgaybatdau
             // 
-            this.dtpNgaybatdau.Location = new System.Drawing.Point(739, 406);
+            this.dtpNgaybatdau.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpNgaybatdau.Location = new System.Drawing.Point(137, 124);
             this.dtpNgaybatdau.Name = "dtpNgaybatdau";
             this.dtpNgaybatdau.Size = new System.Drawing.Size(200, 20);
             this.dtpNgaybatdau.TabIndex = 3;
             // 
             // dtpNgayketthuc
             // 
-            this.dtpNgayketthuc.Location = new System.Drawing.Point(739, 432);
+            this.dtpNgayketthuc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpNgayketthuc.Location = new System.Drawing.Point(137, 162);
             this.dtpNgayketthuc.Name = "dtpNgayketthuc";
             this.dtpNgayketthuc.Size = new System.Drawing.Size(200, 20);
             this.dtpNgayketthuc.TabIndex = 3;
             // 
             // cbbKhachhang
             // 
+            this.cbbKhachhang.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbbKhachhang.FormattingEnabled = true;
-            this.cbbKhachhang.Location = new System.Drawing.Point(738, 357);
+            this.cbbKhachhang.Location = new System.Drawing.Point(137, 82);
             this.cbbKhachhang.Name = "cbbKhachhang";
             this.cbbKhachhang.Size = new System.Drawing.Size(121, 21);
             this.cbbKhachhang.TabIndex = 4;
             // 
             // btnThemduan
             // 
-            this.btnThemduan.Location = new System.Drawing.Point(636, 534);
+            this.btnThemduan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnThemduan.Location = new System.Drawing.Point(128, 206);
             this.btnThemduan.Name = "btnThemduan";
             this.btnThemduan.Size = new System.Drawing.Size(75, 23);
             this.btnThemduan.TabIndex = 5;
@@ -149,7 +163,8 @@
             // 
             // btnXoaduan
             // 
-            this.btnXoaduan.Location = new System.Drawing.Point(803, 534);
+            this.btnXoaduan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnXoaduan.Location = new System.Drawing.Point(209, 206);
             this.btnXoaduan.Name = "btnXoaduan";
             this.btnXoaduan.Size = new System.Drawing.Size(75, 23);
             this.btnXoaduan.TabIndex = 5;
@@ -158,7 +173,8 @@
             // 
             // btnSuaduan
             // 
-            this.btnSuaduan.Location = new System.Drawing.Point(964, 534);
+            this.btnSuaduan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSuaduan.Location = new System.Drawing.Point(300, 206);
             this.btnSuaduan.Name = "btnSuaduan";
             this.btnSuaduan.Size = new System.Drawing.Size(75, 23);
             this.btnSuaduan.TabIndex = 5;
@@ -167,7 +183,8 @@
             // 
             // btnChonanhduan
             // 
-            this.btnChonanhduan.Location = new System.Drawing.Point(1255, 401);
+            this.btnChonanhduan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChonanhduan.Location = new System.Drawing.Point(407, 162);
             this.btnChonanhduan.Name = "btnChonanhduan";
             this.btnChonanhduan.Size = new System.Drawing.Size(75, 23);
             this.btnChonanhduan.TabIndex = 6;
@@ -176,17 +193,19 @@
             // 
             // dgvQuanlyduan
             // 
+            this.dgvQuanlyduan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvQuanlyduan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuanlyduan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuanlyduan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvQuanlyduan.Location = new System.Drawing.Point(0, 576);
+            this.dgvQuanlyduan.Location = new System.Drawing.Point(216, 323);
             this.dgvQuanlyduan.Name = "dgvQuanlyduan";
-            this.dgvQuanlyduan.Size = new System.Drawing.Size(1443, 263);
+            this.dgvQuanlyduan.RowHeadersWidth = 51;
+            this.dgvQuanlyduan.Size = new System.Drawing.Size(578, 193);
             this.dgvQuanlyduan.TabIndex = 7;
             // 
             // btnPhancongnhansuchoduan
             // 
-            this.btnPhancongnhansuchoduan.Location = new System.Drawing.Point(1092, 534);
+            this.btnPhancongnhansuchoduan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPhancongnhansuchoduan.Location = new System.Drawing.Point(388, 206);
             this.btnPhancongnhansuchoduan.Name = "btnPhancongnhansuchoduan";
             this.btnPhancongnhansuchoduan.Size = new System.Drawing.Size(129, 23);
             this.btnPhancongnhansuchoduan.TabIndex = 8;
@@ -194,36 +213,51 @@
             this.btnPhancongnhansuchoduan.UseVisualStyleBackColor = true;
             this.btnPhancongnhansuchoduan.Click += new System.EventHandler(this.btnPhancongnhansuchoduan_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.btnPhancongnhansuchoduan);
+            this.groupBox1.Controls.Add(this.btnChonanhduan);
+            this.groupBox1.Controls.Add(this.btnSuaduan);
+            this.groupBox1.Controls.Add(this.btnXoaduan);
+            this.groupBox1.Controls.Add(this.btnThemduan);
+            this.groupBox1.Controls.Add(this.cbbKhachhang);
+            this.groupBox1.Controls.Add(this.dtpNgayketthuc);
+            this.groupBox1.Controls.Add(this.dtpNgaybatdau);
+            this.groupBox1.Controls.Add(this.txtTiendo);
+            this.groupBox1.Controls.Add(this.txtTenduan);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(231, 45);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(542, 245);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Điền thông tin ";
+            // 
             // quanlyduan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 839);
-            this.Controls.Add(this.btnPhancongnhansuchoduan);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(994, 592);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvQuanlyduan);
-            this.Controls.Add(this.btnChonanhduan);
-            this.Controls.Add(this.btnSuaduan);
-            this.Controls.Add(this.btnXoaduan);
-            this.Controls.Add(this.btnThemduan);
-            this.Controls.Add(this.cbbKhachhang);
-            this.Controls.Add(this.dtpNgayketthuc);
-            this.Controls.Add(this.dtpNgaybatdau);
-            this.Controls.Add(this.txtTiendo);
-            this.Controls.Add(this.txtTenduan);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "quanlyduan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý dự án";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.quanlyduan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanlyduan)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -246,5 +280,6 @@
         private System.Windows.Forms.Button btnChonanhduan;
         private System.Windows.Forms.DataGridView dgvQuanlyduan;
         private System.Windows.Forms.Button btnPhancongnhansuchoduan;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

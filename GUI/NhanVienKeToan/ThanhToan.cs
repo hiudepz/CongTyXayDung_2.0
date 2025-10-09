@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.NhanVienKeToan
 {
-    public partial class QuanLyLuong : Form
+    public partial class ThanhToan : Form
     {
-        public QuanLyLuong()
+        public ThanhToan()
         {
             InitializeComponent();
         }

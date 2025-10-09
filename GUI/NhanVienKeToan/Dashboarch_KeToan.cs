@@ -16,5 +16,24 @@ namespace GUI.NhanVienKeToan
         {
             InitializeComponent();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            DanhSachThanhToan t = new DanhSachThanhToan();
+            t.MdiParent = this;
+            t.Show();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            DanhSachLuong t = new DanhSachLuong();
+            t.MdiParent = this;
+            t.Show();
+        }
     }
 }

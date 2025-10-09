@@ -16,5 +16,11 @@ namespace GUI.NhanVienKho
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ChiTietDonHang  ct = new ChiTietDonHang();
+            ct.ShowDialog();
+        }
     }
 }

@@ -24,6 +24,8 @@ namespace GUI
 
         private void quanlynhanvien_Load(object sender, EventArgs e)
         {
+            //this.Dock = DockStyle.Fill;
+            
             DataTable dt = new DataTable();
             dt.Columns.Add("ID", typeof(int));
             dt.Columns.Add("Họ tên", typeof(string));
@@ -37,6 +39,7 @@ namespace GUI
             dt.Rows.Add(4, "Phạm Thị Dung", "dung.pham@company.com", "0904444555", "Giám sát công trình");
 
             dgvQuanlynhanvien.DataSource = dt;
+
         }
     }
 }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Admin
+namespace GUI.NhanVienKeToan
 {
-    public partial class SuaNhanVien : Form
+    public partial class DanhSachLuong : Form
     {
-        public SuaNhanVien()
+        public DanhSachLuong()
         {
             InitializeComponent();
         }

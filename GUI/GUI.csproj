@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,11 +61,11 @@
     <Compile Include="Admin\QuanLyNguoiDung.Designer.cs">
       <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\SuaNhanVien.cs">
+    <Compile Include="Admin\SuaNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\SuaNhanVien.Designer.cs">
-      <DependentUpon>SuaNhanVien.cs</DependentUpon>
+    <Compile Include="Admin\SuaNguoiDung.Designer.cs">
+      <DependentUpon>SuaNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\ThemNguoiDung.cs">
       <SubType>Form</SubType>
@@ -64,17 +73,11 @@
     <Compile Include="Admin\ThemNguoiDung.Designer.cs">
       <DependentUpon>ThemNguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Login\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\MainForm.cs">
       <SubType>Form</SubType>
@@ -82,11 +85,41 @@
     <Compile Include="Admin\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienGiamSat\DashBoarch_GiamSat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienGiamSat\DashBoarch_GiamSat.Designer.cs">
+      <DependentUpon>DashBoarch_GiamSat.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienGiamSat\phancongnhansuchoduan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhanVienGiamSat\phancongnhansuchoduan.Designer.cs">
       <DependentUpon>phancongnhansuchoduan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienKeToan\BangDonDatHang_BangDuAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienKeToan\BangDonDatHang_BangDuAn.Designer.cs">
+      <DependentUpon>BangDonDatHang_BangDuAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienKeToan\DanhSachThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienKeToan\DanhSachThanhToan.Designer.cs">
+      <DependentUpon>DanhSachThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienKeToan\DanhSachLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienKeToan\DanhSachLuong.Designer.cs">
+      <DependentUpon>DanhSachLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienKeToan\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienKeToan\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienKeToan\Dashboarch_KeToan.cs">
       <SubType>Form</SubType>
@@ -94,17 +127,23 @@
     <Compile Include="NhanVienKeToan\Dashboarch_KeToan.Designer.cs">
       <DependentUpon>Dashboarch_KeToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVienKeToan\QuanLyLuong.cs">
+    <Compile Include="NhanVienKeToan\ThemXoaSuaLuong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVienKeToan\QuanLyLuong.Designer.cs">
-      <DependentUpon>QuanLyLuong.cs</DependentUpon>
+    <Compile Include="NhanVienKeToan\ThemXoaSuaLuong.Designer.cs">
+      <DependentUpon>ThemXoaSuaLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienKho\ChiTietDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhanVienKho\ChiTietDonHang.Designer.cs">
       <DependentUpon>ChiTietDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienKho\Dashboarch_Kho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienKho\Dashboarch_Kho.Designer.cs">
+      <DependentUpon>Dashboarch_Kho.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienKho\DonDatHang.cs">
       <SubType>Form</SubType>
@@ -117,6 +156,12 @@
     </Compile>
     <Compile Include="NhanVienKho\QuanLyKho.Designer.cs">
       <DependentUpon>QuanLyKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienKinhDoanh\Dashboarch_NVKinhDoanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienKinhDoanh\Dashboarch_NVKinhDoanh.Designer.cs">
+      <DependentUpon>Dashboarch_NVKinhDoanh.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienKinhDoanh\phancongnhanvienchohopdong.cs">
       <SubType>Form</SubType>
@@ -168,41 +213,101 @@
     <Compile Include="NhanVienKinhDoanh\quanlyyeucaukhachhang.Designer.cs">
       <DependentUpon>quanlyyeucaukhachhang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\BangLuong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BangLuong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Baocaohopdong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baocaohopdong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Baocaophancong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baocaophancong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Baocaothanhgtoan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baocaothanhgtoan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Baocaotonkho.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baocaotonkho.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Baocaoyeucaukhachhang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baocaoyeucaukhachhang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Hoadonthanhtoan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hoadonthanhtoan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Admin\QuanLyNguoiDung.resx">
       <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\SuaNhanVien.resx">
-      <DependentUpon>SuaNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\SuaNguoiDung.resx">
+      <DependentUpon>SuaNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\ThemNguoiDung.resx">
       <DependentUpon>ThemNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Login\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienGiamSat\DashBoarch_GiamSat.resx">
+      <DependentUpon>DashBoarch_GiamSat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVienGiamSat\phancongnhansuchoduan.resx">
       <DependentUpon>phancongnhansuchoduan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienKeToan\BangDonDatHang_BangDuAn.resx">
+      <DependentUpon>BangDonDatHang_BangDuAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienKeToan\DanhSachThanhToan.resx">
+      <DependentUpon>DanhSachThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienKeToan\DanhSachLuong.resx">
+      <DependentUpon>DanhSachLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienKeToan\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKeToan\Dashboarch_KeToan.resx">
       <DependentUpon>Dashboarch_KeToan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVienKeToan\QuanLyLuong.resx">
-      <DependentUpon>QuanLyLuong.cs</DependentUpon>
+    <EmbeddedResource Include="NhanVienKeToan\ThemXoaSuaLuong.resx">
+      <DependentUpon>ThemXoaSuaLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKho\ChiTietDonHang.resx">
       <DependentUpon>ChiTietDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienKho\Dashboarch_Kho.resx">
+      <DependentUpon>Dashboarch_Kho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKho\DonDatHang.resx">
       <DependentUpon>DonDatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKho\QuanLyKho.resx">
       <DependentUpon>QuanLyKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienKinhDoanh\Dashboarch_NVKinhDoanh.resx">
+      <DependentUpon>Dashboarch_NVKinhDoanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKinhDoanh\phancongnhanvienchohopdong.resx">
       <DependentUpon>phancongnhanvienchohopdong.cs</DependentUpon>
@@ -237,6 +342,35 @@
     <EmbeddedResource Include="NhanVienKinhDoanh\quanlyyeucaukhachhang.resx">
       <DependentUpon>quanlyyeucaukhachhang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\BangLuong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BangLuong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Baocaohopdong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Baocaohopdong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Baocaophancong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Baocaophancong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Baocaothanhgtoan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Baocaothanhgtoan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Baocaotonkho.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Baocaotonkho.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Baocaoyeucaukhachhang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Baocaoyeucaukhachhang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Hoadonthanhtoan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Hoadonthanhtoan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -257,5 +391,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="resources\OIP %281%29.jpeg" />
+    <Content Include="resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

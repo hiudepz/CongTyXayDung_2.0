@@ -1,5 +1,9 @@
-﻿using GUI.NhanVienKho;
+﻿using GUI.Admin;
+using GUI.NhanVienKeToan;
+using GUI.NhanVienKho;
+using GUI.Login;
 using System;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace GUI
@@ -14,7 +18,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new quanlynhacungcap());
+            Application.Run(new login());
         }
     }
 }
