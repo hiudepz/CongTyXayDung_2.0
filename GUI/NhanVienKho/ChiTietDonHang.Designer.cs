@@ -36,12 +36,14 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.guna2NumericUpDown1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.button2);
@@ -62,7 +64,7 @@
             this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2NumericUpDown1.Location = new System.Drawing.Point(100, 89);
-            this.guna2NumericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2NumericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
             this.guna2NumericUpDown1.Size = new System.Drawing.Size(99, 20);
             this.guna2NumericUpDown1.TabIndex = 8;
@@ -79,7 +81,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(100, 127);
+            this.button2.Location = new System.Drawing.Point(34, 127);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
@@ -118,6 +120,15 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Đơn giá";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(125, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Sửa";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ChiTietDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,5 +156,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -132,7 +132,7 @@
             // 
             // btnThemyeucau
             // 
-            this.btnThemyeucau.Location = new System.Drawing.Point(358, 28);
+            this.btnThemyeucau.Location = new System.Drawing.Point(414, 18);
             this.btnThemyeucau.Name = "btnThemyeucau";
             this.btnThemyeucau.Size = new System.Drawing.Size(75, 23);
             this.btnThemyeucau.TabIndex = 5;
@@ -141,7 +141,7 @@
             // 
             // btnXoayeucau
             // 
-            this.btnXoayeucau.Location = new System.Drawing.Point(358, 70);
+            this.btnXoayeucau.Location = new System.Drawing.Point(414, 60);
             this.btnXoayeucau.Name = "btnXoayeucau";
             this.btnXoayeucau.Size = new System.Drawing.Size(75, 23);
             this.btnXoayeucau.TabIndex = 5;
@@ -150,7 +150,7 @@
             // 
             // btnSuayeucau
             // 
-            this.btnSuayeucau.Location = new System.Drawing.Point(358, 109);
+            this.btnSuayeucau.Location = new System.Drawing.Point(414, 99);
             this.btnSuayeucau.Name = "btnSuayeucau";
             this.btnSuayeucau.Size = new System.Drawing.Size(75, 23);
             this.btnSuayeucau.TabIndex = 5;
@@ -296,7 +296,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(15, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(448, 206);
+            this.groupBox2.Size = new System.Drawing.Size(505, 252);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin ";

@@ -20,10 +20,10 @@ namespace GUI.Admin
         {
             InitializeComponent();
         }
-
+    
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var qlnv = new quanlynhanvien();
+            quanlynhanvien qlnv = new quanlynhanvien();
             qlnv.MdiParent = this;
             qlnv.Show();
         }
@@ -161,6 +161,13 @@ namespace GUI.Admin
         {
             DashBoarch_GiamSat qlnv = new DashBoarch_GiamSat();
 
+            qlnv.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DonDatHang qlnv = new DonDatHang();
+            qlnv.MdiParent = this;
             qlnv.Show();
         }
     }

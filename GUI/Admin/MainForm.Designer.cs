@@ -47,14 +47,15 @@
             this.phânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýYêuCầuKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýVậtTưToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tspQuanLyTaiKhoan = new System.Windows.Forms.ToolStripButton();
-            this.tspQuanLyNhanVien = new System.Windows.Forms.ToolStripButton();
             this.hiểnThịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trangChủKếToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trangChủKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trangChủNhânViênKinhDoanhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trangChủGiámSátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tspQuanLyTaiKhoan = new System.Windows.Forms.ToolStripButton();
+            this.tspQuanLyNhanVien = new System.Windows.Forms.ToolStripButton();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +99,7 @@
             // doanhMụcToolStripMenuItem
             // 
             this.doanhMụcToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
             this.quảnLýNhânViênToolStripMenuItem,
             this.quảnLýNgườiDùngToolStripMenuItem,
             this.quảnLýKháchHàngToolStripMenuItem,
@@ -206,36 +208,6 @@
             this.quảnLýVậtTưToolStripMenuItem.Text = "Quản lý vật tư";
             this.quảnLýVậtTưToolStripMenuItem.Click += new System.EventHandler(this.quảnLýVậtTưToolStripMenuItem_Click);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tspQuanLyTaiKhoan,
-            this.tspQuanLyNhanVien});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(810, 25);
-            this.toolStrip1.TabIndex = 15;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tspQuanLyTaiKhoan
-            // 
-            this.tspQuanLyTaiKhoan.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tspQuanLyTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("tspQuanLyTaiKhoan.Image")));
-            this.tspQuanLyTaiKhoan.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspQuanLyTaiKhoan.Name = "tspQuanLyTaiKhoan";
-            this.tspQuanLyTaiKhoan.Size = new System.Drawing.Size(123, 22);
-            this.tspQuanLyTaiKhoan.Text = "Quản lý tài khoản ";
-            this.tspQuanLyTaiKhoan.Click += new System.EventHandler(this.tspQuanLyTaiKhoan_Click);
-            // 
-            // tspQuanLyNhanVien
-            // 
-            this.tspQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("tspQuanLyNhanVien.Image")));
-            this.tspQuanLyNhanVien.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspQuanLyNhanVien.Name = "tspQuanLyNhanVien";
-            this.tspQuanLyNhanVien.Size = new System.Drawing.Size(123, 22);
-            this.tspQuanLyNhanVien.Text = "Quản lý nhân viên";
-            this.tspQuanLyNhanVien.Click += new System.EventHandler(this.tspQuanLyNhanVien_Click);
-            // 
             // hiểnThịToolStripMenuItem
             // 
             this.hiểnThịToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -274,6 +246,43 @@
             this.trangChủGiámSátToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.trangChủGiámSátToolStripMenuItem.Text = "Trang chủ giám sát ";
             this.trangChủGiámSátToolStripMenuItem.Click += new System.EventHandler(this.trangChủGiámSátToolStripMenuItem_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tspQuanLyTaiKhoan,
+            this.tspQuanLyNhanVien});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(810, 25);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tspQuanLyTaiKhoan
+            // 
+            this.tspQuanLyTaiKhoan.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tspQuanLyTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("tspQuanLyTaiKhoan.Image")));
+            this.tspQuanLyTaiKhoan.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspQuanLyTaiKhoan.Name = "tspQuanLyTaiKhoan";
+            this.tspQuanLyTaiKhoan.Size = new System.Drawing.Size(123, 22);
+            this.tspQuanLyTaiKhoan.Text = "Quản lý tài khoản ";
+            this.tspQuanLyTaiKhoan.Click += new System.EventHandler(this.tspQuanLyTaiKhoan_Click);
+            // 
+            // tspQuanLyNhanVien
+            // 
+            this.tspQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("tspQuanLyNhanVien.Image")));
+            this.tspQuanLyNhanVien.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspQuanLyNhanVien.Name = "tspQuanLyNhanVien";
+            this.tspQuanLyNhanVien.Size = new System.Drawing.Size(123, 22);
+            this.tspQuanLyNhanVien.Text = "Quản lý nhân viên";
+            this.tspQuanLyNhanVien.Click += new System.EventHandler(this.tspQuanLyNhanVien_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 22);
+            this.toolStripMenuItem1.Text = "Đặt hàng nhà cung cấp";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // DashBoarch
             // 
@@ -327,5 +336,6 @@
         private System.Windows.Forms.ToolStripMenuItem trangChủKhoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trangChủNhânViênKinhDoanhToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trangChủGiámSátToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

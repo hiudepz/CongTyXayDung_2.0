@@ -121,11 +121,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label6.Location = new System.Drawing.Point(511, 14);
+            this.label6.Location = new System.Drawing.Point(529, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Ảnh đại diện";
+            this.label6.Text = "Logo";
             // 
             // txtHotenkhachhang
             // 
@@ -203,7 +203,7 @@
             // btnLogoncc
             // 
             this.btnLogoncc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.btnLogoncc.Location = new System.Drawing.Point(503, 119);
+            this.btnLogoncc.Location = new System.Drawing.Point(507, 119);
             this.btnLogoncc.Name = "btnLogoncc";
             this.btnLogoncc.Size = new System.Drawing.Size(75, 25);
             this.btnLogoncc.TabIndex = 21;
