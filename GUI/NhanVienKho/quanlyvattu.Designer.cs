@@ -56,13 +56,15 @@
             // 
             // dgvVattu
             // 
+            this.dgvVattu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvVattu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVattu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVattu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvVattu.Location = new System.Drawing.Point(0, 260);
+            this.dgvVattu.Location = new System.Drawing.Point(0, 231);
             this.dgvVattu.Name = "dgvVattu";
             this.dgvVattu.RowHeadersWidth = 51;
-            this.dgvVattu.Size = new System.Drawing.Size(984, 301);
+            this.dgvVattu.Size = new System.Drawing.Size(984, 330);
             this.dgvVattu.TabIndex = 4;
             this.dgvVattu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVattu_CellContentClick);
             // 
@@ -130,6 +132,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
@@ -192,15 +195,15 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(643, 67);
+            this.pictureBox2.Location = new System.Drawing.Point(660, 57);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 70);
+            this.pictureBox2.Size = new System.Drawing.Size(116, 94);
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             // 
             // btnLogoncc
             // 
-            this.btnLogoncc.Location = new System.Drawing.Point(656, 143);
+            this.btnLogoncc.Location = new System.Drawing.Point(686, 157);
             this.btnLogoncc.Name = "btnLogoncc";
             this.btnLogoncc.Size = new System.Drawing.Size(75, 23);
             this.btnLogoncc.TabIndex = 19;
@@ -237,14 +240,16 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(787, 226);
+            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox7.Location = new System.Drawing.Point(788, 205);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 27;
             // 
             // btnTimkiemncc
             // 
-            this.btnTimkiemncc.Location = new System.Drawing.Point(892, 224);
+            this.btnTimkiemncc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimkiemncc.Location = new System.Drawing.Point(893, 203);
             this.btnTimkiemncc.Name = "btnTimkiemncc";
             this.btnTimkiemncc.Size = new System.Drawing.Size(75, 23);
             this.btnTimkiemncc.TabIndex = 26;

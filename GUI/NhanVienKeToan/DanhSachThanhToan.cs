@@ -47,5 +47,17 @@ namespace GUI.NhanVienKeToan
 
            
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            SuaThanhToan stt = new SuaThanhToan();
+            stt.ShowDialog();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+             BangDonDatHang_BangDuAn tt = new BangDonDatHang_BangDuAn();
+            tt.ShowDialog();
+        }
     }
 }

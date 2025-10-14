@@ -55,21 +55,23 @@
             // 
             // dgvKhachhang
             // 
+            this.dgvKhachhang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKhachhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachhang.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvKhachhang.Location = new System.Drawing.Point(0, 283);
+            this.dgvKhachhang.Location = new System.Drawing.Point(0, 273);
             this.dgvKhachhang.Name = "dgvKhachhang";
             this.dgvKhachhang.RowHeadersWidth = 51;
-            this.dgvKhachhang.Size = new System.Drawing.Size(984, 278);
+            this.dgvKhachhang.Size = new System.Drawing.Size(984, 288);
             this.dgvKhachhang.TabIndex = 0;
             this.dgvKhachhang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentClick);
             // 
             // txtMakhachhang
             // 
-            this.txtMakhachhang.Location = new System.Drawing.Point(128, 24);
+            this.txtMakhachhang.Location = new System.Drawing.Point(111, 24);
             this.txtMakhachhang.Name = "txtMakhachhang";
-            this.txtMakhachhang.Size = new System.Drawing.Size(100, 20);
+            this.txtMakhachhang.Size = new System.Drawing.Size(131, 20);
             this.txtMakhachhang.TabIndex = 1;
             // 
             // label1
@@ -102,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 109);
+            this.label4.Location = new System.Drawing.Point(18, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 2;
@@ -129,30 +131,30 @@
             // 
             // txtHotenkhachhang
             // 
-            this.txtHotenkhachhang.Location = new System.Drawing.Point(128, 63);
+            this.txtHotenkhachhang.Location = new System.Drawing.Point(111, 63);
             this.txtHotenkhachhang.Name = "txtHotenkhachhang";
-            this.txtHotenkhachhang.Size = new System.Drawing.Size(100, 20);
+            this.txtHotenkhachhang.Size = new System.Drawing.Size(131, 20);
             this.txtHotenkhachhang.TabIndex = 1;
             // 
             // txtPhonekhachhang
             // 
-            this.txtPhonekhachhang.Location = new System.Drawing.Point(128, 106);
+            this.txtPhonekhachhang.Location = new System.Drawing.Point(111, 101);
             this.txtPhonekhachhang.Name = "txtPhonekhachhang";
-            this.txtPhonekhachhang.Size = new System.Drawing.Size(100, 20);
+            this.txtPhonekhachhang.Size = new System.Drawing.Size(131, 20);
             this.txtPhonekhachhang.TabIndex = 1;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(331, 24);
+            this.textBox4.Location = new System.Drawing.Point(330, 24);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(131, 20);
             this.textBox4.TabIndex = 1;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(330, 63);
+            this.textBox5.Location = new System.Drawing.Point(330, 65);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.Size = new System.Drawing.Size(131, 20);
             this.textBox5.TabIndex = 1;
             // 
             // btnThemkhachhang
@@ -184,7 +186,8 @@
             // 
             // btnTimkiemkhachhang
             // 
-            this.btnTimkiemkhachhang.Location = new System.Drawing.Point(899, 254);
+            this.btnTimkiemkhachhang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimkiemkhachhang.Location = new System.Drawing.Point(897, 244);
             this.btnTimkiemkhachhang.Name = "btnTimkiemkhachhang";
             this.btnTimkiemkhachhang.Size = new System.Drawing.Size(75, 23);
             this.btnTimkiemkhachhang.TabIndex = 3;
@@ -212,6 +215,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnLogoncc);
             this.groupBox1.Controls.Add(this.btnXoakhachhang);
@@ -237,7 +241,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(794, 256);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(791, 246);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 23;

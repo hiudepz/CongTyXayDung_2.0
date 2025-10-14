@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI.NhanVienKeToan
 {
-    public partial class DanhSachLuong : Form
+    public partial class SuaThanhToan : Form
     {
-        public DanhSachLuong()
+        public SuaThanhToan()
         {
             InitializeComponent();
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            ThemXoaSuaLuong txs = new ThemXoaSuaLuong();
-            txs.ShowDialog();
         }
     }
 }

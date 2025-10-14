@@ -26,6 +26,7 @@ namespace GUI.Admin
             quanlynhanvien qlnv = new quanlynhanvien();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
        
@@ -34,8 +35,8 @@ namespace GUI.Admin
         {
             quanlynhanvien qlnv = new quanlynhanvien();
             qlnv.MdiParent = this;
-            
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void tspQuanLyTaiKhoan_Click(object sender, EventArgs e)
@@ -43,13 +44,15 @@ namespace GUI.Admin
             QuanLyNguoiDung qlnv = new QuanLyNguoiDung();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void quảnLýNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QuanLyNguoiDung qlnv = new QuanLyNguoiDung();
-            qlnv.MdiParent = this;
+            qlnv.MdiParent = this;           
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -67,6 +70,7 @@ namespace GUI.Admin
             quanlykhachhang qlnv = new quanlykhachhang();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void quảnLýHợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,6 +78,7 @@ namespace GUI.Admin
             quanlyhopdong qlnv = new quanlyhopdong();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void quảnLýDựÁnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +86,7 @@ namespace GUI.Admin
             quanlyduan qlnv = new quanlyduan();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void phânCôngNhânSựToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,6 +94,7 @@ namespace GUI.Admin
             phancongnhansuchoduan qlnv = new phancongnhansuchoduan();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void quảnLýNhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,6 +102,7 @@ namespace GUI.Admin
             quanlynhacungcap qlnv = new quanlynhacungcap();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void quảnLýKhoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +110,7 @@ namespace GUI.Admin
             QuanLyKho qlnv = new QuanLyKho();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void quảnLýLươngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,6 +118,7 @@ namespace GUI.Admin
             DanhSachLuong qlnv = new DanhSachLuong();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void quảnLýThanhToánToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,6 +126,7 @@ namespace GUI.Admin
             DanhSachThanhToan qlnv = new DanhSachThanhToan();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void phânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,13 +134,12 @@ namespace GUI.Admin
             phancongnhanvienchohopdong qlnv = new phancongnhanvienchohopdong();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void quảnLýYêuCầuKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            quanlyyeucaukhachhang qlnv = new quanlyyeucaukhachhang();
-            qlnv.MdiParent = this;
-            qlnv.Show();
+           
         }
 
         private void quảnLýVậtTưToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,12 +147,14 @@ namespace GUI.Admin
             quanlyvattu qlnv = new quanlyvattu();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
 
         private void trangChủKếToánToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboarch_KeToan qlnv = new Dashboarch_KeToan();
             qlnv.Show();
+
         }
 
         private void trangChủKhoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -169,6 +181,7 @@ namespace GUI.Admin
             DonDatHang qlnv = new DonDatHang();
             qlnv.MdiParent = this;
             qlnv.Show();
+            qlnv.WindowState = FormWindowState.Maximized;
         }
     }
 }

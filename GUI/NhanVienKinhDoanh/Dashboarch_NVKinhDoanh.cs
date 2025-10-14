@@ -33,9 +33,7 @@ namespace GUI.NhanVienKinhDoanh
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            quanlyyeucaukhachhang t = new quanlyyeucaukhachhang();
-            t.MdiParent = this;
-            t.Show();
+            
         }
     }
 }

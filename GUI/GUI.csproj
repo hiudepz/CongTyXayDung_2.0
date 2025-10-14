@@ -115,6 +115,12 @@
     <Compile Include="NhanVienKeToan\DanhSachLuong.Designer.cs">
       <DependentUpon>DanhSachLuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVienKeToan\SuaThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienKeToan\SuaThanhToan.Designer.cs">
+      <DependentUpon>SuaThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienKeToan\ThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,12 +213,6 @@
     <Compile Include="NhanVienKho\quanlyvattu.Designer.cs">
       <DependentUpon>quanlyvattu.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVienKinhDoanh\quanlyyeucaukhachhang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhanVienKinhDoanh\quanlyyeucaukhachhang.Designer.cs">
-      <DependentUpon>quanlyyeucaukhachhang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Report\BangLuong.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -285,6 +285,9 @@
     <EmbeddedResource Include="NhanVienKeToan\DanhSachLuong.resx">
       <DependentUpon>DanhSachLuong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienKeToan\SuaThanhToan.resx">
+      <DependentUpon>SuaThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKeToan\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,9 +341,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKho\quanlyvattu.resx">
       <DependentUpon>quanlyvattu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NhanVienKinhDoanh\quanlyyeucaukhachhang.resx">
-      <DependentUpon>quanlyyeucaukhachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BangLuong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -39,12 +39,14 @@
             this.dgvPhancongnhanvienchohopdong = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhancongnhanvienchohopdong)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 26);
             this.label1.Name = "label1";
@@ -54,6 +56,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(29, 74);
             this.label2.Name = "label2";
@@ -63,6 +66,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(29, 122);
             this.label3.Name = "label3";
@@ -72,6 +76,7 @@
             // 
             // btnThemnhanvienchohopdong
             // 
+            this.btnThemnhanvienchohopdong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnThemnhanvienchohopdong.Location = new System.Drawing.Point(23, 174);
             this.btnThemnhanvienchohopdong.Name = "btnThemnhanvienchohopdong";
             this.btnThemnhanvienchohopdong.Size = new System.Drawing.Size(75, 23);
@@ -81,6 +86,7 @@
             // 
             // btnXoanhanvienkhoihopdong
             // 
+            this.btnXoanhanvienkhoihopdong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnXoanhanvienkhoihopdong.Location = new System.Drawing.Point(122, 174);
             this.btnXoanhanvienkhoihopdong.Name = "btnXoanhanvienkhoihopdong";
             this.btnXoanhanvienkhoihopdong.Size = new System.Drawing.Size(75, 23);
@@ -90,6 +96,7 @@
             // 
             // btnSuanhanvienchohopdong
             // 
+            this.btnSuanhanvienchohopdong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSuanhanvienchohopdong.Location = new System.Drawing.Point(223, 174);
             this.btnSuanhanvienchohopdong.Name = "btnSuanhanvienchohopdong";
             this.btnSuanhanvienchohopdong.Size = new System.Drawing.Size(75, 23);
@@ -99,6 +106,7 @@
             // 
             // cbbTenhopdong
             // 
+            this.cbbTenhopdong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbbTenhopdong.FormattingEnabled = true;
             this.cbbTenhopdong.Location = new System.Drawing.Point(133, 26);
             this.cbbTenhopdong.Name = "cbbTenhopdong";
@@ -107,6 +115,7 @@
             // 
             // cbbTennhanvien
             // 
+            this.cbbTennhanvien.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbbTennhanvien.FormattingEnabled = true;
             this.cbbTennhanvien.Location = new System.Drawing.Point(133, 71);
             this.cbbTennhanvien.Name = "cbbTennhanvien";
@@ -115,17 +124,20 @@
             // 
             // dgvPhancongnhanvienchohopdong
             // 
+            this.dgvPhancongnhanvienchohopdong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPhancongnhanvienchohopdong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhancongnhanvienchohopdong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhancongnhanvienchohopdong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPhancongnhanvienchohopdong.Location = new System.Drawing.Point(0, 259);
+            this.dgvPhancongnhanvienchohopdong.Location = new System.Drawing.Point(0, 246);
             this.dgvPhancongnhanvienchohopdong.Name = "dgvPhancongnhanvienchohopdong";
             this.dgvPhancongnhanvienchohopdong.RowHeadersWidth = 51;
-            this.dgvPhancongnhanvienchohopdong.Size = new System.Drawing.Size(800, 191);
+            this.dgvPhancongnhanvienchohopdong.Size = new System.Drawing.Size(800, 204);
             this.dgvPhancongnhanvienchohopdong.TabIndex = 6;
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(133, 119);
             this.comboBox1.Name = "comboBox1";
@@ -134,6 +146,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.cbbTennhanvien);
             this.groupBox1.Controls.Add(this.cbbTenhopdong);
@@ -143,12 +157,22 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(265, 26);
+            this.groupBox1.Location = new System.Drawing.Point(235, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(313, 214);
+            this.groupBox1.Size = new System.Drawing.Size(409, 214);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lưu thông tin hợp đồng";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(318, 174);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Tìm kiếm";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // phancongnhanvienchohopdong
             // 
@@ -182,5 +206,6 @@
         private System.Windows.Forms.DataGridView dgvPhancongnhanvienchohopdong;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

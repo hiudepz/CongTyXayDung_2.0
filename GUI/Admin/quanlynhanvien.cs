@@ -41,5 +41,10 @@ namespace GUI
             dgvQuanlynhanvien.DataSource = dt;
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

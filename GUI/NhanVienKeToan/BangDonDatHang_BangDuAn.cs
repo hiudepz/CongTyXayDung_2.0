@@ -16,5 +16,17 @@ namespace GUI.NhanVienKeToan
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ThanhToan thanhToan = new ThanhToan();
+            thanhToan.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ThanhToan thanhToan = new ThanhToan();
+            thanhToan.ShowDialog();
+        }
     }
 }
