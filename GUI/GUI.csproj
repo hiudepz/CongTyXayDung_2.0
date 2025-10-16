@@ -389,6 +389,10 @@
       <Project>{039ce75b-8431-41bc-a553-ec22bba9581f}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{afd14d26-33a2-4f45-bd24-d2d01063f788}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

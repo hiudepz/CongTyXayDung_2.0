@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>a069cbee-523d-4a30-b1bd-14b932dc68cd</ProjectGuid>
+    <ProjectGuid>{A069CBEE-523D-4A30-B1BD-14B932DC68CD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
@@ -31,24 +31,117 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BangLuong.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietDonDatHang.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CongTyXayDung.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CongTyXayDung.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CongTyXayDung.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CongTyXayDung.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CongTyXayDung.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DonDatHang.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DuAn.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HopDong.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kho.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDung.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien_DAL.cs" />
+    <Compile Include="PhanCong.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThanhToan.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VatTu.cs">
+      <DependentUpon>CongTyXayDung.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="CongTyXayDung.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CongTyXayDung.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CongTyXayDung.edmx.diagram">
+      <DependentUpon>CongTyXayDung.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{afd14d26-33a2-4f45-bd24-d2d01063f788}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CongTyXayDung.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CongTyXayDung.edmx</DependentUpon>
+      <LastGenOutput>CongTyXayDung.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CongTyXayDung.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CongTyXayDung.edmx</DependentUpon>
+      <LastGenOutput>CongTyXayDung.cs</LastGenOutput>
+    </Content>
+    <Content Include="DbCongTyXayDung\dataqlctxh.sql" />
+    <Content Include="DbCongTyXayDung\qlctxd.sql" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
