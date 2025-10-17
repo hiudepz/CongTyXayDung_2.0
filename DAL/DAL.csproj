@@ -96,6 +96,7 @@
     <Compile Include="NhanVien.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="NhanVien_BLL.cs" />
     <Compile Include="NhanVien_DAL.cs" />
     <Compile Include="PhanCong.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>

@@ -24,5 +24,30 @@ namespace DAL
                 AnhDaiDien = n.AnhDaiDien
             }).ToList();
         }
+        public void Add_NV(NhanVien nv)
+        {
+            db.NhanViens.Add(nv);
+        }
+        public void Delete_NV(int id)
+        {
+            var nv = db.NhanViens.FirstOrDefault(s => s.NhanVienID == id);
+            if (nv!=null) // not 
+            {
+                db.NhanViens.Remove(nv);
+                db.SaveChanges();
+            }
+        }
+        public void Edit_NV(NhanVien nv)
+        {
+            var existing = db.NhanViens.FirstOrDefault(x=>x.NhanVienID == nv.NhanVienID);
+            if (existing != null) { 
+                existing.HoTen = nv.HoTen;
+                existing.Email = nv.Email;
+                existing.Phone = nv.Phone;
+                existing.VaiTro = nv.VaiTro;
+                existing.AnhDaiDien= nv.AnhDaiDien;
+                db.SaveChanges() ;
+            }
+        }
     }
-    }
+   }

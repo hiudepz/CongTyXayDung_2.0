@@ -1,9 +1,11 @@
 ﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +20,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        private byte[] Anhdaidien;
         private void dgvQuanlynhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -47,6 +49,39 @@ namespace GUI
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThemnhanvien_Click(object sender, EventArgs e)
+        {
+
+            var nhanvien = new NhanVien_DTO
+            {
+                HoTen = txtHotennhanvien.Text,
+                Email = txtEmailnhanvien.Text,
+                Phone = txtPhonenhanvien.Text,
+                VaiTro = txtPhonenhanvien.Text,
+                AnhDaiDien = Anhdaidien
+            };
+            bll.Add(nhanvien);
+        }
+
+        private void btnHinhanhnhanvien_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Ảnh (*.jpg;*.png)|*.jpg;*.png";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    ptAnhDaiDien.Image = Image.FromFile(ofd.FileName);
+
+                    // Chuyển ảnh thành mảng byte để lưu vào DB
+                    using (var ms = new MemoryStream())
+                    {
+                        ptAnhDaiDien.Image.Save(ms, ptAnhDaiDien.Image.RawFormat);
+                        Anhdaidien = ms.ToArray();
+                    }
+                }
+            }
         }
     }
 }

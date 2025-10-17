@@ -45,13 +45,13 @@
             this.btnXoanhanvien = new System.Windows.Forms.Button();
             this.btnTimkiemnhanvien = new System.Windows.Forms.Button();
             this.btnHinhanhnhanvien = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptAnhDaiDien = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanlynhanvien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptAnhDaiDien)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,6 +63,7 @@
             this.txtManhanvien.Location = new System.Drawing.Point(95, 19);
             this.txtManhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtManhanvien.Name = "txtManhanvien";
+            this.txtManhanvien.ReadOnly = true;
             this.txtManhanvien.Size = new System.Drawing.Size(154, 21);
             this.txtManhanvien.TabIndex = 0;
             // 
@@ -191,6 +192,7 @@
             this.btnThemnhanvien.TabIndex = 12;
             this.btnThemnhanvien.Text = "Thêm";
             this.btnThemnhanvien.UseVisualStyleBackColor = true;
+            this.btnThemnhanvien.Click += new System.EventHandler(this.btnThemnhanvien_Click);
             // 
             // btnSuanhanvien
             // 
@@ -235,21 +237,22 @@
             this.btnHinhanhnhanvien.TabIndex = 16;
             this.btnHinhanhnhanvien.Text = "Chọn ảnh đại diện";
             this.btnHinhanhnhanvien.UseVisualStyleBackColor = true;
+            this.btnHinhanhnhanvien.Click += new System.EventHandler(this.btnHinhanhnhanvien_Click);
             // 
-            // pictureBox1
+            // ptAnhDaiDien
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Location = new System.Drawing.Point(277, 40);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 123);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.ptAnhDaiDien.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ptAnhDaiDien.Location = new System.Drawing.Point(277, 40);
+            this.ptAnhDaiDien.Margin = new System.Windows.Forms.Padding(4);
+            this.ptAnhDaiDien.Name = "ptAnhDaiDien";
+            this.ptAnhDaiDien.Size = new System.Drawing.Size(116, 123);
+            this.ptAnhDaiDien.TabIndex = 17;
+            this.ptAnhDaiDien.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.ptAnhDaiDien);
             this.panel1.Controls.Add(this.btnHinhanhnhanvien);
             this.panel1.Controls.Add(this.btnThemnhanvien);
             this.panel1.Controls.Add(this.txtVaitronhanvien);
@@ -324,7 +327,7 @@
             this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.quanlynhanvien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanlynhanvien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptAnhDaiDien)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -353,7 +356,7 @@
         private System.Windows.Forms.Button btnXoanhanvien;
         private System.Windows.Forms.Button btnTimkiemnhanvien;
         private System.Windows.Forms.Button btnHinhanhnhanvien;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptAnhDaiDien;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
