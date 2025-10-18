@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace GUI.Admin
 {
     public partial class QuanLyNguoiDung : Form
     {
+        private NguoiDung_BLL nguoiDung_BLL = new NguoiDung_BLL();
         public QuanLyNguoiDung()
         {
             InitializeComponent();
@@ -31,22 +33,8 @@ namespace GUI.Admin
 
         private void QuanLyNguoiDung_Load(object sender, EventArgs e)
         {
-            //this.Dock = DockStyle.Fill;
-            DataTable dt = new DataTable();
-            dt.Columns.Add("NguoiDungID", typeof(int));
-            dt.Columns.Add("TenDangNhap", typeof(string));
-            dt.Columns.Add("HoTen", typeof(string));
-            dt.Columns.Add("VaiTro", typeof(string));
-            dt.Columns.Add("Email", typeof(string));
-            dt.Columns.Add("TrangThai", typeof(string));
-
-            dt.Rows.Add(1, "admin", "Nguyễn Văn Quản", "Quản trị viên", "admin@xaydung.vn", "Hoạt động");
-            dt.Rows.Add(2, "ketoan01", "Lê Thị Mai", "Kế toán", "lemai@xaydung.vn", "Hoạt động");
-            dt.Rows.Add(3, "giam_sat01", "Phạm Văn Hùng", "Giám sát", "hungpham@xaydung.vn", "Hoạt động");
-            dt.Rows.Add(4, "nhanvien_kho", "Trần Quốc Khánh", "Nhân viên kho", "khanhtran@xaydung.vn", "Hoạt động");
-            dt.Rows.Add(5, "nhanvien01", "Võ Đức Tài", "Nhân viên thi công", "tai.vo@xaydung.vn", "Đã khóa");
-
-            dataGridView1.DataSource = dt;
+            
+            dgvNguoiDung.DataSource = nguoiDung_BLL.GetAllUser();
         }
     }
 }

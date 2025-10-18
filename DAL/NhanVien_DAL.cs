@@ -12,17 +12,9 @@ namespace DAL
     public class NhanVien_DAL
     {
         private static QuanLyXayDungEntities2 db = new QuanLyXayDungEntities2();
-        public List<NhanVien_DTO> GetAll()
+        public List<NhanVien> GetAll()
         {
-            return db.NhanViens.Select(n => new NhanVien_DTO
-            {
-                NhanVienID = n.NhanVienID,
-                HoTen = n.HoTen,
-                Email = n.Email,
-                Phone = n.Phone,
-                VaiTro = n.VaiTro,
-                AnhDaiDien = n.AnhDaiDien
-            }).ToList();
+            return db.NhanViens.ToList();
         }
         public void Add_NV(NhanVien nv)
         {

@@ -16,7 +16,16 @@ namespace BLL
         private static NhanVien_DAL dal = new NhanVien_DAL();
         public List<NhanVien_DTO> Laydanhsachnhanvien()
         {
-           return dal.GetAll();
+            
+            return dal.GetAll().Select(nv => new NhanVien_DTO
+            {
+                NhanVienID = nv.NhanVienID,
+                HoTen = nv.HoTen,
+                Email = nv.Email,
+                Phone = nv.Phone,
+                VaiTro = nv.VaiTro,
+                AnhDaiDien = nv.AnhDaiDien
+            }).ToList();
         }
         public void Add (NhanVien_DTO nv_dto)
         {
