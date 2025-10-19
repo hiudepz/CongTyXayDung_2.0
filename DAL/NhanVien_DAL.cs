@@ -71,7 +71,7 @@ namespace DAL
             keyword = RemoveDiacritics(keyword.Trim().ToLower());
 
             return db.NhanViens
-                .AsEnumerable() // Quan trọng: để chạy hàm RemoveDiacritics được
+                .AsEnumerable() //cần để chạy hàm RemoveDiacritics 
                 .Where(n =>
                     RemoveDiacritics(n.HoTen.ToLower()).Contains(keyword) ||
                     RemoveDiacritics(n.Email.ToLower()).Contains(keyword) ||
