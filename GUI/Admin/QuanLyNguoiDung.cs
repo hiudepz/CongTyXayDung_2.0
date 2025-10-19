@@ -35,6 +35,8 @@ namespace GUI.Admin
         {
             
             dgvNguoiDung.DataSource = nguoiDung_BLL.GetAllUser();
+            dgvNguoiDung.Columns["NhanVienID"].Visible = false;
+            dgvNguoiDung.Columns["NguoiDungID"].Visible = false;
         }
     }
 }
