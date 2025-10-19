@@ -47,7 +47,7 @@
             this.btnHinhanhnhanvien = new System.Windows.Forms.Button();
             this.ptAnhDaiDien = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTimkiemnhanvien = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanlynhanvien)).BeginInit();
@@ -204,6 +204,7 @@
             this.btnSuanhanvien.TabIndex = 13;
             this.btnSuanhanvien.Text = "Sửa";
             this.btnSuanhanvien.UseVisualStyleBackColor = true;
+            this.btnSuanhanvien.Click += new System.EventHandler(this.btnSuanhanvien_Click);
             // 
             // btnXoanhanvien
             // 
@@ -215,6 +216,7 @@
             this.btnXoanhanvien.TabIndex = 14;
             this.btnXoanhanvien.Text = "Xóa";
             this.btnXoanhanvien.UseVisualStyleBackColor = true;
+            this.btnXoanhanvien.Click += new System.EventHandler(this.btnXoanhanvien_Click);
             // 
             // btnTimkiemnhanvien
             // 
@@ -226,6 +228,7 @@
             this.btnTimkiemnhanvien.TabIndex = 15;
             this.btnTimkiemnhanvien.Text = "Tìm kiếm";
             this.btnTimkiemnhanvien.UseVisualStyleBackColor = true;
+            this.btnTimkiemnhanvien.Click += new System.EventHandler(this.btnTimkiemnhanvien_Click);
             // 
             // btnHinhanhnhanvien
             // 
@@ -273,19 +276,20 @@
             this.panel1.Size = new System.Drawing.Size(410, 359);
             this.panel1.TabIndex = 18;
             // 
-            // textBox1
+            // txtTimkiemnhanvien
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox1.Location = new System.Drawing.Point(828, 17);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 21);
-            this.textBox1.TabIndex = 18;
+            this.txtTimkiemnhanvien.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtTimkiemnhanvien.Location = new System.Drawing.Point(828, 17);
+            this.txtTimkiemnhanvien.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimkiemnhanvien.Name = "txtTimkiemnhanvien";
+            this.txtTimkiemnhanvien.Size = new System.Drawing.Size(115, 21);
+            this.txtTimkiemnhanvien.TabIndex = 18;
+            this.txtTimkiemnhanvien.TextChanged += new System.EventHandler(this.txtTimkiemnhanvien_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTimkiemnhanvien);
             this.groupBox1.Controls.Add(this.dgvQuanlynhanvien);
             this.groupBox1.Controls.Add(this.btnXoanhanvien);
             this.groupBox1.Controls.Add(this.btnTimkiemnhanvien);
@@ -297,6 +301,7 @@
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chọn nhân viên";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
@@ -358,7 +363,7 @@
         private System.Windows.Forms.Button btnHinhanhnhanvien;
         private System.Windows.Forms.PictureBox ptAnhDaiDien;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTimkiemnhanvien;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
     }

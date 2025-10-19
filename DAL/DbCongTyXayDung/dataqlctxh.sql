@@ -140,4 +140,4 @@ GO
 
 
 select * from BangLuong
-select * from DuAn
+select * from Nhanvien

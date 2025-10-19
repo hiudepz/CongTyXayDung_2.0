@@ -2,6 +2,7 @@
 using GUI.NhanVienKeToan;
 using GUI.NhanVienKho;
 using GUI.NhanVienKinhDoanh;
+using GUI.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -182,6 +183,12 @@ namespace GUI.Admin
             qlnv.MdiParent = this;
             qlnv.Show();
             qlnv.WindowState = FormWindowState.Maximized;
+        }
+
+        private void danhsachnhanvienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmbaocaonhanvien bc = new frmbaocaonhanvien();
+            bc.ShowDialog();
         }
     }
 }
