@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 
@@ -27,26 +28,110 @@ namespace BLL
                 AnhDaiDien = nv.AnhDaiDien
             }).ToList();
         }
-        public void Add (NhanVien_DTO nv_dto)
+        // Kiểm tra dữ liệu nhập
+        private void Validate(NhanVien_DTO nv)
         {
+            if (string.IsNullOrWhiteSpace(nv.HoTen))
+                throw new ArgumentException("Họ tên không được để trống.");
+
+            if (string.IsNullOrWhiteSpace(nv.Email))
+                throw new ArgumentException("Email không được để trống.");
+
+            if (!Regex.IsMatch(nv.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                throw new ArgumentException("Định dạng email không hợp lệ.");
+
+            if (string.IsNullOrWhiteSpace(nv.Phone))
+                throw new ArgumentException("Số điện thoại không được để trống.");
+
+            if (!Regex.IsMatch(nv.Phone, @"^(0|\+84)[0-9]{9,10}$"))
+                throw new ArgumentException("Số điện thoại không hợp lệ.");
+
+            if (string.IsNullOrWhiteSpace(nv.VaiTro))
+                throw new ArgumentException("Vai trò không được để trống.");
+        }
+
+        // Thêm nhân viên
+        public void Add(NhanVien_DTO dto)
+        {
+            Validate(dto);
+
+            if (dal.ExistsEmail(dto.Email, dto.NhanVienID))
+                throw new ArgumentException("Email đã tồn tại, vui lòng chọn email khác.");
+            //if (dal.ExistsImage(dto.AnhDaiDien))
+            //    throw new ArgumentException("Ảnh đại diện này đã được sử dụng cho nhân viên khác.");
             var nv = new NhanVien
             {
-                HoTen= nv_dto.HoTen,
-                Email= nv_dto.Email,
-                Phone= nv_dto.Phone,
-                VaiTro= nv_dto.VaiTro,
-                AnhDaiDien=nv_dto.AnhDaiDien,
+                HoTen = dto.HoTen,
+                Email = dto.Email,
+                Phone = dto.Phone,
+                VaiTro = dto.VaiTro,
+                AnhDaiDien = dto.AnhDaiDien,
             };
-            dal.Add_NV(nv);
+
+            try
+            {
+                dal.Add_NV(nv);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm nhân viên: " + ex.Message, ex);
+            }
         }
-        public void Edit(NhanVien nv)
+
+        //Sửa nhân viên
+        public void Edit(NhanVien_DTO dto)
         {
-            dal.Edit_NV(nv);
+            Validate(dto);
+
+            if (dal.ExistsEmail(dto.Email, dto.NhanVienID))
+                throw new ArgumentException("Email đã tồn tại, vui lòng chọn email khác.");
+            //if (dal.ExistsImage(dto.AnhDaiDien))
+            //    throw new ArgumentException("Ảnh đại diện này đã được sử dụng cho nhân viên khác.");
+            var nv = new NhanVien
+            {
+                NhanVienID = dto.NhanVienID,
+                HoTen = dto.HoTen,
+                Email = dto.Email,
+                Phone = dto.Phone,
+                VaiTro = dto.VaiTro,
+                AnhDaiDien = dto.AnhDaiDien
+            };
+
+            try
+            {
+                dal.Edit_NV(nv);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi sửa nhân viên: " + ex.Message, ex);
+            }
         }
+
+        //Xóa nhân viên
         public void Delete(int id)
         {
-            dal.Delete_NV(id);
+            if (id <= 0)
+                throw new ArgumentException("ID nhân viên không hợp lệ.");
+            try
+
+            {
+                dal.Delete_NV(id);
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                throw new InvalidOperationException("Không thể xóa nhân viên này vì đang được tham chiếu trong bảng khác (VD: tài khoản, dự án...).");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xóa nhân viên: " + ex.Message);
+            }
         }
+
+        public List<NhanVien_DTO> TimKiem(string keyword)
+        {
+            return dal.TimKiem(keyword);
+        }
+
     }
 }
 

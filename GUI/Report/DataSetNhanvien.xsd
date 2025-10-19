@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetNhanvien" targetNamespace="http://tempuri.org/DataSetNhanvien.xsd" xmlns:mstns="http://tempuri.org/DataSetNhanvien.xsd" xmlns="http://tempuri.org/DataSetNhanvien.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetNhanvien" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSetNhanvien" msprop:Generator_DataSetName="DataSetNhanvien">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Nhanvien" msprop:Generator_RowEvHandlerName="NhanvienRowChangeEventHandler" msprop:Generator_RowDeletedName="NhanvienRowDeleted" msprop:Generator_RowDeletingName="NhanvienRowDeleting" msprop:Generator_RowEvArgName="NhanvienRowChangeEvent" msprop:Generator_TablePropName="Nhanvien" msprop:Generator_RowChangedName="NhanvienRowChanged" msprop:Generator_RowChangingName="NhanvienRowChanging" msprop:Generator_TableClassName="NhanvienDataTable" msprop:Generator_RowClassName="NhanvienRow" msprop:Generator_TableVarName="tableNhanvien" msprop:Generator_UserTableName="Nhanvien">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NhanvienID" msprop:Generator_ColumnPropNameInRow="NhanvienID" msprop:Generator_ColumnPropNameInTable="NhanvienIDColumn" msprop:Generator_ColumnVarNameInTable="columnNhanvienID" msprop:Generator_UserColumnName="NhanvienID" type="xs:int" minOccurs="0" />
+              <xs:element name="HoTen" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_ColumnVarNameInTable="columnHoTen" msprop:Generator_UserColumnName="HoTen" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_UserColumnName="Phone" type="xs:string" minOccurs="0" />
+              <xs:element name="VaiTro" msprop:Generator_ColumnPropNameInRow="VaiTro" msprop:Generator_ColumnPropNameInTable="VaiTroColumn" msprop:Generator_ColumnVarNameInTable="columnVaiTro" msprop:Generator_UserColumnName="VaiTro" type="xs:string" minOccurs="0" />
+              <xs:element name="AnhDaiDien" msprop:Generator_ColumnPropNameInRow="AnhDaiDien" msprop:Generator_ColumnPropNameInTable="AnhDaiDienColumn" msprop:Generator_ColumnVarNameInTable="columnAnhDaiDien" msprop:Generator_UserColumnName="AnhDaiDien" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
