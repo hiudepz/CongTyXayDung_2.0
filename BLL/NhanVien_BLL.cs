@@ -51,17 +51,21 @@ namespace BLL
         }
 
         // Thêm nhân viên
-        public void Add(NhanVien_DTO nv_dto)
+        public void Add(NhanVien_DTO dto)
         {
-            Validate(nv_dto);
+            Validate(dto);
 
+            if (dal.ExistsEmail(dto.Email, dto.NhanVienID))
+                throw new ArgumentException("Email đã tồn tại, vui lòng chọn email khác.");
+            //if (dal.ExistsImage(dto.AnhDaiDien))
+            //    throw new ArgumentException("Ảnh đại diện này đã được sử dụng cho nhân viên khác.");
             var nv = new NhanVien
             {
-                HoTen = nv_dto.HoTen,
-                Email = nv_dto.Email,
-                Phone = nv_dto.Phone,
-                VaiTro = nv_dto.VaiTro,
-                AnhDaiDien = nv_dto.AnhDaiDien,
+                HoTen = dto.HoTen,
+                Email = dto.Email,
+                Phone = dto.Phone,
+                VaiTro = dto.VaiTro,
+                AnhDaiDien = dto.AnhDaiDien,
             };
 
             try
@@ -79,6 +83,10 @@ namespace BLL
         {
             Validate(dto);
 
+            if (dal.ExistsEmail(dto.Email, dto.NhanVienID))
+                throw new ArgumentException("Email đã tồn tại, vui lòng chọn email khác.");
+            //if (dal.ExistsImage(dto.AnhDaiDien))
+            //    throw new ArgumentException("Ảnh đại diện này đã được sử dụng cho nhân viên khác.");
             var nv = new NhanVien
             {
                 NhanVienID = dto.NhanVienID,

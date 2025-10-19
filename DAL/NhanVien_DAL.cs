@@ -90,7 +90,7 @@ namespace DAL
                 .ToList();
         }
 
-        // 👉 Hàm loại bỏ dấu tiếng Việt
+        //Hàm loại bỏ dấu tiếng Việt
         private string RemoveDiacritics(string text)
         {
             if (string.IsNullOrEmpty(text))
@@ -104,6 +104,27 @@ namespace DAL
 
             return new string(chars.ToArray()).Normalize(System.Text.NormalizationForm.FormC);
         }
+
+        public bool ExistsEmail(string email, int? excludeId = null)
+        {
+            email = email.Trim().ToLower();
+            return db.NhanViens.Any(n =>
+                n.Email.ToLower() == email &&
+                (!excludeId.HasValue || n.NhanVienID != excludeId.Value)
+            );
+        }
+        public bool ExistsImage(byte[] imageBytes, int? excludeId = null)
+        {
+            if (imageBytes == null || imageBytes.Length == 0)
+                return false;
+
+            return db.NhanViens.Any(n =>
+                n.AnhDaiDien != null &&
+                n.AnhDaiDien.SequenceEqual(imageBytes) &&
+                (!excludeId.HasValue || n.NhanVienID != excludeId.Value)
+            );
+        }
+
 
     }
 }
