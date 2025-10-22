@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSachLuong));
             this.dgvDSThanhToan = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -67,7 +68,7 @@
             this.dgvDSThanhToan.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDSThanhToan.GridColor = System.Drawing.Color.Black;
             this.dgvDSThanhToan.Location = new System.Drawing.Point(0, 32);
-            this.dgvDSThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDSThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDSThanhToan.Name = "dgvDSThanhToan";
             this.dgvDSThanhToan.RowHeadersVisible = false;
             this.dgvDSThanhToan.RowHeadersWidth = 51;
@@ -107,7 +108,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Location = new System.Drawing.Point(572, 398);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(221, 32);
             this.guna2Button2.TabIndex = 22;
@@ -124,7 +125,7 @@
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Cyan;
             this.guna2GroupBox1.Location = new System.Drawing.Point(2, 11);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(822, 360);
             this.guna2GroupBox1.TabIndex = 20;
@@ -147,6 +148,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(826, 450);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DanhSachLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DanhSachLuong";

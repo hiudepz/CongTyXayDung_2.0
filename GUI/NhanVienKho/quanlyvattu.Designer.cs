@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(quanlyvattu));
             this.dgvVattu = new System.Windows.Forms.DataGridView();
             this.cbbNCC = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -266,6 +267,7 @@
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.btnTimkiemncc);
             this.Controls.Add(this.dgvVattu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "quanlyvattu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý vật tư";

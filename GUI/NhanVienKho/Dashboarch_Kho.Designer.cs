@@ -34,8 +34,8 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,15 +90,6 @@
             this.toolStripButton4.Size = new System.Drawing.Size(128, 24);
             this.toolStripButton4.Text = "Thông tin cá nhân";
             // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 450);
-            this.splitter1.TabIndex = 4;
-            this.splitter1.TabStop = false;
-            // 
             // toolStripButton5
             // 
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
@@ -108,6 +99,15 @@
             this.toolStripButton5.Text = "Quản lý vật tư";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 450);
+            this.splitter1.TabIndex = 4;
+            this.splitter1.TabStop = false;
+            // 
             // Dashboarch_Kho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +115,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.splitter1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "Dashboarch_Kho";
             this.Text = "Dashboarch_Kho";

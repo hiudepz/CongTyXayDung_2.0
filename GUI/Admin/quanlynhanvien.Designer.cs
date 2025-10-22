@@ -64,7 +64,7 @@
             this.txtManhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtManhanvien.Name = "txtManhanvien";
             this.txtManhanvien.ReadOnly = true;
-            this.txtManhanvien.Size = new System.Drawing.Size(154, 21);
+            this.txtManhanvien.Size = new System.Drawing.Size(154, 25);
             this.txtManhanvien.TabIndex = 0;
             // 
             // label1
@@ -74,7 +74,7 @@
             this.label1.Location = new System.Drawing.Point(10, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã nhân viên";
             // 
@@ -85,7 +85,7 @@
             this.label2.Location = new System.Drawing.Point(10, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Họ tên";
             // 
@@ -96,7 +96,7 @@
             this.label3.Location = new System.Drawing.Point(10, 172);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Email";
             // 
@@ -107,7 +107,7 @@
             this.label4.Location = new System.Drawing.Point(10, 119);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.Size = new System.Drawing.Size(44, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Phone";
             // 
@@ -118,7 +118,7 @@
             this.label5.Location = new System.Drawing.Point(10, 225);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Vai trò";
             // 
@@ -129,7 +129,7 @@
             this.label6.Location = new System.Drawing.Point(298, 19);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.Size = new System.Drawing.Size(85, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Ảnh đại diện ";
             // 
@@ -152,7 +152,7 @@
             this.txtHotennhanvien.Location = new System.Drawing.Point(95, 72);
             this.txtHotennhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtHotennhanvien.Name = "txtHotennhanvien";
-            this.txtHotennhanvien.Size = new System.Drawing.Size(154, 21);
+            this.txtHotennhanvien.Size = new System.Drawing.Size(154, 25);
             this.txtHotennhanvien.TabIndex = 8;
             // 
             // txtPhonenhanvien
@@ -161,7 +161,7 @@
             this.txtPhonenhanvien.Location = new System.Drawing.Point(95, 117);
             this.txtPhonenhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhonenhanvien.Name = "txtPhonenhanvien";
-            this.txtPhonenhanvien.Size = new System.Drawing.Size(154, 21);
+            this.txtPhonenhanvien.Size = new System.Drawing.Size(154, 25);
             this.txtPhonenhanvien.TabIndex = 9;
             // 
             // txtEmailnhanvien
@@ -170,7 +170,7 @@
             this.txtEmailnhanvien.Location = new System.Drawing.Point(95, 169);
             this.txtEmailnhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailnhanvien.Name = "txtEmailnhanvien";
-            this.txtEmailnhanvien.Size = new System.Drawing.Size(154, 21);
+            this.txtEmailnhanvien.Size = new System.Drawing.Size(154, 25);
             this.txtEmailnhanvien.TabIndex = 10;
             // 
             // txtVaitronhanvien
@@ -179,7 +179,7 @@
             this.txtVaitronhanvien.Location = new System.Drawing.Point(95, 222);
             this.txtVaitronhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtVaitronhanvien.Name = "txtVaitronhanvien";
-            this.txtVaitronhanvien.Size = new System.Drawing.Size(154, 21);
+            this.txtVaitronhanvien.Size = new System.Drawing.Size(154, 25);
             this.txtVaitronhanvien.TabIndex = 11;
             // 
             // btnThemnhanvien
@@ -221,7 +221,7 @@
             // btnTimkiemnhanvien
             // 
             this.btnTimkiemnhanvien.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnTimkiemnhanvien.Location = new System.Drawing.Point(951, 11);
+            this.btnTimkiemnhanvien.Location = new System.Drawing.Point(951, 16);
             this.btnTimkiemnhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimkiemnhanvien.Name = "btnTimkiemnhanvien";
             this.btnTimkiemnhanvien.Size = new System.Drawing.Size(87, 30);
@@ -279,10 +279,10 @@
             // txtTimkiemnhanvien
             // 
             this.txtTimkiemnhanvien.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtTimkiemnhanvien.Location = new System.Drawing.Point(828, 17);
+            this.txtTimkiemnhanvien.Location = new System.Drawing.Point(828, 20);
             this.txtTimkiemnhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimkiemnhanvien.Name = "txtTimkiemnhanvien";
-            this.txtTimkiemnhanvien.Size = new System.Drawing.Size(115, 21);
+            this.txtTimkiemnhanvien.Size = new System.Drawing.Size(115, 25);
             this.txtTimkiemnhanvien.TabIndex = 18;
             this.txtTimkiemnhanvien.TextChanged += new System.EventHandler(this.txtTimkiemnhanvien_TextChanged);
             // 
@@ -319,7 +319,7 @@
             // 
             // quanlynhanvien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1547, 689);
