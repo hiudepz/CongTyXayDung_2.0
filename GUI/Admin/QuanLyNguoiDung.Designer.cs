@@ -42,11 +42,11 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(809, 463);
+            this.btnEdit.Location = new System.Drawing.Point(809, 498);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(101, 28);
-            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Size = new System.Drawing.Size(101, 40);
+            this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.button3_Click);
@@ -54,11 +54,11 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(701, 463);
+            this.btnAdd.Location = new System.Drawing.Point(701, 498);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 28);
-            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Size = new System.Drawing.Size(101, 40);
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.button1_Click);
@@ -66,11 +66,11 @@
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(917, 463);
+            this.btnDelete.Location = new System.Drawing.Point(919, 498);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(101, 28);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Size = new System.Drawing.Size(101, 40);
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -82,11 +82,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNguoiDung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNguoiDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNguoiDung.Location = new System.Drawing.Point(8, 44);
+            this.dgvNguoiDung.Location = new System.Drawing.Point(8, 59);
             this.dgvNguoiDung.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvNguoiDung.Name = "dgvNguoiDung";
             this.dgvNguoiDung.RowHeadersWidth = 51;
-            this.dgvNguoiDung.Size = new System.Drawing.Size(1015, 407);
+            this.dgvNguoiDung.Size = new System.Drawing.Size(1015, 432);
             this.dgvNguoiDung.TabIndex = 14;
             // 
             // groupBox2
@@ -100,11 +100,12 @@
             this.groupBox2.Controls.Add(this.btnSearch);
             this.groupBox2.Controls.Add(this.btnDelete);
             this.groupBox2.Controls.Add(this.dgvNguoiDung);
-            this.groupBox2.Location = new System.Drawing.Point(15, 11);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(15, 1);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1031, 498);
+            this.groupBox2.Size = new System.Drawing.Size(1031, 538);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách người dùng";
@@ -113,22 +114,22 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTimKiem.Location = new System.Drawing.Point(782, 14);
+            this.txtTimKiem.Location = new System.Drawing.Point(761, 18);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(132, 22);
-            this.txtTimKiem.TabIndex = 20;
+            this.txtTimKiem.Size = new System.Drawing.Size(132, 29);
+            this.txtTimKiem.TabIndex = 1;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSearch.Location = new System.Drawing.Point(923, 11);
+            this.btnSearch.Location = new System.Drawing.Point(902, 16);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(101, 28);
-            this.btnSearch.TabIndex = 19;
+            this.btnSearch.Size = new System.Drawing.Size(119, 35);
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);

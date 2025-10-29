@@ -84,6 +84,7 @@
     <Compile Include="KhachHang.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="KhachHang_DAL.cs" />
     <Compile Include="Kho.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>

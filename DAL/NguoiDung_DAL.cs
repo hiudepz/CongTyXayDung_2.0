@@ -85,9 +85,6 @@ namespace DAL
             }
         }
 
-        public object GetByUser()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

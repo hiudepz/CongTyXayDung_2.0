@@ -39,7 +39,9 @@ namespace GUI.Report
                 }
 
                 ReportDocument rpt = new ReportDocument();
-                rpt.Load(Application.StartupPath + @"\Report\Danhsachnhanvien.rpt");
+                string reportPath = System.IO.Path.Combine(Application.StartupPath, "Report", "Danhsachnhanvien.rpt");
+                rpt.Load(reportPath);
+
                 rpt.SetDataSource(dt);
 
                 crystalReportViewer1.ReportSource = rpt;

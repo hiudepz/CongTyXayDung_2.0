@@ -20,7 +20,7 @@ namespace BLL
         public NguoiDung_DTO GetByUser(int id)
         {
             var nd = nd_dal.GetByUser(id);
-           return nd== null ? null : new NguoiDung_DTO
+            return nd == null ? null : new NguoiDung_DTO
             {
                 NguoiDungID = nd.NguoiDungID,
                 TenDangNhap = nd.TenDangNhap,
@@ -89,7 +89,9 @@ namespace BLL
                 loi.AppendLine("- Mật khẩu phải từ 6 ký tự trở lên.");
             if (string.IsNullOrWhiteSpace(VaiTro))
                 loi.AppendLine("- Vui lòng chọn vai trò");
-            if (NhanVienID == (int)GetByUser(NhanVienID).NhanVienID)
+
+            var nd = nd_dal.GetByUser(NhanVienID);
+            if (nd != null && nd.NhanVienID == NhanVienID)
             {
                 loi.AppendLine("- Nhân viên đã có tài khoản");
             }

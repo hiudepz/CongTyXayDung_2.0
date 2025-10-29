@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KhachHang_BLL.cs" />
     <Compile Include="NguoiDung_BLL.cs" />
     <Compile Include="NhanVien_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

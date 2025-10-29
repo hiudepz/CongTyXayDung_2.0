@@ -16,14 +16,14 @@ namespace GUI.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Baocaoyeucaukhachhang : ReportClass {
+    public class Baocaodanhsachkhachhang : ReportClass {
         
-        public Baocaoyeucaukhachhang() {
+        public Baocaodanhsachkhachhang() {
         }
         
         public override string ResourceName {
             get {
-                return "Baocaoyeucaukhachhang.rpt";
+                return "Baocaodanhsachkhachhang.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace GUI.Report {
         
         public override string FullResourceName {
             get {
-                return "GUI.Report.Baocaoyeucaukhachhang.rpt";
+                return "GUI.Report.Baocaodanhsachkhachhang.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace GUI.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBaocaoyeucaukhachhang : Component, ICachedReport {
+    public class CachedBaocaodanhsachkhachhang : Component, ICachedReport {
         
-        public CachedBaocaoyeucaukhachhang() {
+        public CachedBaocaodanhsachkhachhang() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace GUI.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Baocaoyeucaukhachhang rpt = new Baocaoyeucaukhachhang();
+            Baocaodanhsachkhachhang rpt = new Baocaodanhsachkhachhang();
             rpt.Site = this.Site;
             return rpt;
         }

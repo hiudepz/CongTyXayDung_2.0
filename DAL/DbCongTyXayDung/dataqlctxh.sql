@@ -5,23 +5,23 @@ GO
 -- 1. NHÂN VIÊN
 PRINT N'Chèn dữ liệu vào bảng NhanVien...';
 INSERT INTO NhanVien (HoTen, Email, Phone, VaiTro) VALUES
-(N'Nguyễn Văn A', 'a.nguyen@example.com', '0901234567', N'Giám sát'),
-(N'Trần Thị B', 'b.tran@example.com', '0912345678', N'Kế toán'),
-(N'Lê Văn C', 'c.le@example.com', '0987654321', N'Kho'),
-(N'Phạm Thị D', 'd.pham@example.com', '0934567890', N'Kinh doanh'),
+(N'Nguyễn Văn A', 'a.nguyen@example.com', '0901234567', N'Nhân viên giám sát'),
+(N'Trần Thị B', 'b.tran@example.com', '0912345678', N'Nhân viên kế toán'),
+(N'Lê Văn C', 'c.le@example.com', '0987654321', N'Nhân viên kho'),
+(N'Phạm Thị D', 'd.pham@example.com', '0934567890', N'Nhân viên kinh doanh'),
 (N'Võ Minh Tùng', 'tung.vo@example.com', '0945112233', N'Admin'),
-(N'Đỗ Hoàng E', 'e.do@example.com', '0905678123', N'Kiến trúc sư');
+(N'Đỗ Hoàng E', 'e.do@example.com', '0905678123', N'Nhân viên kinh doanh');
 GO
 
 -- 2. NGƯỜI DÙNG HỆ THỐNG
 PRINT N'Chèn dữ liệu vào bảng NguoiDung...';
 -- Lưu ý: Trong thực tế, mật khẩu phải được băm (hashed) trước khi lưu.
 INSERT INTO NguoiDung (TenDangNhap, MatKhau, VaiTro, NhanVienID) VALUES
-('giam_sat_a', 'hashed_password_123', N'Nhân viên', 1),
-('ke_toan_b', 'hashed_password_123', N'Nhân viên', 2),
-('kho_c', 'hashed_password_123', N'Nhân viên', 3),
-('kinh_doanh_d', 'hashed_password_123', N'Nhân viên', 4),
-('admin', 'hashed_admin_password', N'Quản trị viên', 5);
+('giam_sat_a', 'hashed_password_123', N'Nhân viên giám sát', 1),
+('ke_toan_b', 'hashed_password_123', N'Nhân viên kế toán', 2),
+('kho_c', 'hashed_password_123', N'Nhân viên kho', 3),
+('kinh_doanh_d', 'hashed_password_123', N'Nhân viên kinh doanh', 4),
+('admin', 'hashed_admin_password', N'Admin', 5);
 GO
 
 -- 3. KHÁCH HÀNG
@@ -140,4 +140,4 @@ GO
 
 
 select * from BangLuong
-select * from Nhanvien
+select * from KhachHang

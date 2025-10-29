@@ -49,11 +49,11 @@ namespace GUI.Admin
                     nhanVienId = parsedNv;
 
                 // Lấy vai trò từ combobox (nếu dùng DataSource là string list thì SelectedItem trả về string)
-                string vaiTro = null;
-                if (cbbVaiTro.SelectedItem != null)
-                    vaiTro = cbbVaiTro.SelectedItem.ToString();
-                else
-                    vaiTro = cbbVaiTro.Text?.Trim();
+               
+                //if (cbbVaiTro.SelectedItem != null)
+                //    vaiTro = cbbVaiTro.SelectedItem.ToString();
+                //else
+                var vaiTro = cbbVaiTro.Text?.Trim();
 
                 var nd = new NguoiDung_DTO
                 {
@@ -131,6 +131,7 @@ namespace GUI.Admin
         }
         private void TxtSearch_KeyDown(object sender, KeyEventArgs e)
         {
+            //xu ly khi nhan enter
             if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
@@ -153,6 +154,10 @@ namespace GUI.Admin
         {
             LoadUsers(txtTimKiem.Text);
         }
-       
+
+        private void cbbVaiTro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

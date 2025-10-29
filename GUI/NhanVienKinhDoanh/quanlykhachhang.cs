@@ -1,8 +1,11 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,27 +19,114 @@ namespace GUI
         {
             InitializeComponent();
         }
+        private byte[] Anhdaidien;
+        private KhachHang_BLL KhachHang_bll = new KhachHang_BLL();
 
         private void dgvKhachhang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                // Đảm bảo người dùng click vào hàng hợp lệ
+                if (e.RowIndex < 0 || e.RowIndex >= dgvKhachhang.Rows.Count)
+                    return;
 
+                var row = dgvKhachhang.Rows[e.RowIndex];
+
+                // Gán dữ liệu vào các textbox
+                txtMakhachhang.Text = row.Cells["KhachHangID"]?.Value?.ToString() ?? string.Empty;
+                txtHotenkhachhang.Text = row.Cells["HoTenKH"]?.Value?.ToString() ?? string.Empty;
+                txtEmail.Text = row.Cells["Email"]?.Value?.ToString() ?? string.Empty;
+                txtPhonekhachhang.Text = row.Cells["Phone"]?.Value?.ToString() ?? string.Empty;
+                txtDiaChi.Text = row.Cells["DiaChi"]?.Value?.ToString() ?? string.Empty;
+
+                // Xử lý ảnh đại diện (nếu có)
+                var cellValue = row.Cells["AnhDaiDien"]?.Value;
+
+                if (cellValue != null && cellValue is byte[] bytes && bytes.Length > 0)
+                {
+                    using (var ms = new MemoryStream(bytes))
+                    {
+                        ptAnhDaiDien.Image = Image.FromStream(ms);
+                    }
+                    Anhdaidien = bytes;
+                }
+                else
+                {
+                    // Nếu null hoặc không có ảnh
+                    ptAnhDaiDien.Image = null;
+                    Anhdaidien = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thông tin nhân viên: " + ex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void quanlykhachhang_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ID", typeof(int));
-            dt.Columns.Add("Họ tên", typeof(string));
-            dt.Columns.Add("Email", typeof(string));
-            dt.Columns.Add("Phone", typeof(string));
-            dt.Columns.Add("Địa chỉ", typeof(string));
+            dgvKhachhang.DataSource = KhachHang_bll.GetAllCustomer();
+        }
+        private void LoadCustomer(string filter = null)
+        {
+            List<KhachHang_DTO> users = KhachHang_bll.SearchCustomers(filter);
+            dgvKhachhang.DataSource = users;
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            LoadCustomer(txtTimKiem.Text);
+        }
 
-            dt.Rows.Add(1, "Công ty Xây dựng Hòa Bình", "contact@hoabinh.com", "0901234567", "Quận 1, TP.HCM");
-            dt.Rows.Add(2, "Công ty Cổ phần Coteccons", "info@coteccons.vn", "0907654321", "Quận Bình Thạnh, TP.HCM");
-            dt.Rows.Add(3, "Công ty VinGroup", "support@vingroup.vn", "0912345678", "Quận Hai Bà Trưng, Hà Nội");
-            dt.Rows.Add(4, "Công ty SunGroup", "contact@sungroup.com.vn", "0987654321", "Quận Ngũ Hành Sơn, Đà Nẵng");
+        private void btnThemkhachhang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvKhachhang.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn người dùng cần thêm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                // Parse NhanVienID from the textbox. If empty -> null; if invalid -> show error and abort.
+                int? khachhangId = null;
+                var idText = txtMakhachhang.Text?.Trim();
+                if (!string.IsNullOrEmpty(idText))
+                {
+                    if (int.TryParse(idText, out int parsedId))
+                        khachhangId = parsedId;
+                    else
+                    {
+                        MessageBox.Show("Mã nhân viên không hợp lệ. Vui lòng nhập một số nguyên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
 
-            dgvKhachhang.DataSource = dt;
+                KhachHang_DTO kh = new KhachHang_DTO
+                {
+                    HoTenKH = txtHotenkhachhang.Text.Trim(),
+                    Email = txtEmail.Text.Trim(),
+                    Phone = txtPhonekhachhang.Text.Trim(),
+                    DiaChi = txtDiaChi.Text.Trim(),
+                    AnhDaiDien = Anhdaidien                   
+                };
+                // Optional: validate via BLL if available
+                var validationMsg = KhachHang_bll.CheckAdd(kh);
+                if (!string.IsNullOrEmpty(validationMsg))
+                {
+                    MessageBox.Show(validationMsg, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                KhachHang_bll.AddCustomer(kh);
+                MessageBox.Show("Thêm người dùng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại các lỗi sau:\n\n" + ex.Message,
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
         }
     }
 }
