@@ -96,6 +96,7 @@
             this.dgvDSThanhToan.ThemeStyle.RowsStyle.Height = 24;
             this.dgvDSThanhToan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSThanhToan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDSThanhToan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSThanhToan_CellContentClick);
             // 
             // guna2Button2
             // 
@@ -140,6 +141,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(826, 450);
             this.panel1.TabIndex = 23;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // DanhSachLuong
             // 
