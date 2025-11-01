@@ -44,25 +44,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tsbXoa = new System.Windows.Forms.ToolStripButton();
+            this.tsbXoaall = new System.Windows.Forms.ToolStripButton();
+            this.txtTimkiem = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dgvBangPhanCong = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnTimkiemnhanvien = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvThongtinduan = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.dgvThongtinnhanvien = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangPhanCong)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtinduan)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtinnhanvien)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -80,9 +80,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(9, 10);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(456, 247);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
@@ -110,6 +110,7 @@
             this.btnSuanhansuduan.TabIndex = 10;
             this.btnSuanhansuduan.Text = "Sửa";
             this.btnSuanhansuduan.UseVisualStyleBackColor = true;
+            this.btnSuanhansuduan.Click += new System.EventHandler(this.btnSuanhansuduan_Click);
             // 
             // cbbNhanvien
             // 
@@ -127,6 +128,7 @@
             this.btnThemnhansuvaoduan.TabIndex = 11;
             this.btnThemnhansuvaoduan.Text = "Thêm";
             this.btnThemnhansuvaoduan.UseVisualStyleBackColor = true;
+            this.btnThemnhansuvaoduan.Click += new System.EventHandler(this.btnThemnhansuvaoduan_Click);
             // 
             // cbbDuan
             // 
@@ -194,46 +196,57 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.toolStrip1);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtTimkiem);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.dgvBangPhanCong);
             this.groupBox3.Location = new System.Drawing.Point(0, 263);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(932, 286);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bảng Phân Công";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.tsbXoa,
+            this.tsbXoaall});
             this.toolStrip1.Location = new System.Drawing.Point(2, 15);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(928, 27);
             this.toolStrip1.TabIndex = 21;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // tsbXoa
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(51, 24);
-            this.toolStripButton1.Text = "Xóa";
+            this.tsbXoa.Image = ((System.Drawing.Image)(resources.GetObject("tsbXoa.Image")));
+            this.tsbXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbXoa.Name = "tsbXoa";
+            this.tsbXoa.Size = new System.Drawing.Size(51, 24);
+            this.tsbXoa.Text = "Xóa";
+            this.tsbXoa.Click += new System.EventHandler(this.tsbXoa_Click);
             // 
-            // textBox3
+            // tsbXoaall
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(748, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 20;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.tsbXoaall.Image = ((System.Drawing.Image)(resources.GetObject("tsbXoaall.Image")));
+            this.tsbXoaall.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbXoaall.Name = "tsbXoaall";
+            this.tsbXoaall.Size = new System.Drawing.Size(86, 24);
+            this.tsbXoaall.Text = "Xóa tất cả ";
+            this.tsbXoaall.Click += new System.EventHandler(this.tsbXoaall_Click);
+            // 
+            // txtTimkiem
+            // 
+            this.txtTimkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTimkiem.Location = new System.Drawing.Point(748, 52);
+            this.txtTimkiem.Name = "txtTimkiem";
+            this.txtTimkiem.Size = new System.Drawing.Size(100, 20);
+            this.txtTimkiem.TabIndex = 20;
+            this.txtTimkiem.TextChanged += new System.EventHandler(this.txtTimkiem_TextChanged);
             // 
             // button2
             // 
@@ -253,23 +266,25 @@
             this.dgvBangPhanCong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBangPhanCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBangPhanCong.Location = new System.Drawing.Point(2, 78);
-            this.dgvBangPhanCong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBangPhanCong.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBangPhanCong.Name = "dgvBangPhanCong";
             this.dgvBangPhanCong.RowHeadersWidth = 51;
             this.dgvBangPhanCong.RowTemplate.Height = 24;
             this.dgvBangPhanCong.Size = new System.Drawing.Size(928, 206);
             this.dgvBangPhanCong.TabIndex = 2;
+            this.dgvBangPhanCong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangPhanCong_CellClick);
+            this.dgvBangPhanCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangPhanCong_CellContentClick);
             // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.btnTimkiemnhanvien);
-            this.groupBox5.Controls.Add(this.dataGridView1);
+            this.groupBox5.Controls.Add(this.dgvThongtinduan);
             this.groupBox5.Location = new System.Drawing.Point(485, 5);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(436, 122);
             this.groupBox5.TabIndex = 21;
             this.groupBox5.TabStop = false;
@@ -285,27 +300,29 @@
             this.btnTimkiemnhanvien.Text = "Tìm kiếm";
             this.btnTimkiemnhanvien.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvThongtinduan
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(432, 77);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvThongtinduan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThongtinduan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongtinduan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvThongtinduan.Location = new System.Drawing.Point(2, 43);
+            this.dgvThongtinduan.Name = "dgvThongtinduan";
+            this.dgvThongtinduan.RowHeadersWidth = 51;
+            this.dgvThongtinduan.Size = new System.Drawing.Size(432, 77);
+            this.dgvThongtinduan.TabIndex = 5;
+            this.dgvThongtinduan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongtinduan_CellClick);
+            this.dgvThongtinduan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongtinduan_CellContentClick);
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Controls.Add(this.dgvThongtinnhanvien);
             this.groupBox4.Location = new System.Drawing.Point(483, 143);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(436, 116);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
@@ -321,24 +338,18 @@
             this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgvThongtinnhanvien
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 37);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(432, 77);
-            this.dataGridView2.TabIndex = 5;
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(86, 24);
-            this.toolStripButton2.Text = "Xóa tất cả ";
+            this.dgvThongtinnhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThongtinnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongtinnhanvien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvThongtinnhanvien.Location = new System.Drawing.Point(2, 37);
+            this.dgvThongtinnhanvien.Name = "dgvThongtinnhanvien";
+            this.dgvThongtinnhanvien.RowHeadersWidth = 51;
+            this.dgvThongtinnhanvien.Size = new System.Drawing.Size(432, 77);
+            this.dgvThongtinnhanvien.TabIndex = 5;
+            this.dgvThongtinnhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongtinnhanvien_CellClick);
+            this.dgvThongtinnhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongtinnhanvien_CellContentClick);
             // 
             // phancongnhansuchoduan
             // 
@@ -353,6 +364,7 @@
             this.Name = "phancongnhansuchoduan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phân công nhân sự cho dự án";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.phancongnhansuchoduan_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -362,9 +374,9 @@
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangPhanCong)).EndInit();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtinduan)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtinnhanvien)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,14 +386,14 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvBangPhanCong;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvThongtinduan;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvThongtinnhanvien;
         private System.Windows.Forms.Button btnTimkiemnhanvien;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ToolStripButton tsbXoa;
+        private System.Windows.Forms.TextBox txtTimkiem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker dtpNgayketthuc;
         private System.Windows.Forms.DateTimePicker dtpNgaybatdau;
@@ -395,6 +407,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton tsbXoaall;
     }
 }

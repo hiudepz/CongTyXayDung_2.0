@@ -50,6 +50,12 @@ namespace GUI.NhanVienKeToan
 
         private void ThemXoaSuaLuong_Load(object sender, EventArgs e)
         {
+            //tắt chỉnh sửa trực tiếp trên dgv
+            dgvLuong.ReadOnly = true;
+            dgvLuong.AllowUserToAddRows = false;
+            dgvLuong.AllowUserToDeleteRows = false;
+            dgvLuong.EditMode = DataGridViewEditMode.EditProgrammatically;
+
             if (currentLuong != null)
             {
                 txtNhanvienid.Text = currentLuong.NhanVienID.ToString();
@@ -62,9 +68,24 @@ namespace GUI.NhanVienKeToan
                 txtKhautru.Text = currentLuong.KhauTru.ToString();
                 txtNgaycong.Text = currentLuong.NgayCong.ToString();
                 txtGiotangca.Text = currentLuong.GioTangCa.ToString();
+                txtTongluong.Text = currentLuong.TongLuong.ToString();
                 selectedID = currentLuong.BangLuongID;
             }
             LoadData();
+
+            dgvLuong.Columns["Thang"].Visible = true;
+            dgvLuong.Columns["Nam"].Visible = true;
+            dgvLuong.Columns["LuongCoBan"].Visible = false;
+            dgvLuong.Columns["PhuCap"].Visible = false;
+            dgvLuong.Columns["KhauTru"].Visible = false;
+            dgvLuong.Columns["NgayCong"].Visible = false;
+            dgvLuong.Columns["GioTangCa"].Visible = false;
+            dgvLuong.Columns["BangLuongID"].Visible = false;
+            dgvLuong.Columns["TongLuong"].Visible = false;
+            dgvLuong.Columns["Thuong"].Visible = false;
+
+
+            txtTongluong.ReadOnly = true;
         }
         private void LoadData()
         {
@@ -104,45 +125,14 @@ namespace GUI.NhanVienKeToan
             };
         }
        
-        private void ValidateInput(LuongNV_DTO luong)
-        {
-            if (luong.NhanVienID <= 0)
-                throw new ArgumentException("ID nhân viên không hợp lệ.");
-
-            if (string.IsNullOrWhiteSpace(luong.HoTen))
-                throw new ArgumentException("Họ tên không được để trống.");
-
-            if (luong.Thang < 1 || luong.Thang > 12)
-                throw new ArgumentException("Tháng phải nằm trong khoảng 1 đến 12.");
-
-            if (luong.Nam < 2000 || luong.Nam > DateTime.Now.Year + 1)
-                throw new ArgumentException("Năm không hợp lệ.");
-
-            if (luong.LuongCoBan < 0)
-                throw new ArgumentException("Lương cơ bản không thể âm.");
-
-            if (luong.Thuong < 0)
-                throw new ArgumentException("Thưởng không thể âm.");
-
-            if (luong.KhauTru < 0)
-                throw new ArgumentException("Khoản khấu trừ không thể âm.");
-
-            if (luong.PhuCap < 0)
-                throw new ArgumentException("Phụ cấp không thể âm.");
-
-            if (luong.NgayCong < 0 || luong.NgayCong > 31)
-                throw new ArgumentException("Số ngày công không hợp lệ (0–31).");
-
-            if (luong.GioTangCa < 0)
-                throw new ArgumentException("Giờ tăng ca không hợp lệ.");
-        }
+        
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
+                selectedID = 0;
                 var luong = GetInput();
-                ValidateInput(luong);
                 bll.Add(luong);
                 MessageBox.Show("Thêm bảng lương thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
@@ -186,7 +176,6 @@ namespace GUI.NhanVienKeToan
                     return;
                 }
                 var luong = GetInput();
-                ValidateInput(luong);
                 bll.Update(luong);
                 MessageBox.Show("Sửa bảng lương thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
@@ -232,6 +221,8 @@ namespace GUI.NhanVienKeToan
                     txtNgaycong.Text = row.Cells["NgayCong"]?.Value?.ToString() ?? string.Empty;
                     txtGiotangca.Text = row.Cells["GioTangCa"]?.Value?.ToString() ?? string.Empty;
                     txtTongluong.Text = row.Cells["TongLuong"]?.Value?.ToString() ?? string.Empty;
+                    TinhTongLuong();
+
                 }
             }
             catch (Exception ex)
@@ -257,6 +248,9 @@ namespace GUI.NhanVienKeToan
                 txtPhucap.Text = row.Cells["PhuCap"].Value?.ToString();
                 txtNgaycong.Text = row.Cells["NgayCong"].Value?.ToString();
                 txtGiotangca.Text = row.Cells["GioTangCa"].Value?.ToString();
+                txtTongluong.Text = row.Cells["TongLuong"].Value?.ToString();
+                TinhTongLuong();
+
             }
         }
 
@@ -266,6 +260,41 @@ namespace GUI.NhanVienKeToan
             {
                 dgvLuong.DataSource = bll.GetAllLuong();
             }
+        }
+
+        public void TinhTongLuong()
+        {
+            try
+            {
+                decimal luongCoBan = decimal.TryParse(txtBasicluong.Text, out var lcb) ? lcb : 0;
+                decimal thuong = decimal.TryParse(txtThuong.Text, out var t) ? t : 0;
+                decimal phuCap = decimal.TryParse(txtPhucap.Text, out var pc) ? pc : 0;
+                decimal khauTru = decimal.TryParse(txtKhautru.Text, out var kt) ? kt : 0;
+
+                decimal tongLuong = luongCoBan + thuong + phuCap - khauTru;
+                txtTongluong.Text = tongLuong.ToString("F2");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tính tổng lương: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtBasicluong_TextChanged(object sender, EventArgs e)
+        {
+            TinhTongLuong();
+        }
+
+        private void txtThuong_TextChanged(object sender, EventArgs e)
+        {
+            TinhTongLuong();
+
+        }
+
+        private void txtTongluong_TextChanged(object sender, EventArgs e)
+        {
+            TinhTongLuong();
+
         }
     }
 }

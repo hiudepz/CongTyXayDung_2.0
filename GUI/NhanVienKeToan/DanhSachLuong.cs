@@ -82,6 +82,11 @@ namespace GUI.NhanVienKeToan
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            //tắt chỉnh sửa trực tiếp trên dgv
+            dgvDSThanhToan.ReadOnly = true;
+            dgvDSThanhToan.AllowUserToAddRows = false;
+            dgvDSThanhToan.AllowUserToDeleteRows = false;
+            dgvDSThanhToan.EditMode = DataGridViewEditMode.EditProgrammatically;
             LoadData();
         }
 

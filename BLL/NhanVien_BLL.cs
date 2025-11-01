@@ -57,8 +57,9 @@ namespace BLL
 
             if (dal.ExistsEmail(dto.Email, dto.NhanVienID))
                 throw new ArgumentException("Email đã tồn tại, vui lòng chọn email khác.");
-            //if (dal.ExistsImage(dto.AnhDaiDien))
-            //    throw new ArgumentException("Ảnh đại diện này đã được sử dụng cho nhân viên khác.");
+            if (dal.IsPhoneExists(dto.Phone,dto.NhanVienID))
+                throw new ArgumentException("Số điện thoại đã tồn tại.");
+
             var nv = new NhanVien
             {
                 HoTen = dto.HoTen,
@@ -85,8 +86,8 @@ namespace BLL
 
             if (dal.ExistsEmail(dto.Email, dto.NhanVienID))
                 throw new ArgumentException("Email đã tồn tại, vui lòng chọn email khác.");
-            //if (dal.ExistsImage(dto.AnhDaiDien))
-            //    throw new ArgumentException("Ảnh đại diện này đã được sử dụng cho nhân viên khác.");
+            if (dal.IsPhoneExists(dto.Phone, dto.NhanVienID))
+                throw new ArgumentException("Số điện thoại đã tồn tại.");
             var nv = new NhanVien
             {
                 NhanVienID = dto.NhanVienID,

@@ -68,6 +68,7 @@
             // 
             // dgvLuong
             // 
+            this.dgvLuong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLuong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvLuong.Location = new System.Drawing.Point(2, 86);
@@ -230,6 +231,7 @@
             this.txtBasicluong.Name = "txtBasicluong";
             this.txtBasicluong.Size = new System.Drawing.Size(149, 22);
             this.txtBasicluong.TabIndex = 13;
+            this.txtBasicluong.TextChanged += new System.EventHandler(this.txtBasicluong_TextChanged);
             // 
             // txtThuong
             // 
@@ -238,6 +240,7 @@
             this.txtThuong.Name = "txtThuong";
             this.txtThuong.Size = new System.Drawing.Size(149, 22);
             this.txtThuong.TabIndex = 14;
+            this.txtThuong.TextChanged += new System.EventHandler(this.txtThuong_TextChanged);
             // 
             // txtKhautru
             // 
@@ -254,6 +257,7 @@
             this.txtTongluong.Name = "txtTongluong";
             this.txtTongluong.Size = new System.Drawing.Size(149, 22);
             this.txtTongluong.TabIndex = 16;
+            this.txtTongluong.TextChanged += new System.EventHandler(this.txtTongluong_TextChanged);
             // 
             // txtNgaycong
             // 
@@ -409,6 +413,7 @@
             this.Name = "ThemXoaSuaLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QuanLyLuong";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ThemXoaSuaLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLuong)).EndInit();
             this.groupBox1.ResumeLayout(false);

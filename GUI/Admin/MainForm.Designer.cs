@@ -54,9 +54,11 @@
             this.trangChủGiámSátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baocaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhsachnhanvienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baocaonhansutrongduanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tspQuanLyTaiKhoan = new System.Windows.Forms.ToolStripButton();
             this.tspQuanLyNhanVien = new System.Windows.Forms.ToolStripButton();
+            this.baocaochiphithuenhansuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -251,7 +253,9 @@
             // baocaoToolStripMenuItem
             // 
             this.baocaoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.danhsachnhanvienToolStripMenuItem});
+            this.danhsachnhanvienToolStripMenuItem,
+            this.baocaonhansutrongduanToolStripMenuItem,
+            this.baocaochiphithuenhansuToolStripMenuItem});
             this.baocaoToolStripMenuItem.Name = "baocaoToolStripMenuItem";
             this.baocaoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.baocaoToolStripMenuItem.Text = "Báo cáo";
@@ -259,9 +263,16 @@
             // danhsachnhanvienToolStripMenuItem
             // 
             this.danhsachnhanvienToolStripMenuItem.Name = "danhsachnhanvienToolStripMenuItem";
-            this.danhsachnhanvienToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.danhsachnhanvienToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.danhsachnhanvienToolStripMenuItem.Text = "Danh sách nhân viên";
             this.danhsachnhanvienToolStripMenuItem.Click += new System.EventHandler(this.danhsachnhanvienToolStripMenuItem_Click);
+            // 
+            // baocaonhansutrongduanToolStripMenuItem
+            // 
+            this.baocaonhansutrongduanToolStripMenuItem.Name = "baocaonhansutrongduanToolStripMenuItem";
+            this.baocaonhansutrongduanToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.baocaonhansutrongduanToolStripMenuItem.Text = "Báo cáo nhân sự trong dự án";
+            this.baocaonhansutrongduanToolStripMenuItem.Click += new System.EventHandler(this.baocaonhansutrongduanToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -292,6 +303,13 @@
             this.tspQuanLyNhanVien.Size = new System.Drawing.Size(123, 22);
             this.tspQuanLyNhanVien.Text = "Quản lý nhân viên";
             this.tspQuanLyNhanVien.Click += new System.EventHandler(this.tspQuanLyNhanVien_Click);
+            // 
+            // baocaochiphithuenhansuToolStripMenuItem
+            // 
+            this.baocaochiphithuenhansuToolStripMenuItem.Name = "baocaochiphithuenhansuToolStripMenuItem";
+            this.baocaochiphithuenhansuToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.baocaochiphithuenhansuToolStripMenuItem.Text = "Báo cáo tổng chi phí thuê nhân sự";
+            this.baocaochiphithuenhansuToolStripMenuItem.Click += new System.EventHandler(this.baocaochiphithuenhansuToolStripMenuItem_Click);
             // 
             // DashBoarch
             // 
@@ -348,5 +366,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem baocaoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhsachnhanvienToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem baocaonhansutrongduanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem baocaochiphithuenhansuToolStripMenuItem;
     }
 }

@@ -53,6 +53,25 @@ namespace BLL
             {
                 throw new Exception("Giờ tăng ca không được âm.");
             }
+            if(luong.LuongCoBan < luong.KhauTru)
+            {
+                throw new Exception("Khấu trừ không được lớn hơn lương cơ bản.");
+            }
+            //Kiểm tra nhân viên chỉ được nhận lương 1 lần mỗi tháng
+            using (var db = new QuanLyXayDungEntities2())
+            {
+                bool existed = db.BangLuongs.Any(x =>
+                    x.NhanVienID == luong.NhanVienID &&
+                    x.Thang == luong.Thang &&
+                    x.Nam == luong.Nam &&
+                    x.BangLuongID != luong.BangLuongID  // tránh lỗi khi đang sửa
+                );
+
+                if (existed)
+                {
+                    throw new Exception("Nhân viên này đã có bảng lương trong tháng và năm này.");
+                }
+            }
         }
         public List<LuongNV_DTO> GetAllLuong()
         {

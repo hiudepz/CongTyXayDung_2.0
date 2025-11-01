@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DuAn_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="LuongNV_DTO.cs" />
     <Compile Include="NguoiDung_DTO.cs" />
     <Compile Include="NhanVien_DTO.cs" />
+    <Compile Include="PhanCong_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

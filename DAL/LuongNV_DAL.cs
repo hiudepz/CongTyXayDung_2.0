@@ -58,16 +58,18 @@ namespace DAL
                 var bl = db.BangLuongs.FirstOrDefault(s => s.BangLuongID == id);
                 if (bl != null)
                 {
-                    try
-                    {
-                        db.BangLuongs.Remove(bl);
-                        db.SaveChanges();
-                    }
-                    catch (System.Data.Entity.Infrastructure.DbUpdateException)
-                    {
-                        // Ném lỗi ra để GUI xử lý hiển thị thông báo người dùng
-                        throw;
-                    }
+                    db.BangLuongs.Remove(bl);
+                    db.SaveChanges();
+                    //try
+                    //{
+                    //    db.BangLuongs.Remove(bl);
+                    //    db.SaveChanges();
+                    //}
+                    //catch (System.Data.Entity.Infrastructure.DbUpdateException)
+                    //{
+                    //    // Ném lỗi ra để GUI xử lý hiển thị thông báo người dùng
+                    //    throw;
+                    //}
                 }
             }
         }
@@ -95,12 +97,12 @@ namespace DAL
         {
             using (var db = new QuanLyXayDungEntities2())
             {
-                keyword = keyword?.Trim() ?? "";
+                keyword = RemoveDiacritics(keyword?.Trim().ToLower() ?? "");
 
                 var result = db.BangLuongs
                     .AsEnumerable() //cần có để tránh lỗi ToString()
                     .Where(x =>
-                        x.NhanVien.HoTen.IndexOf(keyword, StringComparison.OrdinalIgnoreCase)>=0 ||
+                        RemoveDiacritics(x.NhanVien.HoTen.ToLower()).Contains(keyword) ||
                         x.Thang.ToString().Contains(keyword) ||
                         x.Nam.ToString().Contains(keyword) ||
                         x.LuongCoBan.ToString().Contains(keyword)
@@ -124,7 +126,20 @@ namespace DAL
                 return result;
             }
         }
+        //Hàm loại bỏ dấu tiếng Việt
+        private string RemoveDiacritics(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return text;
 
+            var normalized = text.Normalize(System.Text.NormalizationForm.FormD);
+            var chars = normalized.Where(c =>
+                System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c) !=
+                System.Globalization.UnicodeCategory.NonSpacingMark
+            );
+
+            return new string(chars.ToArray()).Normalize(System.Text.NormalizationForm.FormC);
+        }
         public LuongNV_DTO GetLuongByID(int id)
         {
             var result = (from bl in db.BangLuongs
