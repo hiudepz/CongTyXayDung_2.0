@@ -60,7 +60,8 @@ namespace GUI.Report.form
 
                 var rpt = new BangLuong(); 
                 rpt.SetDataSource(ds);
-                rpt.SetParameterValue("NguoiLap", nguoiLap);
+                //rpt.SetParameterValue("NguoiLap", nguoiLap);
+                rpt.SetParameterValue("NguoiLap", GUI.Login.login.TenDangNhapHienTai);
                 crystalReportViewer1.ReportSource = rpt;
                 crystalReportViewer1.Refresh();
             }
@@ -118,8 +119,11 @@ namespace GUI.Report.form
 
             var rpt = new BangLuong();
             rpt.SetDataSource(ds);
+            rpt.SetParameterValue("NguoiLap", GUI.Login.login.TenDangNhapHienTai);
             crystalReportViewer1.ReportSource = rpt;
             crystalReportViewer1.Refresh();
+            
+
         }
         //Hàm bỏ dấu
         private string RemoveDiacritics(string text)

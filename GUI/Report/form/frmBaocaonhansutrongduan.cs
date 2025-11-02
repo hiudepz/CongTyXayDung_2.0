@@ -54,7 +54,7 @@ namespace GUI.Report.form
                 rpt.Load(reportPath);
                 
                 rpt.SetDataSource(ds); // gán toàn bộ Dataset
-                rpt.SetParameterValue("NguoiLap", nguoiLap);
+                rpt.SetParameterValue("NguoiLap", GUI.Login.login.TenDangNhapHienTai);
                 frmBaoCaoNhanSu.ReportSource = rpt;
                 frmBaoCaoNhanSu.Refresh();
             }
@@ -95,6 +95,7 @@ namespace GUI.Report.form
 
             var rpt = new Baocaophancong();
             rpt.SetDataSource(ds);
+            rpt.SetParameterValue("NguoiLap", GUI.Login.login.TenDangNhapHienTai);
             frmBaoCaoNhanSu.ReportSource = rpt;
             frmBaoCaoNhanSu.Refresh();
         }
