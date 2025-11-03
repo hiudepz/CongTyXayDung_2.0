@@ -250,9 +250,29 @@ namespace GUI
 
         private void txtTimkiemnhanvien_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTimkiemnhanvien.Text))
+            try
             {
-                dgvQuanlynhanvien.DataSource = bll.Laydanhsachnhanvien();
+                string keyword = txtTimkiemnhanvien.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(keyword))
+                {
+                    // Nếu trống => load lại toàn bộ danh sách
+                    dgvQuanlynhanvien.DataSource = bll.Laydanhsachnhanvien();
+                    return;
+                }
+
+                var ketqua = bll.TimKiem(keyword);
+
+                if (ketqua.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy nhân viên nào phù hợp!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                dgvQuanlynhanvien.DataSource = ketqua;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

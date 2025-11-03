@@ -57,6 +57,7 @@
     <Compile Include="ChiTietDonDatHang.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietDonDatHang_DAL.cs" />
     <Compile Include="CongTyXayDung.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +76,7 @@
     <Compile Include="DonDatHang.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="DonDatHang_DAL.cs" />
     <Compile Include="DuAn.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
@@ -88,6 +90,7 @@
     <Compile Include="Kho.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="Kho_DAL.cs" />
     <Compile Include="NguoiDung.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
@@ -95,6 +98,7 @@
     <Compile Include="NhaCungCap.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="NhaCungCap_DAL.cs" />
     <Compile Include="NhanVien.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
@@ -109,6 +113,7 @@
     <Compile Include="VatTu.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="VatTu_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

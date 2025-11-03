@@ -107,7 +107,7 @@ namespace GUI
                     Email = txtEmail.Text.Trim(),
                     Phone = txtPhonekhachhang.Text.Trim(),
                     DiaChi = txtDiaChi.Text.Trim(),
-                    AnhDaiDien = Anhdaidien                   
+                    AnhDaiDien = Anhdaidien
                 };
                 // Optional: validate via BLL if available
                 var validationMsg = KhachHang_bll.CheckAdd(kh);
@@ -118,7 +118,7 @@ namespace GUI
                 }
                 KhachHang_bll.AddCustomer(kh);
                 MessageBox.Show("Thêm người dùng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                dgvKhachhang.DataSource = KhachHang_bll.GetAllCustomer();
             }
             catch (Exception ex)
             {
@@ -126,6 +126,96 @@ namespace GUI
                                 "Thông báo",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnLogoncc_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSuakhachhang_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvKhachhang.CurrentRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn khách hàng cần sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                var kh_dto = new KhachHang_DTO
+                {
+                    KhachHangID = int.Parse(txtMakhachhang.Text),
+                    HoTenKH = txtHotenkhachhang.Text,
+                    Email = txtEmail.Text,
+                    Phone = txtPhonekhachhang.Text,
+                    DiaChi = txtDiaChi.Text,
+                    AnhDaiDien = Anhdaidien
+                };
+                // Optional: validate via BLL if available
+                var validationMsg = KhachHang_bll.CheckAdd(kh_dto);
+                if (!string.IsNullOrEmpty(validationMsg))
+                {
+                    MessageBox.Show(validationMsg, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                KhachHang_bll.UpdateCustomer(kh_dto);
+                MessageBox.Show("Sửa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvKhachhang.DataSource = KhachHang_bll.GetAllCustomer();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại các lỗi sau:\n\n" + ex.Message,
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnXoakhachhang_Click(object sender, EventArgs e)
+        {
+            if (txtMakhachhang == null)
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                int customerId = int.Parse(txtMakhachhang.Text);
+                var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        KhachHang_bll.DeleteCustomer(customerId);
+                        MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvKhachhang.DataSource = KhachHang_bll.GetAllCustomer();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi xóa khách hàng: " + ex.Message,
+                                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void ptAnhDaiDien_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Ảnh (*.jpg;*.png)|*.jpg;*.png";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    ptAnhDaiDien.Image = Image.FromFile(ofd.FileName);
+
+                    // Chuyển ảnh thành mảng byte để lưu vào DB
+                    using (var ms = new MemoryStream())
+                    {
+                        ptAnhDaiDien.Image.Save(ms, ptAnhDaiDien.Image.RawFormat);
+                        Anhdaidien = ms.ToArray();
+                    }
+                }
             }
         }
     }

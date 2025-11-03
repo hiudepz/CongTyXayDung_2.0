@@ -6,6 +6,7 @@ using System;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using GUI.Report;
+using GUI.NhanVienKinhDoanh;
 
 namespace GUI
 {
@@ -14,12 +15,12 @@ namespace GUI
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
+        [STAThread] 
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new quanlykhachhang());
+            Application.Run(new Dashboarch_Kho());
         }
     }
 }

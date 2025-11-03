@@ -22,6 +22,7 @@ namespace GUI.NhanVienKho
             DonDatHang t = new DonDatHang();
             t.MdiParent = this;
             t.Show();
+            t.WindowState = FormWindowState.Maximized;
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace GUI.NhanVienKho
             QuanLyKho t = new QuanLyKho();
             t.MdiParent = this;
             t.Show();
+            t.WindowState = FormWindowState.Maximized;
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace GUI.NhanVienKho
             quanlynhacungcap t = new quanlynhacungcap();
             t.MdiParent = this;
             t.Show();
+            t.WindowState = FormWindowState.Maximized;
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -43,6 +46,12 @@ namespace GUI.NhanVienKho
             quanlyvattu t = new quanlyvattu();
             t.MdiParent = this;
             t.Show();
+            t.WindowState = FormWindowState.Maximized;
+        }
+
+        private void Dashboarch_Kho_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

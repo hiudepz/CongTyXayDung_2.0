@@ -22,6 +22,7 @@ namespace GUI.NhanVienKinhDoanh
             quanlyhopdong t = new quanlyhopdong();
             t.MdiParent = this;
             t.Show();
+            t.WindowState = FormWindowState.Maximized;
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace GUI.NhanVienKinhDoanh
             quanlykhachhang t = new quanlykhachhang();
             t.MdiParent = this;
             t.Show();
+            t.WindowState = FormWindowState.Maximized;
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
