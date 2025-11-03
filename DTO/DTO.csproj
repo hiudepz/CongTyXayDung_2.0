@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DuAn_DTO.cs" />
+    <Compile Include="HopDong_DTO.cs" />
+   
+    <Compile Include="LuongNV_DTO.cs" />
     <Compile Include="ChiTietDonDatHang_DTO.cs" />
     <Compile Include="DonDatHang_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />
@@ -53,6 +57,7 @@
     <Compile Include="NguoiDung_DTO.cs" />
     <Compile Include="NhaCungCap_DTO.cs" />
     <Compile Include="NhanVien_DTO.cs" />
+    <Compile Include="PhanCong_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VatTu_DTO.cs" />
   </ItemGroup>

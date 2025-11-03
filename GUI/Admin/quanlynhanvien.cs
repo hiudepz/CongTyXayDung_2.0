@@ -65,21 +65,13 @@ namespace GUI
 
         private void quanlynhanvien_Load(object sender, EventArgs e)
         {
-            //this.Dock = DockStyle.Fill;
-            
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("ID", typeof(int));
-            //dt.Columns.Add("Họ tên", typeof(string));
-            //dt.Columns.Add("Email", typeof(string));
-            //dt.Columns.Add("Phone", typeof(string));
-            //dt.Columns.Add("Vai trò", typeof(string));
 
-            //dt.Rows.Add(1, "Nguyễn Văn An", "an.nguyen@company.com", "0901111222", "Kỹ sư xây dựng");
-            //dt.Rows.Add(2, "Trần Thị Bình", "binh.tran@company.com", "0902222333", "Kế toán");
-            //dt.Rows.Add(3, "Lê Văn Cường", "cuong.le@company.com", "0903333444", "Quản lý kho");
-            //dt.Rows.Add(4, "Phạm Thị Dung", "dung.pham@company.com", "0904444555", "Giám sát công trình");
+            //tắt chỉnh sửa trực tiếp trên dgv
+            dgvQuanlynhanvien.ReadOnly = true;
+            dgvQuanlynhanvien.AllowUserToAddRows = false;
+            dgvQuanlynhanvien.AllowUserToDeleteRows = false;
+            dgvQuanlynhanvien.EditMode = DataGridViewEditMode.EditProgrammatically;
 
-            //dgvQuanlynhanvien.DataSource = dt;
             dgvQuanlynhanvien.DataSource = bll.Laydanhsachnhanvien();
             ((DataGridViewImageColumn)dgvQuanlynhanvien.Columns["AnhDaiDien"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
             dgvQuanlynhanvien.RowTemplate.Height = 100;
@@ -299,5 +291,46 @@ namespace GUI
             }
         }
 
+        private void dgvQuanlynhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Đảm bảo người dùng click vào hàng hợp lệ
+                if (e.RowIndex < 0 || e.RowIndex >= dgvQuanlynhanvien.Rows.Count)
+                    return;
+
+                var row = dgvQuanlynhanvien.Rows[e.RowIndex];
+
+                // Gán dữ liệu vào các textbox
+                txtManhanvien.Text = row.Cells["NhanVienID"]?.Value?.ToString() ?? string.Empty;
+                txtHotennhanvien.Text = row.Cells["HoTen"]?.Value?.ToString() ?? string.Empty;
+                txtEmailnhanvien.Text = row.Cells["Email"]?.Value?.ToString() ?? string.Empty;
+                txtPhonenhanvien.Text = row.Cells["Phone"]?.Value?.ToString() ?? string.Empty;
+                txtVaitronhanvien.Text = row.Cells["VaiTro"]?.Value?.ToString() ?? string.Empty;
+
+                // Xử lý ảnh đại diện (nếu có)
+                var cellValue = row.Cells["AnhDaiDien"]?.Value;
+
+                if (cellValue != null && cellValue is byte[] bytes && bytes.Length > 0)
+                {
+                    using (var ms = new MemoryStream(bytes))
+                    {
+                        ptAnhDaiDien.Image = Image.FromStream(ms);
+                    }
+                    Anhdaidien = bytes;
+                }
+                else
+                {
+                    // Nếu null hoặc không có ảnh
+                    ptAnhDaiDien.Image = null;
+                    Anhdaidien = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thông tin nhân viên: " + ex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

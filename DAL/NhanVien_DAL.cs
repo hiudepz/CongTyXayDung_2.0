@@ -71,7 +71,7 @@ namespace DAL
             keyword = RemoveDiacritics(keyword.Trim().ToLower());
 
             return db.NhanViens
-                .AsEnumerable() //cần để chạy hàm RemoveDiacritics 
+                .AsEnumerable() //cần để tránh lỗi ToString()
                 .Where(n =>
                     RemoveDiacritics(n.HoTen.ToLower()).Contains(keyword) ||
                     RemoveDiacritics(n.Email.ToLower()).Contains(keyword) ||
@@ -103,6 +103,13 @@ namespace DAL
             );
 
             return new string(chars.ToArray()).Normalize(System.Text.NormalizationForm.FormC);
+        }
+        public bool IsPhoneExists(string phone, int? excludeID = null)
+        {
+            using (var db = new QuanLyXayDungEntities2())
+            {
+                return db.NhanViens.Any(nv => nv.Phone == phone && (excludeID == null || nv.NhanVienID != excludeID));
+            }
         }
 
         public bool ExistsEmail(string email, int? excludeId = null)

@@ -20,6 +20,8 @@ namespace GUI.Login
     public partial class login : Form
     {
         private NguoiDung_BLL nd_bll = new NguoiDung_BLL();
+        public static string TenDangNhapHienTai = "";
+
         public login()
         {
             InitializeComponent();
@@ -50,6 +52,7 @@ namespace GUI.Login
                     MessageBox.Show("Tên đăng nhập, mật khẩu hoặc vai trò không đúng.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                TenDangNhapHienTai = username;
 
                 // Normalize role string for robust matching (remove diacritics, spaces and lowercase)
                 string normalizedRole = NormalizeRole(user.VaiTro);

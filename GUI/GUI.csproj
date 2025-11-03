@@ -250,6 +250,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Baocaophancong.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Baocaothanhgtoan.cs">
       <AutoGen>True</AutoGen>
@@ -277,6 +278,14 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Report\dataset\DataSetLuong.cs">
+      <DependentUpon>DataSetLuong.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\dataset\DataSetLuong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLuong.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Report\dataset\DataSetNhanvien.cs">
       <DependentUpon>DataSetNhanvien.xsd</DependentUpon>
     </Compile>
@@ -293,11 +302,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetKhachHang.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report\dataset\DataSetPhanCong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPhanCong.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\form\frmBaocaochiphithuenhansu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\form\frmBaocaochiphithuenhansu.Designer.cs">
+      <DependentUpon>frmBaocaochiphithuenhansu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\form\frmBaoCaoKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report\form\frmBaoCaoKhachHang.Designer.cs">
       <DependentUpon>frmBaoCaoKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\form\frmBaocaonhansutrongduan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\form\frmBaocaonhansutrongduan.Designer.cs">
+      <DependentUpon>frmBaocaonhansutrongduan.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\form\frmbaocaonhanvien.cs">
       <SubType>Form</SubType>
@@ -417,6 +443,7 @@
     <EmbeddedResource Include="Report\Baocaophancong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Baocaophancong.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Baocaothanhgtoan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -436,8 +463,14 @@
       <LastGenOutput>Danhsachnhanvien.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\form\frmBaocaochiphithuenhansu.resx">
+      <DependentUpon>frmBaocaochiphithuenhansu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\form\frmBaoCaoKhachHang.resx">
       <DependentUpon>frmBaoCaoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\form\frmBaocaonhansutrongduan.resx">
+      <DependentUpon>frmBaocaonhansutrongduan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\form\frmbaocaonhanvien.resx">
       <DependentUpon>frmbaocaonhanvien.cs</DependentUpon>
@@ -456,6 +489,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\dataset\DataSetLuong.xsc">
+      <DependentUpon>DataSetLuong.xsd</DependentUpon>
+    </None>
+    <None Include="Report\dataset\DataSetLuong.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLuong.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\dataset\DataSetLuong.xss">
+      <DependentUpon>DataSetLuong.xsd</DependentUpon>
+    </None>
     <None Include="Report\dataset\DataSetNhanvien.xsc">
       <DependentUpon>DataSetNhanvien.xsd</DependentUpon>
     </None>
@@ -477,6 +521,17 @@
     </None>
     <None Include="Report\dataset\DataSetKhachHang.xss">
       <DependentUpon>DataSetKhachHang.xsd</DependentUpon>
+    </None>
+    <None Include="Report\dataset\DataSetPhanCong.xsc">
+      <DependentUpon>DataSetPhanCong.xsd</DependentUpon>
+    </None>
+    <None Include="Report\dataset\DataSetPhanCong.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPhanCong.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\dataset\DataSetPhanCong.xss">
+      <DependentUpon>DataSetPhanCong.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

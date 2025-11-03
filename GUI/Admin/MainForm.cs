@@ -3,6 +3,7 @@ using GUI.NhanVienKeToan;
 using GUI.NhanVienKho;
 using GUI.NhanVienKinhDoanh;
 using GUI.Report;
+using GUI.Report.form;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -189,6 +190,18 @@ namespace GUI.Admin
         {
             frmbaocaonhanvien bc = new frmbaocaonhanvien();
             bc.ShowDialog();
+        }
+
+        private void baocaonhansutrongduanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaocaonhansutrongduan frm = new frmBaocaonhansutrongduan("Phan Đình Ngọc");
+            frm.ShowDialog();
+        }
+
+        private void baocaochiphithuenhansuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaocaochiphithuenhansu frm = new frmBaocaochiphithuenhansu("Phan Đình Ngọc");
+            frm.ShowDialog();
         }
     }
 }

@@ -144,6 +144,7 @@
             this.dgvQuanlynhanvien.RowHeadersWidth = 51;
             this.dgvQuanlynhanvien.Size = new System.Drawing.Size(1031, 604);
             this.dgvQuanlynhanvien.TabIndex = 7;
+            this.dgvQuanlynhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuanlynhanvien_CellClick);
             this.dgvQuanlynhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuanlynhanvien_CellContentClick);
             // 
             // txtHotennhanvien

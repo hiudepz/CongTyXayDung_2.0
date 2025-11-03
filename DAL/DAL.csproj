@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -80,9 +80,11 @@
     <Compile Include="DuAn.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="DuAn_DAL.cs" />
     <Compile Include="HopDong.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="HopDong_DAL.cs" />
     <Compile Include="KhachHang.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
@@ -90,6 +92,7 @@
     <Compile Include="Kho.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="LuongNV_DAL.cs" />
     <Compile Include="Kho_DAL.cs" />
     <Compile Include="NguoiDung.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
@@ -106,6 +109,7 @@
     <Compile Include="PhanCong.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="PhanCong_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThanhToan.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
