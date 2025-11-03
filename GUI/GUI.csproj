@@ -80,6 +80,12 @@
     <Compile Include="Admin\ThemNguoiDung.Designer.cs">
       <DependentUpon>ThemNguoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ThongTinNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ThongTinNguoiDung.Designer.cs">
+      <DependentUpon>ThongTinNguoiDung.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,12 @@
     </Compile>
     <Compile Include="NhanVienKho\QuanLyKho.Designer.cs">
       <DependentUpon>QuanLyKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienKho\ThongTinChiTietNhanVienDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienKho\ThongTinChiTietNhanVienDatHang.Designer.cs">
+      <DependentUpon>ThongTinChiTietNhanVienDatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienKinhDoanh\Dashboarch_NVKinhDoanh.cs">
       <SubType>Form</SubType>
@@ -335,6 +347,9 @@
     <EmbeddedResource Include="Admin\ThemNguoiDung.resx">
       <DependentUpon>ThemNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ThongTinNguoiDung.resx">
+      <DependentUpon>ThongTinNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKho\QuanLyKho.resx">
       <DependentUpon>QuanLyKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienKho\ThongTinChiTietNhanVienDatHang.resx">
+      <DependentUpon>ThongTinChiTietNhanVienDatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKinhDoanh\Dashboarch_NVKinhDoanh.resx">
       <DependentUpon>Dashboarch_NVKinhDoanh.cs</DependentUpon>

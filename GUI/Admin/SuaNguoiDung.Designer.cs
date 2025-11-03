@@ -148,6 +148,7 @@
             this.cbbNhanVien.Name = "cbbNhanVien";
             this.cbbNhanVien.Size = new System.Drawing.Size(179, 26);
             this.cbbNhanVien.TabIndex = 8;
+            this.cbbNhanVien.SelectedIndexChanged += new System.EventHandler(this.cbbNhanVien_SelectedIndexChanged);
             // 
             // label4
             // 

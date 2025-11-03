@@ -27,6 +27,7 @@ namespace GUI.NhanVienKeToan
             DanhSachThanhToan t = new DanhSachThanhToan();
             t.MdiParent = this;
             t.Show();
+            t.WindowState = FormWindowState.Maximized;
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace GUI.NhanVienKeToan
             DanhSachLuong t = new DanhSachLuong();
             t.MdiParent = this;
             t.Show();
+            t.WindowState = FormWindowState.Maximized;
         }
     }
 }

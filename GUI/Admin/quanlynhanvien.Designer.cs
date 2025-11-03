@@ -74,9 +74,9 @@
             this.label1.Location = new System.Drawing.Point(22, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
+            this.label1.Size = new System.Drawing.Size(34, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Mã nhân viên";
+            this.label1.Text = "Mã ";
             // 
             // label2
             // 
@@ -138,11 +138,11 @@
             this.dgvQuanlynhanvien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvQuanlynhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuanlynhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuanlynhanvien.Location = new System.Drawing.Point(7, 69);
+            this.dgvQuanlynhanvien.Location = new System.Drawing.Point(7, 55);
             this.dgvQuanlynhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.dgvQuanlynhanvien.Name = "dgvQuanlynhanvien";
             this.dgvQuanlynhanvien.RowHeadersWidth = 51;
-            this.dgvQuanlynhanvien.Size = new System.Drawing.Size(1031, 590);
+            this.dgvQuanlynhanvien.Size = new System.Drawing.Size(1031, 604);
             this.dgvQuanlynhanvien.TabIndex = 7;
             this.dgvQuanlynhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuanlynhanvien_CellClick);
             this.dgvQuanlynhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuanlynhanvien_CellContentClick);
@@ -198,7 +198,7 @@
             // btnSuanhanvien
             // 
             this.btnSuanhanvien.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSuanhanvien.Location = new System.Drawing.Point(266, 316);
+            this.btnSuanhanvien.Location = new System.Drawing.Point(171, 316);
             this.btnSuanhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuanhanvien.Name = "btnSuanhanvien";
             this.btnSuanhanvien.Size = new System.Drawing.Size(88, 30);
@@ -210,7 +210,7 @@
             // btnXoanhanvien
             // 
             this.btnXoanhanvien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoanhanvien.Location = new System.Drawing.Point(171, 316);
+            this.btnXoanhanvien.Location = new System.Drawing.Point(267, 316);
             this.btnXoanhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoanhanvien.Name = "btnXoanhanvien";
             this.btnXoanhanvien.Size = new System.Drawing.Size(87, 30);
@@ -222,7 +222,7 @@
             // btnTimkiemnhanvien
             // 
             this.btnTimkiemnhanvien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTimkiemnhanvien.Location = new System.Drawing.Point(951, 16);
+            this.btnTimkiemnhanvien.Location = new System.Drawing.Point(951, 18);
             this.btnTimkiemnhanvien.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimkiemnhanvien.Name = "btnTimkiemnhanvien";
             this.btnTimkiemnhanvien.Size = new System.Drawing.Size(87, 30);

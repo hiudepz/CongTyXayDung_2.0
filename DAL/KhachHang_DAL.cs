@@ -11,6 +11,22 @@ namespace DAL
     public class KhachHang_DAL
     { 
         private static QuanLyXayDungEntities2 db = new QuanLyXayDungEntities2();
+        public List<KhachHang_DTO> GetByCustomer(int id )
+        {
+            var list = (from kh in db.KhachHangs
+                        where kh.KhachHangID ==id
+                        select new KhachHang_DTO
+                        {
+                            KhachHangID= kh.KhachHangID,
+                            HoTenKH = kh.HoTenKH,
+                            Email= kh.Email,
+                            Phone= kh.Phone,
+                            DiaChi= kh.DiaChi,
+                            AnhDaiDien= kh.AnhDaiDien
+                        }
+                        ).ToList();
+            return list;
+        }
         public List<KhachHang_DTO> GetAllCustomers()
         {
             //tao list DTO de truyen du lieu qua GUI
@@ -41,7 +57,7 @@ namespace DAL
         //Update Customer
         public void UpdateCustomer(KhachHang kh)
         {
-            var existingCustomer = db.KhachHangs.Find(kh.KhachHangID);
+            var existingCustomer = db.KhachHangs.FirstOrDefault(k => k.KhachHangID == kh.KhachHangID);
             if (existingCustomer != null)
             {
                 existingCustomer.HoTenKH = kh.HoTenKH;

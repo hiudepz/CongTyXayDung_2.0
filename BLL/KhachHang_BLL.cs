@@ -29,8 +29,17 @@ namespace BLL
             };
             kh_dal.AddCustomer(kh);
         }
-        public void UpdateCustomer(KhachHang kh)
+        public void UpdateCustomer(KhachHang_DTO kh_dto)
         {
+            KhachHang kh = new KhachHang
+            {
+                KhachHangID = kh_dto.KhachHangID,
+                HoTenKH = kh_dto.HoTenKH,
+                Email = kh_dto.Email,
+                Phone = kh_dto.Phone,
+                DiaChi = kh_dto.DiaChi,
+                AnhDaiDien = kh_dto.AnhDaiDien,
+            };
             kh_dal.UpdateCustomer(kh);
         }
         public void DeleteCustomer(int CustomerId)
@@ -49,13 +58,16 @@ namespace BLL
         {
             return kh_dal.SearchCustomers(text);
         }
+        public List<KhachHang_DTO> GetByCustomer(int id)
+        {
+            return kh_dal.GetByCustomer(id);
+        } 
         public string CheckAdd(KhachHang_DTO kh)
         {
-          
 
             StringBuilder loi = new StringBuilder();
             if (string.IsNullOrWhiteSpace(kh.HoTenKH))
-                loi.AppendLine("- Vui lòng thêm khách hàng");
+                loi.AppendLine("- Vui lòng thêm tên khách hàng");
             if (string.IsNullOrWhiteSpace(kh.Email))
                 loi.AppendLine("- Email không được để trống.");
             if (!Regex.IsMatch(kh.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
@@ -66,13 +78,6 @@ namespace BLL
                 loi.AppendLine("- Số điện thoại không hợp lệ");
             if (string.IsNullOrWhiteSpace(kh.DiaChi))
                 loi.AppendLine("- Địa chỉ không được để trống");
-
-            var ID = kh.KhachHangID;
-            //var nd = kh.GetByCustomer(ID);
-            //if (kh != null && kh.KhachHangID == ID)
-            //{
-            //    loi.AppendLine("- Nhân viên đã có tài khoản");
-            //}
             return loi.ToString();
         }
     }

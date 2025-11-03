@@ -22,6 +22,7 @@ namespace GUI.NhanVienGiamSat
             quanlyduan qlda = new quanlyduan();
             qlda.MdiParent = this;
             qlda.Show();
+            qlda.WindowState = FormWindowState.Maximized;
         }
     }
 }
