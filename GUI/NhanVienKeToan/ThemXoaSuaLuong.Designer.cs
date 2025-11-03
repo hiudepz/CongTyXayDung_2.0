@@ -413,7 +413,6 @@
             this.Name = "ThemXoaSuaLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QuanLyLuong";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ThemXoaSuaLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLuong)).EndInit();
             this.groupBox1.ResumeLayout(false);

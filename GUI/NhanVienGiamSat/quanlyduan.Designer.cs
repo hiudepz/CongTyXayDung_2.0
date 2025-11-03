@@ -42,15 +42,14 @@
             this.btnThemduan = new System.Windows.Forms.Button();
             this.btnXoaduan = new System.Windows.Forms.Button();
             this.btnSuaduan = new System.Windows.Forms.Button();
-            this.btnChonanhduan = new System.Windows.Forms.Button();
             this.dgvQuanlyduan = new System.Windows.Forms.DataGridView();
             this.btnPhancongnhansuchoduan = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbHopdong = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
             this.btnTimkiem = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbbHopdong = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picHinhanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuanlyduan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -176,15 +175,6 @@
             this.btnSuaduan.UseVisualStyleBackColor = true;
             this.btnSuaduan.Click += new System.EventHandler(this.btnSuaduan_Click);
             // 
-            // btnChonanhduan
-            // 
-            this.btnChonanhduan.Location = new System.Drawing.Point(510, 186);
-            this.btnChonanhduan.Name = "btnChonanhduan";
-            this.btnChonanhduan.Size = new System.Drawing.Size(86, 33);
-            this.btnChonanhduan.TabIndex = 6;
-            this.btnChonanhduan.Text = "Chọn ảnh";
-            this.btnChonanhduan.UseVisualStyleBackColor = true;
-            // 
             // dgvQuanlyduan
             // 
             this.dgvQuanlyduan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -218,7 +208,6 @@
             this.groupBox1.Controls.Add(this.cbbHopdong);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnPhancongnhansuchoduan);
-            this.groupBox1.Controls.Add(this.btnChonanhduan);
             this.groupBox1.Controls.Add(this.btnSuaduan);
             this.groupBox1.Controls.Add(this.btnXoaduan);
             this.groupBox1.Controls.Add(this.btnThemduan);
@@ -242,6 +231,24 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điền thông tin ";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbbHopdong
+            // 
+            this.cbbHopdong.FormattingEnabled = true;
+            this.cbbHopdong.Location = new System.Drawing.Point(156, 115);
+            this.cbbHopdong.Name = "cbbHopdong";
+            this.cbbHopdong.Size = new System.Drawing.Size(200, 24);
+            this.cbbHopdong.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 119);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Hợp đồng";
             // 
             // groupBox2
             // 
@@ -262,6 +269,7 @@
             // 
             // txtTimkiem
             // 
+            this.txtTimkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimkiem.Location = new System.Drawing.Point(760, 16);
             this.txtTimkiem.Name = "txtTimkiem";
             this.txtTimkiem.Size = new System.Drawing.Size(138, 22);
@@ -278,23 +286,6 @@
             this.btnTimkiem.Text = "Tìm kiếm ";
             this.btnTimkiem.UseVisualStyleBackColor = true;
             this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 119);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Hợp đồng";
-            // 
-            // cbbHopdong
-            // 
-            this.cbbHopdong.FormattingEnabled = true;
-            this.cbbHopdong.Location = new System.Drawing.Point(156, 115);
-            this.cbbHopdong.Name = "cbbHopdong";
-            this.cbbHopdong.Size = new System.Drawing.Size(200, 24);
-            this.cbbHopdong.TabIndex = 10;
             // 
             // quanlyduan
             // 
@@ -334,7 +325,6 @@
         private System.Windows.Forms.Button btnThemduan;
         private System.Windows.Forms.Button btnXoaduan;
         private System.Windows.Forms.Button btnSuaduan;
-        private System.Windows.Forms.Button btnChonanhduan;
         private System.Windows.Forms.DataGridView dgvQuanlyduan;
         private System.Windows.Forms.Button btnPhancongnhansuchoduan;
         private System.Windows.Forms.GroupBox groupBox1;

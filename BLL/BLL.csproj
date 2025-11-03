@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DuAn_BLL.cs" />
+    <Compile Include="HopDong_BLL.cs" />
     <Compile Include="KhachHang_BLL.cs" />
     <Compile Include="LuongNV_BLL.cs" />
     <Compile Include="NguoiDung_BLL.cs" />

@@ -164,13 +164,6 @@ namespace DAL
         }
 
 
-        //public bool ExistsLuong(int nhanVienId, int thang, int nam, int? excludeBangLuongId = null)
-        //{
-        //    return db.BangLuongs.Any(bl =>
-        //                   bl.NhanVienID == nhanVienId &&
-        //                                  bl.Thang == thang &&
-        //                                                 bl.Nam == nam &&
-        //                                                                (excludeBangLuongId == null || bl.BangLuongID != excludeBangLuongId));
-        //}
+       
     }
 }

@@ -17,6 +17,7 @@ namespace GUI
     {
         private readonly DuAn_BLL bll = new DuAn_BLL();
         private readonly KhachHang_BLL khachHangBLL = new KhachHang_BLL();
+        private readonly HopDong_BLL hopDong_BLL = new HopDong_BLL();
 
         private int selectedID = -1;
         public quanlyduan()
@@ -26,6 +27,11 @@ namespace GUI
 
         private void quanlyduan_Load(object sender, EventArgs e)
         {
+            //format date
+            dtpNgaybatdau.Format = DateTimePickerFormat.Custom;
+            dtpNgaybatdau.CustomFormat = "MM/dd/yyyy";
+            dtpNgayketthuc.Format = DateTimePickerFormat.Custom;
+            dtpNgayketthuc.CustomFormat = "MM/dd/yyyy";
             //tắt chỉnh sửa trực tiếp trên dgv
             dgvQuanlyduan.ReadOnly = true;
             dgvQuanlyduan.AllowUserToAddRows = false;
@@ -34,6 +40,7 @@ namespace GUI
             cbbKhachhang.DropDownStyle = ComboBoxStyle.DropDownList;
             cbbHopdong.DropDownStyle = ComboBoxStyle.DropDownList;
             LoadKH();
+            LoadHD();
             LoadData();
 
 
@@ -88,6 +95,22 @@ namespace GUI
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LoadHD()
+        {
+            try
+            {
+                var listHD = hopDong_BLL.GetAllHopDong();
+                cbbHopdong.DataSource = listHD;
+                cbbHopdong.DisplayMember = "TenHopDong";  // Hiển thị tên hợp đồng
+                cbbHopdong.ValueMember = "HopDongID";     // Giá trị lưu thực tế
+                cbbHopdong.SelectedIndex = -1;              // Không chọn mặc định
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách hợp đồng: " + ex.Message,
+                                       "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+            }
+        }
         private DuAn_DTO GetInput()
         {
             return new DuAn_DTO
@@ -97,9 +120,9 @@ namespace GUI
                 KhachHangID = cbbKhachhang.SelectedValue != null
                         ? Convert.ToInt32(cbbKhachhang.SelectedValue)
                         : 0,
-                //HopDongID = cbbHopdong.SelectedValue != null
-                //        ? Convert.ToInt32(cbbHopdong.SelectedValue)
-                //        : 0,
+                HopDongID = cbbHopdong.SelectedValue != null
+                        ? Convert.ToInt32(cbbHopdong.SelectedValue)
+                        : 0,
                 NgayBatDau = dtpNgaybatdau.Value,
                 NgayKetThuc = dtpNgayketthuc.Value,
                 TienDo = txtTiendo.Text,
@@ -132,16 +155,16 @@ namespace GUI
                     selectedID = Convert.ToInt32(row.Cells["DuAnID"]?.Value ?? 0);
 
                     txtTenduan.Text = row.Cells["TenDuAn"]?.Value?.ToString() ?? string.Empty;
-                    // 👇 CHỈ chọn theo ValueMember (ID)
+                    //CHỈ chọn theo ValueMember (ID)
                     int khachHangID = Convert.ToInt32(row.Cells["KhachHangID"].Value ?? 0);
-                    //int hopDongID = Convert.ToInt32(row.Cells["HopDongID"].Value ?? 0);
+                    int hopDongID = Convert.ToInt32(row.Cells["HopDongID"].Value ?? 0);
 
                     // Đảm bảo ComboBox đã có DataSource
                     if (cbbKhachhang.DataSource != null)
                         cbbKhachhang.SelectedValue = khachHangID;
 
-                    //if (cbbHopdong.DataSource != null)
-                    //    cbbHopdong.SelectedValue = hopDongID;
+                    if (cbbHopdong.DataSource != null)
+                        cbbHopdong.SelectedValue = hopDongID;
 
                     if (DateTime.TryParse(row.Cells["NgayBatDau"]?.Value?.ToString(), out DateTime ngayBatDau))
                         dtpNgaybatdau.Value = ngayBatDau;
@@ -220,7 +243,7 @@ namespace GUI
         {
             try
             {
-                selectedID = 0;
+                
 
                 var da = GetInput();
                 bll.Update(da);
@@ -258,15 +281,15 @@ namespace GUI
                     txtTenduan.Text = row.Cells["TenDuAn"].Value?.ToString();
                     txtTiendo.Text = row.Cells["TienDo"].Value?.ToString();
                     int khachHangID = Convert.ToInt32(row.Cells["KhachHangID"].Value ?? 0);
-                    //int hopDongID = Convert.ToInt32(row.Cells["HopDongID"].Value ?? 0);
+                int hopDongID = Convert.ToInt32(row.Cells["HopDongID"].Value ?? 0);
 
-                    // Đảm bảo ComboBox đã có DataSource
-                    if (cbbKhachhang.DataSource != null)
+                // Đảm bảo ComboBox đã có DataSource
+                if (cbbKhachhang.DataSource != null)
                         cbbKhachhang.SelectedValue = khachHangID;
 
-                    //if (cbbHopdong.DataSource != null)
-                    //    cbbHopdong.SelectedValue = hopDongID;
-                    dtpNgaybatdau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value);
+                if (cbbHopdong.DataSource != null)
+                    cbbHopdong.SelectedValue = hopDongID;
+                dtpNgaybatdau.Value = Convert.ToDateTime(row.Cells["NgayBatDau"].Value);
                     dtpNgayketthuc.Value = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value);
                     txtTiendo.Text = row.Cells["TienDo"].Value?.ToString() ?? "";
 
@@ -277,6 +300,11 @@ namespace GUI
             {
 
             }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
+    }
     } 
 

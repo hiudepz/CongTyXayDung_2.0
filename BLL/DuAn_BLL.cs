@@ -85,8 +85,20 @@ namespace BLL
         public void Delete(int id)
         {
             if (id <= 0)
-                throw new Exception("ID dự án không hợp lệ.");
-            dal.Delete(id);
+                throw new ArgumentException("ID dự án không hợp lệ.");
+            try
+
+            {
+                dal.Delete(id);
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                throw new InvalidOperationException("Không thể xóa dự án này vì đang được tham chiếu trong bảng khác.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xóa dự án: " + ex.Message);
+            }
         }
 
         public List<DuAn_DTO> Search(string keyword) => dal.Search(keyword);

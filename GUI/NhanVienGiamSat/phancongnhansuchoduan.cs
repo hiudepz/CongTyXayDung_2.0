@@ -29,6 +29,11 @@ namespace GUI
 
         private void phancongnhansuchoduan_Load(object sender, EventArgs e)
         {
+            //format date
+            dtpNgaybatdau.Format = DateTimePickerFormat.Custom;
+            dtpNgaybatdau.CustomFormat = "MM/dd/yyyy";
+            dtpNgayketthuc.Format = DateTimePickerFormat.Custom;
+            dtpNgayketthuc.CustomFormat = "MM/dd/yyyy";
             //tắt chỉnh sửa trực tiếp trên dgv
             dgvThongtinduan.ReadOnly = true;
             dgvThongtinduan.AllowUserToAddRows = false;
