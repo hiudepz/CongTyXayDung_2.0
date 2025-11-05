@@ -21,7 +21,7 @@ namespace GUI.Login
     {
         private NguoiDung_BLL nd_bll = new NguoiDung_BLL();
         public static string TenDangNhapHienTai = "";
-
+        public static int IDNhanVienHienTai = 0;
         public login()
         {
             InitializeComponent();
@@ -46,14 +46,15 @@ namespace GUI.Login
                                  .FirstOrDefault(u => string.Equals(u.TenDangNhap, username, StringComparison.OrdinalIgnoreCase)
                                                    && u.MatKhau == password
                                                    && string.Equals(u.VaiTro, roleInput, StringComparison.OrdinalIgnoreCase));
-
+              
+                
                 if (user == null)
                 {
                     MessageBox.Show("Tên đăng nhập, mật khẩu hoặc vai trò không đúng.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 TenDangNhapHienTai = username;
-
+                IDNhanVienHienTai = user.NhanVienID.Value;
                 // Normalize role string for robust matching (remove diacritics, spaces and lowercase)
                 string normalizedRole = NormalizeRole(user.VaiTro);
 

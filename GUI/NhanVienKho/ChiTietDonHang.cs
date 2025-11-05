@@ -38,6 +38,10 @@ namespace GUI.NhanVienKho
             cbbVatTu.DataSource = vatTu_Bll.GetAllMaterials();
             cbbVatTu.DisplayMember = "TenVatTu";
             cbbVatTu.ValueMember = "VatTuID";
+
+            //an id
+            dgvChiTietDonDatHang.Columns["ChiTietID"].Visible = false;
+            dgvChiTietDonDatHang.Columns["VatTuID"].Visible = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)

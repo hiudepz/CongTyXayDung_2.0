@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(quanlynhacungcap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnXoavattu = new System.Windows.Forms.Button();
@@ -271,7 +270,6 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.btnTimkiemncc);
             this.Controls.Add(this.dgvNcc);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "quanlynhacungcap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhà cung cấp";

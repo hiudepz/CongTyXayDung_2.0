@@ -10,11 +10,14 @@ namespace DTO
     {
         public int KhoID { get; set; }
         public Nullable<int> VatTuID { get; set; }
+        public string TenVatTu { get; set; }
         public string LoaiGiaoDich { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<System.DateTime> NgayGiaoDich { get; set; }
         public Nullable<int> DuAnID { get; set; }
         public Nullable<int> DonDatHangID { get; set; }
-        public int NhanVienID { get; set; } 
+        public string TenDuAn { get; set; }
+        public int NhanVienID { get; set; }
+        public string TenNhanVien { get; set; }
     }
 }

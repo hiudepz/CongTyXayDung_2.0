@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinChiTietNhanVienDatHang));
             this.btn = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -60,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(1212, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 24);
+            this.label1.Size = new System.Drawing.Size(73, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Tìm kiếm ";
             // 
@@ -69,7 +68,7 @@
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimKiem.Location = new System.Drawing.Point(1310, 11);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(127, 29);
+            this.txtTimKiem.Size = new System.Drawing.Size(127, 24);
             this.txtTimKiem.TabIndex = 7;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -87,13 +86,12 @@
             // 
             // ThongTinChiTietNhanVienDatHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1470, 582);
             this.Controls.Add(this.btn);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ThongTinChiTietNhanVienDatHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -263,6 +263,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Baocaotonkho.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Baocaodanhsachkhachhang.cs">
       <AutoGen>True</AutoGen>
@@ -307,6 +308,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPhanCong.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report\dataset\DataSetVatTu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetVatTu.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Report\form\frmBaocaochiphithuenhansu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,12 @@
     </Compile>
     <Compile Include="Report\form\frmbaocaonhanvien.Designer.cs">
       <DependentUpon>frmbaocaonhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\form\frmBaoCaoVatTuTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\form\frmBaoCaoVatTuTonKho.Designer.cs">
+      <DependentUpon>frmBaoCaoVatTuTonKho.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\Hoadonthanhtoan.cs">
       <AutoGen>True</AutoGen>
@@ -452,6 +464,7 @@
     <EmbeddedResource Include="Report\Baocaotonkho.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Baocaotonkho.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Baocaodanhsachkhachhang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -474,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\form\frmbaocaonhanvien.resx">
       <DependentUpon>frmbaocaonhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\form\frmBaoCaoVatTuTonKho.resx">
+      <DependentUpon>frmBaoCaoVatTuTonKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Hoadonthanhtoan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -532,6 +548,17 @@
     </None>
     <None Include="Report\dataset\DataSetPhanCong.xss">
       <DependentUpon>DataSetPhanCong.xsd</DependentUpon>
+    </None>
+    <None Include="Report\dataset\DataSetVatTu.xsc">
+      <DependentUpon>DataSetVatTu.xsd</DependentUpon>
+    </None>
+    <None Include="Report\dataset\DataSetVatTu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVatTu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\dataset\DataSetVatTu.xss">
+      <DependentUpon>DataSetVatTu.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -123,26 +123,6 @@ namespace DAL
                         }).ToList();
             return ConvertToDataTable(list);
         }
-
-
-        //----------------------lay du lieu de in report khach hang-------------------
-        public DataTable GetAllCustomertoRP()
-        {
-            var list = (from kh in db.KhachHangs
-                        select new KhachHang_DTO
-                        {
-                            KhachHangID = kh.KhachHangID,
-                            HoTenKH = kh.HoTenKH,
-                            Email = kh.Email,
-                            Phone = kh.Phone,
-                            DiaChi = kh.DiaChi,
-                            AnhDaiDien = kh.AnhDaiDien
-                        }).ToList();
-
-            return ConvertToDataTable(list);
-        }
-
-        //----------------------ham chuyen doi tu list-------------------
         public static DataTable ConvertToDataTable<T>(IList<T> data)
         {
             var props = typeof(T).GetProperties();
@@ -165,6 +145,26 @@ namespace DAL
 
             return tb;
         }
+
+        //----------------------lay du lieu de in report khach hang-------------------
+        public DataTable GetAllCustomertoRP()
+        {
+            var list = (from kh in db.KhachHangs
+                        select new KhachHang_DTO
+                        {
+                            KhachHangID = kh.KhachHangID,
+                            HoTenKH = kh.HoTenKH,
+                            Email = kh.Email,
+                            Phone = kh.Phone,
+                            DiaChi = kh.DiaChi,
+                            AnhDaiDien = kh.AnhDaiDien
+                        }).ToList();
+
+            return ConvertToDataTable(list);
+        }
+
+        //----------------------ham chuyen doi tu list-------------------
+        
 
     }
 }

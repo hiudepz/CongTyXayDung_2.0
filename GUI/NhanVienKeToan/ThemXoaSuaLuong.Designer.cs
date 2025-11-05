@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemXoaSuaLuong));
             this.dgvLuong = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTimkiem = new System.Windows.Forms.TextBox();
@@ -409,7 +408,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ThemXoaSuaLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QuanLyLuong";

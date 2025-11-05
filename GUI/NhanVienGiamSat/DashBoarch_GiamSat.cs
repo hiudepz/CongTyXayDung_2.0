@@ -24,5 +24,10 @@ namespace GUI.NhanVienGiamSat
             qlda.Show();
             qlda.WindowState = FormWindowState.Maximized;
         }
+
+        private void DashBoarch_GiamSat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

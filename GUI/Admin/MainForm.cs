@@ -203,5 +203,17 @@ namespace GUI.Admin
             frmBaocaochiphithuenhansu frm = new frmBaocaochiphithuenhansu("Phan Đình Ngọc");
             frm.ShowDialog();
         }
+
+        private void báoCáoDanhSáchKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoKhachHang frm = new frmBaoCaoKhachHang();
+            frm.ShowDialog();
+        }
+
+        private void báoCáoHàngTồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoVatTuTonKho frm = new frmBaoCaoVatTuTonKho();
+            frm.ShowDialog();
+        }
     }
 }

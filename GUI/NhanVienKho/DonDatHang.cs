@@ -72,11 +72,10 @@ namespace GUI.NhanVienKho
             txtDonDathangID.Visible = false;
 
             //Add Trang thai
-            cbbTrangThai.Items.Add("Đang xử lý");
-            cbbTrangThai.Items.Add("Đã hoàn thành");
-            cbbTrangThai.Items.Add("Đã hủy");
-            cbbTrangThai.Items.Add("Đã giao");
-            cbbTrangThai.Items.Add("Đang giao");
+            cbbTrangThai.Items.Add("Đang Giao");
+            cbbTrangThai.Items.Add("Đã hủy hàng");
+            cbbTrangThai.Items.Add("Đã Nhập Kho");
+            
 
             cbbTrangThai.DropDownStyle = ComboBoxStyle.DropDownList;
 

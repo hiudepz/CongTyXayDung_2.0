@@ -28,21 +28,7 @@ namespace GUI.Report
         {
             try
             {
-                //1. lay du lieu tu khach hang tu bll
-                //var dsNhanVien = kh_bll.GetAllCustomer();
-
-                //DataTable dt = new DataTable();
-                //dt.Columns.Add("KhachHangID", typeof(int));
-                //dt.Columns.Add("HoTenKH", typeof(string));
-                //dt.Columns.Add("Email", typeof(string));
-                //dt.Columns.Add("Phone", typeof(string));
-                //dt.Columns.Add("DiaChi", typeof(string));
-                //dt.Columns.Add("AnhDaiDien", typeof(byte[]));
-
-                //foreach (var nv in dsNhanVien)
-                //{
-                //    dt.Rows.Add(nv.KhachHangID, nv.HoTenKH, nv.Email, nv.Phone, nv.DiaChi, nv.AnhDaiDien);
-                //}
+                
                 DataTable dt = kh_bll.GetAllCustomertoRP();
 
                 //2. tao doi tuong 
@@ -152,6 +138,11 @@ namespace GUI.Report
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             TimKiemInRPKH();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
  }

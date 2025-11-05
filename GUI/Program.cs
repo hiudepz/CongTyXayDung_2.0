@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using GUI.Report;
 using GUI.NhanVienKinhDoanh;
+using GUI.Report.form;
 
 namespace GUI
 {
@@ -22,7 +23,7 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new Dashboarch_Kho());
+            Application.Run(new login());
 
         }
     }

@@ -66,13 +66,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDSThanhToan.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDSThanhToan.GridColor = System.Drawing.Color.Black;
-            this.dgvDSThanhToan.Location = new System.Drawing.Point(0, 32);
-            this.dgvDSThanhToan.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDSThanhToan.Location = new System.Drawing.Point(0, 49);
+            this.dgvDSThanhToan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvDSThanhToan.Name = "dgvDSThanhToan";
             this.dgvDSThanhToan.RowHeadersVisible = false;
             this.dgvDSThanhToan.RowHeadersWidth = 51;
             this.dgvDSThanhToan.RowTemplate.Height = 24;
-            this.dgvDSThanhToan.Size = new System.Drawing.Size(822, 320);
+            this.dgvDSThanhToan.Size = new System.Drawing.Size(1370, 492);
             this.dgvDSThanhToan.TabIndex = 0;
             this.dgvDSThanhToan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDSThanhToan.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -107,10 +107,10 @@
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(572, 398);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button2.Location = new System.Drawing.Point(954, 612);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(221, 32);
+            this.guna2Button2.Size = new System.Drawing.Size(369, 49);
             this.guna2Button2.TabIndex = 22;
             this.guna2Button2.Text = "Thêm / xóa / sửa";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -124,10 +124,10 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Gray;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(2, 11);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(4, 18);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(822, 360);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1370, 554);
             this.guna2GroupBox1.TabIndex = 20;
             this.guna2GroupBox1.Text = "Danh sách lương nhân viên";
             // 
@@ -137,18 +137,21 @@
             this.panel1.Controls.Add(this.guna2GroupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(826, 450);
+            this.panel1.Size = new System.Drawing.Size(1376, 692);
             this.panel1.TabIndex = 23;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // DanhSachLuong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(826, 450);
+            this.ClientSize = new System.Drawing.Size(1376, 692);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "DanhSachLuong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DanhSachLuong";

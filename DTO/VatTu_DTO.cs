@@ -11,8 +11,10 @@ namespace DTO
         public int VatTuID { get; set; }
         public string TenVatTu { get; set; }
         public string DonViTinh { get; set; }
-        public Nullable<int> SoLuongTon { get; set; }
-        public Nullable<int> NhaCungCapID { get; set; }
-        public byte[] HinhAnhVatTu { get; set; } 
+        public int? SoLuongTon { get; set; }
+        public int? NhaCungCapID { get; set; }
+            // optional: supplier name for report
+        public byte[] HinhAnhVatTu { get; set; }
+        public string TenNhaCungCap { get; set; }
     }
 }

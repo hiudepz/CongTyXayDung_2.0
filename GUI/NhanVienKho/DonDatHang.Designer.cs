@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DonDatHang));
             this.cbbNhaCungCap = new System.Windows.Forms.ComboBox();
             this.cbbNhanVien = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -304,7 +303,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnThem);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DonDatHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
