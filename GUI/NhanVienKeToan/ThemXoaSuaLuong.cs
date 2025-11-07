@@ -15,6 +15,7 @@ namespace GUI.NhanVienKeToan
     public partial class ThemXoaSuaLuong : Form
     {
         private readonly LuongNV_BLL bll = new LuongNV_BLL();
+        private readonly NhanVien_BLL nv_bll = new NhanVien_BLL();
         private int selectedID = -1;
         private LuongNV_DTO currentLuong;//dữ liệu bên ngoài truyền  vào
         //public event Action DataChanged;
@@ -26,23 +27,24 @@ namespace GUI.NhanVienKeToan
         {
             currentLuong = luong;
         }
-        private void LoadLuongData(int id)
-        {
-            var luong = bll.GetLuongByID(id);
-            if (luong != null)
-            {
-                txtNhanvienid.Text = luong.NhanVienID.ToString();
-                txtHoten.Text = luong.HoTen;
-                txtThang.Text = luong.Thang.ToString();
-                txtNam.Text = luong.Nam.ToString();
-                txtBasicluong.Text = luong.LuongCoBan.ToString();
-                txtThuong.Text = luong.Thuong.ToString();
-                txtKhautru.Text = luong.KhauTru.ToString();
-                txtPhucap.Text = luong.PhuCap.ToString();
-                txtNgaycong.Text = luong.NgayCong.ToString();
-                txtGiotangca.Text = luong.GioTangCa.ToString();
-            }
-        }
+        //private void LoadLuongData(int id)
+        //{
+
+        //    var luong = bll.GetLuongByID(id);
+        //    if (luong != null)
+        //    {
+        //        txtNhanvienid.Text = luong.NhanVienID.ToString();
+        //        txtHoten.Text = luong.HoTen;
+        //        txtThang.Text = luong.Thang.ToString();
+        //        txtNam.Text = luong.Nam.ToString();
+        //        txtBasicluong.Text = luong.LuongCoBan.ToString();
+        //        txtThuong.Text = luong.Thuong.ToString();
+        //        txtKhautru.Text = luong.KhauTru.ToString();
+        //        txtPhucap.Text = luong.PhuCap.ToString();
+        //        txtNgaycong.Text = luong.NgayCong.ToString();
+        //        txtGiotangca.Text = luong.GioTangCa.ToString();
+        //    }
+        //}
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -55,13 +57,20 @@ namespace GUI.NhanVienKeToan
             dgvLuong.AllowUserToAddRows = false;
             dgvLuong.AllowUserToDeleteRows = false;
             dgvLuong.EditMode = DataGridViewEditMode.EditProgrammatically;
+            // Trong Form_Load:
+            dtpThangNam.Format = DateTimePickerFormat.Custom;
+            dtpThangNam.CustomFormat = "MM/yyyy";
+            dtpThangNam.ShowUpDown = true;
+            dtpThangNam.Value = DateTime.Now; //Luôn mặc định tháng-năm hiện tại
+
+            // Không cho chọn tháng-năm khác
+            dtpThangNam.Enabled = false; //Không cho người dùng chỉnh tay
 
             if (currentLuong != null)
             {
-                txtNhanvienid.Text = currentLuong.NhanVienID.ToString();
+                cbbMaNhanVien.ValueMember = currentLuong.NhanVienID.ToString();
                 txtHoten.Text = currentLuong.HoTen;
-                txtThang.Text = currentLuong.Thang.ToString();
-                txtNam.Text = currentLuong.Nam.ToString();
+                dtpThangNam.Value = new DateTime(currentLuong.Nam, currentLuong.Thang, 1);
                 txtBasicluong.Text = currentLuong.LuongCoBan.ToString();
                 txtThuong.Text = currentLuong.Thuong.ToString();
                 txtPhucap.Text = currentLuong.PhuCap.ToString();
@@ -86,6 +95,10 @@ namespace GUI.NhanVienKeToan
 
 
             txtTongluong.ReadOnly = true;
+
+            //load cbb MaNV
+            cbbMaNhanVien.DataSource = nv_bll.Laydanhsachnhanvien();
+            cbbMaNhanVien.DisplayMember = "NhanVienID";
         }
         private void LoadData()
         {
@@ -95,7 +108,7 @@ namespace GUI.NhanVienKeToan
         }
         public void ResetForm()
         {
-            //selectedID = -1;
+            selectedID = -1;
             //txtNhanvienid.Clear();
             //txtHoten.Clear();
             //txtThang.Clear();
@@ -109,13 +122,15 @@ namespace GUI.NhanVienKeToan
         }
         private LuongNV_DTO GetInput()
         {
+            var now = dtpThangNam.Value;
+
             return new LuongNV_DTO
             {
                 BangLuongID = selectedID,
-                NhanVienID = int.TryParse(txtNhanvienid.Text, out var nvID) ? nvID : 0,
+                NhanVienID = int.TryParse(cbbMaNhanVien.Text, out var nvID) ? nvID : 0,
                 HoTen = txtHoten.Text,
-                Thang = int.TryParse(txtThang.Text, out var thang) ? thang : 0,
-                Nam = int.TryParse(txtNam.Text, out var nam) ? nam : 0,
+                Thang = now.Month,
+                Nam = now.Year,
                 LuongCoBan = decimal.TryParse(txtBasicluong.Text, out var luong) ? luong : 0,
                 Thuong = decimal.TryParse(txtThuong.Text, out var thuong) ? thuong : 0,
                 KhauTru = decimal.TryParse(txtKhautru.Text, out var khau) ? khau : 0,
@@ -210,10 +225,14 @@ namespace GUI.NhanVienKeToan
                 {
                     var row = dgvLuong.Rows[e.RowIndex];
                     selectedID = Convert.ToInt32(row.Cells["BangLuongID"]?.Value ?? 0);
-                    txtNhanvienid.Text = row.Cells["NhanVienID"]?.Value?.ToString() ?? string.Empty;
+                    cbbMaNhanVien.ValueMember = row.Cells["NhanVienID"]?.Value?.ToString() ?? string.Empty;
                     txtHoten.Text = row.Cells["HoTen"]?.Value?.ToString() ?? string.Empty;
-                    txtThang.Text = row.Cells["Thang"]?.Value?.ToString() ?? string.Empty;
-                    txtNam.Text = row.Cells["Nam"]?.Value?.ToString() ?? string.Empty;
+                    if (row.Cells["Thang"].Value != null && row.Cells["Nam"].Value != null)
+                    {
+                        int thang = Convert.ToInt32(row.Cells["Thang"].Value);
+                        int nam = Convert.ToInt32(row.Cells["Nam"].Value);
+                        dtpThangNam.Value = new DateTime(nam, thang, 1);
+                    }
                     txtBasicluong.Text = row.Cells["LuongCoBan"]?.Value?.ToString() ?? string.Empty;
                     txtThuong.Text = row.Cells["Thuong"]?.Value?.ToString() ?? string.Empty;
                     txtKhautru.Text = row.Cells["KhauTru"]?.Value?.ToString() ?? string.Empty;
@@ -238,10 +257,15 @@ namespace GUI.NhanVienKeToan
             {
                 var row = dgvLuong.Rows[e.RowIndex];
                 selectedID = Convert.ToInt32(row.Cells["BangLuongID"].Value);
-                txtNhanvienid.Text = row.Cells["NhanVienID"].Value?.ToString();
+                cbbMaNhanVien.ValueMember = row.Cells["NhanVienID"].Value?.ToString();
                 txtHoten.Text = row.Cells["HoTen"].Value?.ToString();
-                txtThang.Text = row.Cells["Thang"].Value?.ToString();
-                txtNam.Text = row.Cells["Nam"].Value?.ToString();
+                if (row.Cells["Thang"].Value != null && row.Cells["Nam"].Value != null)
+                {
+                    int thang = Convert.ToInt32(row.Cells["Thang"].Value);
+                    int nam = Convert.ToInt32(row.Cells["Nam"].Value);
+                    dtpThangNam.Value = new DateTime(nam, thang, 1);
+                }
+
                 txtBasicluong.Text = row.Cells["LuongCoBan"].Value?.ToString();
                 txtThuong.Text = row.Cells["Thuong"].Value?.ToString();
                 txtKhautru.Text = row.Cells["KhauTru"].Value?.ToString();

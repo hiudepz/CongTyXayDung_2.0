@@ -25,9 +25,9 @@ namespace BLL
             {
                 throw new Exception("Tháng không hợp lệ. Vui lòng nhập giá trị từ 1 đến 12.");
             }
-            if (luong.Nam < 2000 || luong.Nam > DateTime.Now.Year)
+            if (luong.Nam == DateTime.Now.Year)
             {
-                throw new Exception("Năm không hợp lệ. Vui lòng nhập năm từ 2000 đến năm hiện tại.");
+                throw new Exception("Năm không hợp lệ. Vui lòng nhập năm hiện tại.");
             }
             if (luong.LuongCoBan < 0)
             {
