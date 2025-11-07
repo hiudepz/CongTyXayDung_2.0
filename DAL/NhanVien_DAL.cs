@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,7 +26,10 @@ namespace DAL
                 AnhDaiDien = n.AnhDaiDien
             }).ToList();
         }
-
+        public NhanVien GetByID(int id)
+        {
+            return db.NhanViens.FirstOrDefault(nv => nv.NhanVienID == id);
+        }
         public void Add_NV(NhanVien nv)
         {
             db.NhanViens.Add(nv);

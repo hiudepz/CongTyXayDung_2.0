@@ -23,7 +23,7 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new login());
+            Application.Run(new DanhSachLuong());
 
         }
     }

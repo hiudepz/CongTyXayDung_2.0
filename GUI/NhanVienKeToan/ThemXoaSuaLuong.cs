@@ -98,7 +98,11 @@ namespace GUI.NhanVienKeToan
 
             //load cbb MaNV
             cbbMaNhanVien.DataSource = nv_bll.Laydanhsachnhanvien();
-            cbbMaNhanVien.DisplayMember = "NhanVienID";
+            cbbMaNhanVien.DisplayMember = "NhanVienID";       // Hiển thị tên nhân viên
+            cbbMaNhanVien.ValueMember = "NhanVienID";    // Giá trị thực là ID
+
+            cbbMaNhanVien.DropDownStyle= ComboBoxStyle.DropDownList; // Chỉ cho chọn, không cho nhập
+            txtHoten.ReadOnly = true;
         }
         private void LoadData()
         {
@@ -139,8 +143,8 @@ namespace GUI.NhanVienKeToan
                 GioTangCa = int.TryParse(txtGiotangca.Text, out var gio) ? gio : 0
             };
         }
-       
-        
+
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -210,7 +214,7 @@ namespace GUI.NhanVienKeToan
             dgvLuong.DataSource = result;
         }
 
-      
+
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -257,7 +261,10 @@ namespace GUI.NhanVienKeToan
             {
                 var row = dgvLuong.Rows[e.RowIndex];
                 selectedID = Convert.ToInt32(row.Cells["BangLuongID"].Value);
-                cbbMaNhanVien.ValueMember = row.Cells["NhanVienID"].Value?.ToString();
+                if (row.Cells["NhanVienID"].Value != null)
+                {
+                    cbbMaNhanVien.SelectedValue = Convert.ToInt32(row.Cells["NhanVienID"].Value);
+                }
                 txtHoten.Text = row.Cells["HoTen"].Value?.ToString();
                 if (row.Cells["Thang"].Value != null && row.Cells["Nam"].Value != null)
                 {
@@ -319,6 +326,19 @@ namespace GUI.NhanVienKeToan
         {
             TinhTongLuong();
 
+        }
+
+        private void cbbMaNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (cbbMaNhanVien.SelectedValue != null && int.TryParse(cbbMaNhanVien.SelectedValue.ToString(), out int nvID))
+            {
+                var nv = nv_bll.GetNhanVienByID(nvID);
+                if (nv != null)
+                {
+                    txtHoten.Text = nv.HoTen;
+                }
+            }
         }
     }
 }
