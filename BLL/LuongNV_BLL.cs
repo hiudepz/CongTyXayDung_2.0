@@ -25,10 +25,11 @@ namespace BLL
             {
                 throw new Exception("Tháng không hợp lệ. Vui lòng nhập giá trị từ 1 đến 12.");
             }
-            if (luong.Nam == DateTime.Now.Year)
+            if (luong.Nam < 2000 || luong.Nam > DateTime.Now.Year)
             {
-                throw new Exception("Năm không hợp lệ. Vui lòng nhập năm hiện tại.");
+                throw new Exception("Năm không hợp lệ. Vui lòng nhập năm hiện tại hoặc nhỏ hơn.");
             }
+
             if (luong.LuongCoBan < 0)
             {
                 throw new Exception("Lương cơ bản không được âm.");
@@ -53,7 +54,11 @@ namespace BLL
             {
                 throw new Exception("Giờ tăng ca không được âm.");
             }
-            if(luong.LuongCoBan < luong.KhauTru)
+            else if (luong.GioTangCa > 40)
+            {
+                throw new Exception("Tổng giờ tăng ca trong tháng không được vượt quá 40 giờ.");
+            }
+            if (luong.LuongCoBan < luong.KhauTru)
             {
                 throw new Exception("Khấu trừ không được lớn hơn lương cơ bản.");
             }

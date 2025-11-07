@@ -28,6 +28,24 @@ namespace BLL
                 AnhDaiDien = nv.AnhDaiDien
             }).ToList();
         }
+        public NhanVien_DTO GetNhanVienByID(int id)
+        {
+            var nv = dal.GetByID(id);
+            if (nv != null)
+            {
+                return new NhanVien_DTO
+                {
+                    NhanVienID = nv.NhanVienID,
+                    HoTen = nv.HoTen,
+                    Email = nv.Email,
+                    Phone = nv.Phone,
+                    VaiTro = nv.VaiTro,
+                    AnhDaiDien = nv.AnhDaiDien
+                };
+            }
+            return null;
+        }
+
         // Kiểm tra dữ liệu nhập
         private void Validate(NhanVien_DTO nv)
         {
