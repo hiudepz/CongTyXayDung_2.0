@@ -57,6 +57,12 @@ namespace BLL
                 throw new Exception("Lỗi khi lấy danh sách hợp đồng: " + ex.Message);
             }
         }
+        public HopDong_DTO GetByID(int id)
+        {
+            var all = GetAllHopDong();
+            return all.FirstOrDefault(h => h.HopDongID == id);
+        }
+
 
         // Thêm hợp đồng
         public void Add(HopDong_DTO hd)

@@ -22,6 +22,12 @@ namespace GUI
 
         private void quanlyhopdong_Load(object sender, EventArgs e)
         {
+            //format date
+            dtpNgayky.Format = DateTimePickerFormat.Custom;
+            dtpNgayky.CustomFormat = "MM/dd/yyyy";
+       
+            //tắt chỉnh sửa trực tiếp trên dgv
+
             dgvQlhopdong.ReadOnly = true;
             dgvQlhopdong.AllowUserToAddRows = false;
             dgvQlhopdong.AllowUserToDeleteRows = false;
@@ -34,7 +40,7 @@ namespace GUI
             cbbTrangthai.Items.AddRange(new string[] { "Chưa ký", "Đang thực hiện", "Hoàn thành", "Đã hủy" });
 
             LoadKH();
-            //LoadDA()/*;*/
+            LoadDA();
             LoadData();
         }
 
@@ -88,21 +94,21 @@ namespace GUI
             }
         }
 
-        //private void LoadDA()
-        //{
-        //    try
-        //    {
-        //        var list = duAn_BLL.GetAll();
-        //        cbbDuAn.DataSource = list;
-        //        cbbDuAn.DisplayMember = "TenDuAn";
-        //        cbbDuAn.ValueMember = "DuAnID";
-        //        cbbDuAn.SelectedIndex = -1;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi khi tải danh sách dự án: " + ex.Message);
-        //    }
-        //}
+        private void LoadDA()
+        {
+            try
+            {
+                var list = duAn_BLL.GetAll();
+                cbbDuAn.DataSource = list;
+                cbbDuAn.DisplayMember = "TenDuAn";
+                cbbDuAn.ValueMember = "DuAnID";
+                cbbDuAn.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách dự án: " + ex.Message);
+            }
+        }
 
         private HopDong_DTO GetInput()
         {
@@ -112,7 +118,7 @@ namespace GUI
                 MaHopDong = txtMahopdong.Text.Trim(),
                 TenHopDong = txtTenHopDong.Text.Trim(),
                 KhachHangID = cbbKH.SelectedValue != null ? Convert.ToInt32(cbbKH.SelectedValue) : 0,
-                //DuAnID = cbbDuAn.SelectedValue != null ? Convert.ToInt32(cbbDuAn.SelectedValue) : (int?)null,
+                DuAnID = cbbDuAn.SelectedValue != null ? Convert.ToInt32(cbbDuAn.SelectedValue) : (int?)null,
                 NgayKy = dtpNgayky.Value,
                 GiaTriHopDong = decimal.TryParse(txtGiatri.Text, out var gt) ? gt : 0,
                 NoiDungYeuCau = txtNoidung.Text.Trim(),
@@ -139,11 +145,11 @@ namespace GUI
                 cbbTrangthai.Text = row.Cells["TrangThai"].Value?.ToString();
 
                 int khID = Convert.ToInt32(row.Cells["KhachHangID"].Value ?? 0);
-                //int? daID = row.Cells["DuAnID"].Value as int?;
+                int? daID = row.Cells["DuAnID"].Value as int?;
                 if (cbbKH.DataSource != null)
                     cbbKH.SelectedValue = khID;
-                //if (daID.HasValue && cbbDuAn.DataSource != null)
-                //    cbbDuAn.SelectedValue = daID.Value;
+                if (daID.HasValue && cbbDuAn.DataSource != null)
+                    cbbDuAn.SelectedValue = daID.Value;
 
                 if (DateTime.TryParse(row.Cells["NgayKy"].Value?.ToString(), out DateTime ngayKy))
                     dtpNgayky.Value = ngayKy;
@@ -159,6 +165,7 @@ namespace GUI
                 hopDong_BLL.Add(hd);
                 LoadData();
                 MessageBox.Show("Thêm hợp đồng thành công!");
+                cbbDuAn.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -174,6 +181,8 @@ namespace GUI
                 hopDong_BLL.Update(hd);
                 LoadData();
                 MessageBox.Show("Cập nhật hợp đồng thành công!");
+                cbbDuAn.SelectedIndex = -1;
+
             }
             catch (Exception ex)
             {
@@ -243,6 +252,22 @@ namespace GUI
         }
 
         private void dgvTTKH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnClearDA_Click(object sender, EventArgs e)
+        {
+            cbbDuAn.SelectedIndex = -1;
+        }
+
+        private void btnDuAn_Click(object sender, EventArgs e)
+        {
+            quanlyduan frm = new quanlyduan();
+            frm.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

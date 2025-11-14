@@ -81,6 +81,8 @@ namespace GUI
                 cbbTenhopdong.DataSource = listHopDong;
                 cbbTenhopdong.DisplayMember = "TenHopDong";
                 cbbTenhopdong.ValueMember = "HopDongID";
+
+                cbbTenhopdong.DropDownStyle = ComboBoxStyle.DropDownList;
             }
             catch (Exception ex)
             {
@@ -95,6 +97,9 @@ namespace GUI
                 cbbTennhanvien.DataSource = listNV;
                 cbbTennhanvien.DisplayMember = "HoTen";
                 cbbTennhanvien.ValueMember = "NhanVienID";
+
+                cbbTennhanvien.DropDownStyle = ComboBoxStyle.DropDownList;
+
             }
             catch (Exception ex)
             {
@@ -104,16 +109,47 @@ namespace GUI
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
+            string keyword = txtTimKiem.Text.Trim().ToLower();
 
+            if (string.IsNullOrEmpty(keyword))
+            {
+                LoadData();
+              
+                return;
+            }
+
+          
+
+            var phanCongList = bll.Search(keyword).Where(x =>
+                RemoveDiacritics(x.TenHopDong?.ToLower() ?? "").Contains(RemoveDiacritics(keyword)) ||
+             
+                RemoveDiacritics(x.HoTenNV?.ToLower() ?? "").Contains(RemoveDiacritics(keyword))).ToList();
+
+         
+            dgvPhancongnhanvienchohopdong.DataSource = phanCongList;
         }
+        //Hàm loại bỏ dấu tiếng Việt
+        private string RemoveDiacritics(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return text;
 
+            var normalized = text.Normalize(System.Text.NormalizationForm.FormD);
+            var chars = normalized.Where(c =>
+                System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c) !=
+                System.Globalization.UnicodeCategory.NonSpacingMark
+            );
+
+            return new string(chars.ToArray()).Normalize(System.Text.NormalizationForm.FormC);
+        }
         private void btnThemnhanvienchohopdong_Click(object sender, EventArgs e)
         {
             try
             {
-             
 
+                selectedID = 0;
                 var dto = GetInput();
+                if (dto == null) return;      
                 bll.Add(dto);
 
                 LoadData(); // refresh lại grid

@@ -215,5 +215,11 @@ namespace GUI.Admin
             frmBaoCaoVatTuTonKho frm = new frmBaoCaoVatTuTonKho();
             frm.ShowDialog();
         }
+
+        private void baocaohopdongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoHopDong frm = new frmBaoCaoHopDong();
+            frm.ShowDialog();
+        }
     }
 }

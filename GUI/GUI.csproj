@@ -279,6 +279,11 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Report\dataset\DataSetHopDong.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHopDong.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Report\dataset\DataSetLuong.cs">
       <DependentUpon>DataSetLuong.xsd</DependentUpon>
     </Compile>
@@ -318,6 +323,12 @@
     </Compile>
     <Compile Include="Report\form\frmBaocaochiphithuenhansu.Designer.cs">
       <DependentUpon>frmBaocaochiphithuenhansu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\form\frmBaoCaoHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\form\frmBaoCaoHopDong.Designer.cs">
+      <DependentUpon>frmBaoCaoHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\form\frmBaoCaoKhachHang.cs">
       <SubType>Form</SubType>
@@ -424,6 +435,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="NhanVienGiamSat\quanlyduan.resx">
       <DependentUpon>quanlyduan.cs</DependentUpon>
@@ -479,6 +491,9 @@
     <EmbeddedResource Include="Report\form\frmBaocaochiphithuenhansu.resx">
       <DependentUpon>frmBaocaochiphithuenhansu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\form\frmBaoCaoHopDong.resx">
+      <DependentUpon>frmBaoCaoHopDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\form\frmBaoCaoKhachHang.resx">
       <DependentUpon>frmBaoCaoKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -505,6 +520,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\dataset\DataSetHopDong.xsc">
+      <DependentUpon>DataSetHopDong.xsd</DependentUpon>
+    </None>
+    <None Include="Report\dataset\DataSetHopDong.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHopDong.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\dataset\DataSetHopDong.xss">
+      <DependentUpon>DataSetHopDong.xsd</DependentUpon>
+    </None>
     <None Include="Report\dataset\DataSetLuong.xsc">
       <DependentUpon>DataSetLuong.xsd</DependentUpon>
     </None>
@@ -576,6 +602,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="resources\icons8-x-16.png" />
     <Content Include="resources\OIP %281%29.jpeg" />
     <Content Include="resources\user.png" />
   </ItemGroup>
