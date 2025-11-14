@@ -50,7 +50,7 @@ namespace GUI.NhanVienKho
 
             //load data cbb:
             //1.NhaCungCap
-            cbbNhaCungCap.DataSource = ncc_bll.GetAllSuplier();
+            cbbNhaCungCap.DataSource = ncc_bll.GetAllSupplier();
             cbbNhaCungCap.DisplayMember = "TenNCC";
             cbbNhaCungCap.ValueMember = "NhaCungCapID";
             //2.NhanVien

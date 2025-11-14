@@ -12,14 +12,14 @@ namespace BLL
     {
         private HopDong_DAL dal = new HopDong_DAL();
 
-        // ✅ Kiểm tra dữ liệu hợp đồng
+        //Kiểm tra dữ liệu hợp đồng
         public void Validate(HopDong_DTO hd)
         {
             if (hd == null)
                 throw new Exception("Dữ liệu hợp đồng không được để trống.");
 
             if (string.IsNullOrWhiteSpace(hd.MaHopDong))
-                throw new Exception("Mã hợp đồng không được để trống.");
+                throw new Exception("Số hợp đồng không được để trống.");
 
             if (string.IsNullOrWhiteSpace(hd.TenHopDong))
                 throw new Exception("Tên hợp đồng không được để trống.");
@@ -41,7 +41,7 @@ namespace BLL
                 );
 
                 if (existed)
-                    throw new Exception("Mã hợp đồng đã tồn tại.");
+                    throw new Exception("Số hợp đồng đã tồn tại.");
             }
         }
 
@@ -122,7 +122,7 @@ namespace BLL
             }
         }
 
-        // Lấy hợp đồng theo ID (nếu bạn cần mở form chi tiết)
+        // Lấy hợp đồng theo ID (nếu cần mở form chi tiết)
         public HopDong_DTO GetHopDongByID(int id)
         {
             try

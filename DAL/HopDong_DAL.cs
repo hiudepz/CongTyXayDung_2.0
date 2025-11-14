@@ -103,7 +103,7 @@ namespace DAL
             }
         }
 
-        // 🔍 Tìm kiếm hợp đồng
+        // Tìm kiếm hợp đồng
         public List<HopDong_DTO> Search(string keyword)
         {
             keyword = RemoveDiacritics(keyword?.Trim().ToLower() ?? "");

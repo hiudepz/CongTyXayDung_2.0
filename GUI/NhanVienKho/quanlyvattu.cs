@@ -75,7 +75,7 @@ namespace GUI
         {
 
              // load nhà cung cấp lên combobox
-            cbbNhaCungCap.DataSource = ncc_bll.GetAllSuplier();
+            cbbNhaCungCap.DataSource = ncc_bll.GetAllSupplier();
             cbbNhaCungCap.DisplayMember = "TenNCC";
             cbbNhaCungCap.ValueMember = "NhaCungCapID";
             // Load dữ liệu vật tư lên DataGridView

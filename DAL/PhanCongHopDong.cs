@@ -12,20 +12,14 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Kho
+    public partial class PhanCongHopDong
     {
-        public int KhoID { get; set; }
-        public Nullable<int> VatTuID { get; set; }
-        public string LoaiGiaoDich { get; set; }
-        public Nullable<int> SoLuong { get; set; }
-        public Nullable<System.DateTime> NgayGiaoDich { get; set; }
-        public Nullable<int> DuAnID { get; set; }
-        public Nullable<int> DonDatHangID { get; set; }
+        public int PhanCongID { get; set; }
+        public int HopDongID { get; set; }
         public int NhanVienID { get; set; }
+        public string VaiTro { get; set; }
     
-        public virtual DonDatHang DonDatHang { get; set; }
-        public virtual DuAn DuAn { get; set; }
+        public virtual HopDong HopDong { get; set; }
         public virtual NhanVien NhanVien { get; set; }
-        public virtual VatTu VatTu { get; set; }
     }
 }

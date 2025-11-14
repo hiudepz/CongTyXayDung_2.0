@@ -57,6 +57,19 @@ INSERT INTO HopDong (MaHopDong, TenHopDong, KhachHangID, NgayKy, GiaTriHopDong, 
 ('HD-2025-002', N'Hợp đồng cải tạo văn phòng An Khang', 1, '2025-10-10', 550000000.00, N'Sửa chữa, phân chia lại không gian văn phòng, đi lại hệ thống điện mạng', N'45 ngày', N'Thanh toán 3 đợt', N'Đang thực hiện');
 GO
 
+PRINT N'Chèn dữ liệu vào bảng PhanCongHopDong...';
+INSERT INTO PhanCongHopDong (HopDongID, NhanVienID, VaiTro) VALUES
+-- Hợp đồng HD-2025-001 (thi công nhà phố Ms. Thảo)
+(1, 1, N'Giám sát thi công'),   -- Nguyễn Văn A
+(1, 2, N'Kế toán hợp đồng'),    -- Trần Thị B
+(1, 3, N'Quản lý kho vật tư'),  -- Lê Văn C
+
+-- Hợp đồng HD-2025-002 (cải tạo văn phòng An Khang)
+(2, 4, N'Phụ trách kinh doanh'), -- Phạm Thị D
+(2, 5, N'Quản trị hệ thống'),    -- Võ Minh Tùng
+(2, 6, N'Kinh doanh hỗ trợ');    -- Đỗ Hoàng E
+GO
+
 -- 7. DỰ ÁN / CÔNG TRÌNH
 PRINT N'Chèn dữ liệu vào bảng DuAn...';
 INSERT INTO DuAn (TenDuAn, KhachHangID, HopDongID, NgayBatDau, NgayKetThuc, TienDo) VALUES
@@ -141,3 +154,4 @@ GO
 
 select * from BangLuong
 select * from KhachHang
+select * from DuAn

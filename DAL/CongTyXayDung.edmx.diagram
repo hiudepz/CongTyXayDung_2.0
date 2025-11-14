@@ -41,6 +41,9 @@
         <AssociationConnector Association="QuanLyXayDungModel.FK__VatTu__NhaCungCa__3D5E1FD2" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyXayDungModel.FK__PhanCong__NhanVi__37A5467C" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyXayDungModel.FK__ThanhToan__NhanV__534D60F1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyXayDungModel.PhanCongHopDong" Width="1.5" PointX="6.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyXayDungModel.FK__PhanCongH__HopDo__4F7CD00D" />
+        <AssociationConnector Association="QuanLyXayDungModel.FK__PhanCongH__NhanV__5070F446" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
