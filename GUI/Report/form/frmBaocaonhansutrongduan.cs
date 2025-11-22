@@ -113,5 +113,10 @@ namespace GUI.Report.form
 
             return new string(chars.ToArray()).Normalize(System.Text.NormalizationForm.FormC);
         }
+
+        private void frmBaocaonhansutrongduan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

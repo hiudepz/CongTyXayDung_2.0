@@ -18,7 +18,7 @@ namespace GUI.NhanVienKho
         private Kho_BLL kho_BLL = new Kho_BLL();
         private VatTu_BLL vatTu_BLL = new VatTu_BLL();
         private DuAn_BLL duAn_BLL = new DuAn_BLL();
-        private int idDonDatHang;
+        private int idDonDatHang =0;
         public QuanLyKho(int id)
         {
             InitializeComponent();

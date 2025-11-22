@@ -118,6 +118,7 @@
     <Compile Include="ThanhToan.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>
+    <Compile Include="ThanhToan_DAL.cs" />
     <Compile Include="VatTu.cs">
       <DependentUpon>CongTyXayDung.tt</DependentUpon>
     </Compile>

@@ -51,6 +51,7 @@ namespace BLL
                 NhanVienID = nd_dto.NhanVienID
             };
             nd_dal.AddUser(nd);
+            
         }
         public void UpdateUser(NguoiDung_DTO nd_dto)
         {

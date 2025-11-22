@@ -40,7 +40,7 @@
             this.frmBaoCaoNhanSu.Cursor = System.Windows.Forms.Cursors.Default;
             this.frmBaoCaoNhanSu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frmBaoCaoNhanSu.Location = new System.Drawing.Point(0, 0);
-            this.frmBaoCaoNhanSu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.frmBaoCaoNhanSu.Margin = new System.Windows.Forms.Padding(4);
             this.frmBaoCaoNhanSu.Name = "frmBaoCaoNhanSu";
             this.frmBaoCaoNhanSu.Size = new System.Drawing.Size(1067, 554);
             this.frmBaoCaoNhanSu.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimKiem.Location = new System.Drawing.Point(665, 7);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(132, 22);
             this.txtTimKiem.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTimKiem.Location = new System.Drawing.Point(805, 4);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 28);
             this.btnTimKiem.TabIndex = 2;
@@ -76,10 +76,11 @@
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.frmBaoCaoNhanSu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBaocaonhansutrongduan";
             this.Text = "frmBaocaonhansutrongduan";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmBaocaonhansutrongduan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

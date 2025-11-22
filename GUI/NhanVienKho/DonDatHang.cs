@@ -16,7 +16,7 @@ namespace GUI.NhanVienKho
     
     public partial class DonDatHang : Form
     {
-        public int NhanVienID { get; set; }
+        public int NhanVienID   { get; set; }
         private DonDatHang_BLL ddh_bll = new DonDatHang_BLL();
         private ChiTietDonDatHang_BLL ctdh_bll = new ChiTietDonDatHang_BLL();
         private NhanVien_BLL  nv_bll = new NhanVien_BLL();

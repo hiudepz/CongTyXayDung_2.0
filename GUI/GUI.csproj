@@ -110,12 +110,6 @@
     <Compile Include="NhanVienGiamSat\phancongnhansuchoduan.Designer.cs">
       <DependentUpon>phancongnhansuchoduan.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVienKeToan\BangDonDatHang_BangDuAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhanVienKeToan\BangDonDatHang_BangDuAn.Designer.cs">
-      <DependentUpon>BangDonDatHang_BangDuAn.cs</DependentUpon>
-    </Compile>
     <Compile Include="NhanVienKeToan\DanhSachThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +312,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetVatTu.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report\dataset\ThanhToanHoaDon.cs">
+      <DependentUpon>ThanhToanHoaDon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\dataset\ThanhToanHoaDon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThanhToanHoaDon.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Report\form\frmBaocaochiphithuenhansu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -354,11 +356,18 @@
     <Compile Include="Report\form\frmBaoCaoVatTuTonKho.Designer.cs">
       <DependentUpon>frmBaoCaoVatTuTonKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\form\frmHoaDonThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\form\frmHoaDonThanhToan.Designer.cs">
+      <DependentUpon>frmHoaDonThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Hoadonthanhtoan.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Hoadonthanhtoan.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Service.cs" />
     <EmbeddedResource Include="Admin\QuanLyNguoiDung.resx">
@@ -384,9 +393,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienGiamSat\phancongnhansuchoduan.resx">
       <DependentUpon>phancongnhansuchoduan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NhanVienKeToan\BangDonDatHang_BangDuAn.resx">
-      <DependentUpon>BangDonDatHang_BangDuAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienKeToan\DanhSachThanhToan.resx">
       <DependentUpon>DanhSachThanhToan.cs</DependentUpon>
@@ -506,9 +512,13 @@
     <EmbeddedResource Include="Report\form\frmBaoCaoVatTuTonKho.resx">
       <DependentUpon>frmBaoCaoVatTuTonKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\form\frmHoaDonThanhToan.resx">
+      <DependentUpon>frmHoaDonThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Hoadonthanhtoan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Hoadonthanhtoan.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -602,7 +612,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Report\dataset\ThanhToanHoaDon.xsc">
+      <DependentUpon>ThanhToanHoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="Report\dataset\ThanhToanHoaDon.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ThanhToanHoaDon.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\dataset\ThanhToanHoaDon.xss">
+      <DependentUpon>ThanhToanHoaDon.xsd</DependentUpon>
+    </None>
     <None Include="resources\icons8-x-16.png" />
+    <Content Include="resources\icons8-plus-16.png" />
     <Content Include="resources\OIP %281%29.jpeg" />
     <Content Include="resources\user.png" />
   </ItemGroup>

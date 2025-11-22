@@ -18,6 +18,7 @@ namespace GUI.Report.form
     public partial class frmBaoCaoHopDong : Form
     {
         private readonly HopDong_BLL bll = new HopDong_BLL();
+        private readonly KhachHang_BLL khachHangBLL = new KhachHang_BLL();
         public frmBaoCaoHopDong()
         {
             InitializeComponent();
@@ -35,11 +36,13 @@ namespace GUI.Report.form
         }
         private void LoadReport(int hopDongID)
         {
-            var hd = bll.GetByID(hopDongID); //return hopdong_dto
-
+            var hd = bll.GetByID(hopDongID); // HopDong_DTO
+            var listKh = khachHangBLL.GetByCustomer(hd.KhachHangID); // KhachHang_DTO
+            var kh = listKh.FirstOrDefault();
             var dt = new DataSetHopDong.HopDongDataTable();
             var row = dt.NewHopDongRow();
 
+            // Thông tin hợp đồng
             row.HopDongID = hd.HopDongID;
             row.SoHopDong = hd.MaHopDong;
             row.TenHopDong = hd.TenHopDong;
@@ -49,16 +52,59 @@ namespace GUI.Report.form
             row.ThoiHanThiCong = hd.ThoiHanThiCong;
             row.DieuKhoanThanhToan = hd.DieuKhoanThanhToan;
             row.TrangThai = hd.TrangThai;
-            row.TenKhachHang = hd.TenKhachHang;
             row.TenDuAn = hd.TenDuAn;
+
+            // Thông tin khách hàng (Bên A)
+            if (kh != null)
+            {
+                row.TenKhachHang = kh.HoTenKH;
+                row.DiaChiKhachHang = kh.DiaChi;
+                row.DienThoaiKhachHang = kh.Phone;
+                row.EmailKhachHang = kh.Email;
+            }
+
+            // Thông tin đơn vị thi công (Bên B) — nếu có
+            //row.TenNhaThau = "Công Ty TNHH An Khang";
+            //row.DiaChiNhaThau = "info@ankhang.com";
+            //row.DienThoaiNhaThau = "0288123456";
+            //row.GiayDKKD = "BV";
+            //row.NgayCapDKKD = DateTime.Today;
+            //row.NoiCapDKKD = "Sở KHĐT TP.HCM";
+
+            // Ngày lập hợp đồng
+            //row.NgayLap = DateTime.Today;
 
             dt.AddHopDongRow(row);
 
-            var report = new Baocaohopdong();
+            var report = new Baocaohopdong(); // Crystal Report mẫu hành chính
             report.SetDataSource((DataTable)dt);
 
             crvHopDong.ReportSource = report;
             crvHopDong.Refresh();
+            //var hd = bll.GetByID(hopDongID); //return hopdong_dto
+
+            //var dt = new DataSetHopDong.HopDongDataTable();
+            //var row = dt.NewHopDongRow();
+
+            //row.HopDongID = hd.HopDongID;
+            //row.SoHopDong = hd.MaHopDong;
+            //row.TenHopDong = hd.TenHopDong;
+            //row.NgayKy = hd.NgayKy ?? DateTime.MinValue;
+            //row.GiaTriHopDong = hd.GiaTriHopDong;
+            //row.NoiDungYeuCau = hd.NoiDungYeuCau;
+            //row.ThoiHanThiCong = hd.ThoiHanThiCong;
+            //row.DieuKhoanThanhToan = hd.DieuKhoanThanhToan;
+            //row.TrangThai = hd.TrangThai;
+            //row.TenKhachHang = hd.TenKhachHang;
+            //row.TenDuAn = hd.TenDuAn;
+
+            //dt.AddHopDongRow(row);
+
+            //var report = new Baocaohopdong();
+            //report.SetDataSource((DataTable)dt);
+
+            //crvHopDong.ReportSource = report;
+            //crvHopDong.Refresh();
             //string path = @"C:\Reports\HopDong_" + hd.HopDongID + ".pdf";
             //report.ExportToDisk(ExportFormatType.PortableDocFormat, path);
 

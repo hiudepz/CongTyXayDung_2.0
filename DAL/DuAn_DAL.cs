@@ -178,6 +178,11 @@ namespace DAL
 
             return new string(chars.ToArray()).Normalize(System.Text.NormalizationForm.FormC);
         }
+
+        public decimal GetTongThanhToan(int duAnID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
