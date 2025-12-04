@@ -20,13 +20,13 @@ namespace GUI.Report.form
     {
         public int? duAnID;
         public decimal SoTien;
-        public string nguoiLap;
-        public frmHoaDonThanhToan(int? IDduAn,decimal soTien,string nguoiLap)
+        public int IDthanhtoan;
+        public frmHoaDonThanhToan(int? IDduAn,decimal soTien,int IDthanhtoan)
         {
             InitializeComponent();
             this.duAnID = IDduAn;
             this.SoTien = soTien;
-            this.nguoiLap = nguoiLap;
+            this.IDthanhtoan = IDthanhtoan;
         }
         public frmHoaDonThanhToan()
         { 
@@ -70,6 +70,8 @@ namespace GUI.Report.form
 
                 // Gán tham số báo cáo
                 rpt.SetParameterValue("NguoiLap", GUI.Login.login.TenDangNhapHienTai);
+                rpt.SetParameterValue("IDThanhToan", IDthanhtoan);
+
 
                 // Hiển thị báo cáo trên CrystalReportViewer
                 crystalReportViewer1.ReportSource = rpt;

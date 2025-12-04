@@ -202,6 +202,7 @@ namespace GUI.NhanVienKeToan
             try
             {
                 txtMaThanhtoan.Text = row.Cells["ThanhToanID"]?.Value?.ToString() ?? string.Empty;
+                IDThanhToan = int.Parse(txtMaThanhtoan.Text);
                 txtSoTien.Text = row.Cells["SoTien"]?.Value?.ToString() ?? string.Empty;
                 decimal SoTien;
                 if (!decimal.TryParse(txtSoTien.Text, out SoTien))
@@ -395,12 +396,12 @@ namespace GUI.NhanVienKeToan
         {
             // Không triển khai ở lần này (nếu cần tôi sẽ thêm)
         }
-        public string TenDangNhapHienTai = "";
+        public int IDThanhToan = 0;
         private void tsbtnInPhieu_Click(object sender, EventArgs e)
         {
             
                 
-                frmHoaDonThanhToan hdtt = new frmHoaDonThanhToan(duAnID, soTien, TenDangNhapHienTai);
+                frmHoaDonThanhToan hdtt = new frmHoaDonThanhToan(duAnID, soTien, IDThanhToan);
                 hdtt.Show();
             
         }

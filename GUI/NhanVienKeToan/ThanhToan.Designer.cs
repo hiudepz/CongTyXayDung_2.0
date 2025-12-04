@@ -532,7 +532,7 @@
             this.checkdgvDonDatHang.CheckedState.BorderThickness = 0;
             this.checkdgvDonDatHang.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.checkdgvDonDatHang.ForeColor = System.Drawing.Color.Black;
-            this.checkdgvDonDatHang.Location = new System.Drawing.Point(1001, 5);
+            this.checkdgvDonDatHang.Location = new System.Drawing.Point(1016, 7);
             this.checkdgvDonDatHang.Name = "checkdgvDonDatHang";
             this.checkdgvDonDatHang.Size = new System.Drawing.Size(119, 24);
             this.checkdgvDonDatHang.TabIndex = 33;
@@ -552,7 +552,7 @@
             this.checkdgvDuAn.CheckedState.BorderThickness = 0;
             this.checkdgvDuAn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.checkdgvDuAn.ForeColor = System.Drawing.Color.Black;
-            this.checkdgvDuAn.Location = new System.Drawing.Point(911, 5);
+            this.checkdgvDuAn.Location = new System.Drawing.Point(926, 7);
             this.checkdgvDuAn.Name = "checkdgvDuAn";
             this.checkdgvDuAn.Size = new System.Drawing.Size(68, 24);
             this.checkdgvDuAn.TabIndex = 32;
